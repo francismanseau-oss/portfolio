@@ -78,11 +78,7 @@
     "p3": "Pour discuter d’une collaboration ou de mon parcours, écrivez-moi."
   },
   "skills": {
-    "title": "Démarche",
-    "role": "Analyste et concepteur de solutions techniques",
-    "lead": "Les technologies évoluent. La résolution de problèmes demeure. Je comprends un problème, je conçois une solution, et je vais jusqu’au résultat fiable — l’IA accélère la réalisation, elle ne remplace pas l’analyse.",
-    "designsFeatures": "Conçoit les fonctionnalités",
-    "directsCorrections": "Dirige les corrections"
+    "title": "Compétences"
   },
   "footer": {
     "copyright": ""
