@@ -18,12 +18,44 @@
     line-height: 1.25;
 }
 
+.skills-intro__identity {
+    margin: 0 auto 10px;
+    max-width: 36rem;
+    font-size: clamp(1.05rem, 2.6vw, 1.2rem);
+    font-weight: 650;
+    line-height: 1.4;
+    color: var(--text, #e8eef8);
+}
+
+.skills-intro__axes {
+    margin: 0 auto 16px;
+    max-width: 42rem;
+    font-size: clamp(0.82rem, 2.1vw, 0.92rem);
+    font-weight: 550;
+    letter-spacing: 0.02em;
+    line-height: 1.55;
+    color: var(--accent, #22d3ee);
+}
+
+.skills-intro__define {
+    margin: 0 auto 16px;
+    max-width: 52ch;
+    font-size: clamp(0.95rem, 2.3vw, 1.02rem);
+    line-height: 1.7;
+    color: var(--text-muted, #b4c1d3);
+}
+
 .skills-intro__lead {
     margin: 0 auto;
     max-width: 48ch;
     color: var(--lead-color, var(--text-muted));
     font-size: clamp(1rem, 2.4vw, 1.08rem);
     line-height: 1.75;
+}
+
+html[data-theme="day"] .skills-intro__identity,
+html[data-theme="auto"][data-theme-effective="day"] .skills-intro__identity {
+    color: var(--text);
 }
 
 .skills-section {
