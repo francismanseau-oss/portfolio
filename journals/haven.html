@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Journal du concepteur — Haven.">
+    <title>Journal · Haven | Le Laboratoire</title>
+    <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/brand/favicon/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../assets/brand/favicon/favicon-16.png" type="image/png" sizes="16x16">
+    <link rel="shortcut icon" href="../assets/logo/favicon.png" type="image/png">
+    <script src="../js/theme.js"></script>
+    <link rel="stylesheet" href="../css/site.css?v=12">
+    <link rel="stylesheet" href="../css/themes.css?v=12">
+    <link rel="stylesheet" href="../css/layout.css?v=12">
+    <link rel="stylesheet" href="../css/interactive.css?v=12">
+    <link rel="stylesheet" href="../css/lab-studies.css?v=2">
+    <link rel="stylesheet" href="../css/mobile-readability.css?v=12">
+</head>
+<body data-nav-root="../" data-nav-active="projects">
+    <script src="../js/site-bg.js"></script>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="header-brand">
+                <a href="../index.html" class="logo-link">
+                    <img src="../assets/logo/logo-nav.png" alt="" class="logo-icon" width="56" height="56">
+                    <span class="logo-text">Francis <span>Manseau</span></span>
+                </a>
+            </div>
+            <nav class="main-nav" id="mainNav" aria-label="Navigation principale"></nav>
+            <script src="../js/site-nav.js?v=7"></script>
+            <span class="lang-status" id="langStatus" data-translate>Traduction…</span>
+            <nav class="lang-switcher" id="langFlags" aria-label="Choisir la langue">
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="de">DE</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="es">ES</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="it">IT</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="zh-CN">ZH</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="ja">JA</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="pt">PT</button>
+            </nav>
+            <script src="../js/lang-ui.js"></script>
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <main class="journal-page">
+        <header class="page-intro">
+            <h1>Haven</h1>
+            <p class="page-intro__lead" data-translate>Carnet de conception — ce qui a été construit, et la direction qui suit.</p>
+            <p><a href="index.html" data-translate>← Tous les journaux</a> · <a href="../projects/index.html#haven" data-translate>Laboratoire</a></p>
+        </header>
+
+        <article class="journal-entry">
+            <p class="journal-entry__meta" data-translate>Hypothèse</p>
+            <h2 data-translate>Reprendre le contrôle des interruptions</h2>
+            <p data-translate>
+                Le point de départ n'était pas « une autre app de silence ».
+                C'était : le téléphone qui interrompt au mauvais moment — conduite, sommeil, travail —
+                et le besoin de règles fines plutôt que d'un mode tout ou rien.
+            </p>
+        </article>
+
+        <article class="journal-entry">
+            <p class="journal-entry__meta" data-translate>Expérimentation</p>
+            <h2 data-translate>Des problématiques distinctes, une même application</h2>
+            <p data-translate>
+                Urgences, deuxième appel, filtrage, profils par contexte, automatisation Android :
+                chaque sujet a été étudié pour lui-même, puis rassemblé dans un comportement cohérent.
+                La validation sur appareil réel a tranché plus d'une hypothèse trop élégante sur le papier.
+            </p>
+        </article>
+
+        <article class="journal-entry">
+            <p class="journal-entry__meta" data-translate>Amélioration</p>
+            <h2 data-translate>Configurer une fois, puis oublier</h2>
+            <p data-translate>
+                La meilleure automatisation est celle qu'on oublie — parce qu'elle respecte le contexte.
+                Haven vise ce point : règles claires, exceptions nécessaires, moins de friction au quotidien.
+            </p>
+        </article>
+
+        <article class="journal-entry journal-entry--next">
+            <p class="journal-entry__meta" data-translate>Prochaine évolution</p>
+            <h2 data-translate>Un calendrier plus proche de la vraie vie</h2>
+            <p data-translate>
+                Les prochains travaux concernent principalement un calendrier intelligent
+                pour améliorer les automatismes — encore en préparation.
+            </p>
+            <ul>
+                <li data-translate>Jours fériés</li>
+                <li data-translate>Journées pédagogiques</li>
+                <li data-translate>Vacances</li>
+                <li data-translate>Congés personnalisés</li>
+                <li data-translate>Événements récurrents</li>
+            </ul>
+            <p data-translate>
+                L'objectif : rapprocher encore davantage le comportement automatique de la réalité quotidienne —
+                voir en un coup d'œil sa journée, sa semaine ou son mois.
+            </p>
+        </article>
+
+        <p class="lab-credo" style="text-align:center;margin-top:2.5rem;font-style:italic;color:var(--text-muted)" data-translate>
+            Je ne considère aucun projet comme terminé.
+            Seulement suffisamment abouti pour passer au suivant.
+        </p>
+    </main>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/mobile-nav.js"></script>
+    <script src="../js/portrait-lock.js"></script>
+    <script src="../js/back-to-top.js"></script>
+    <script src="../js/i18n.js"></script>
+</body>
+</html>

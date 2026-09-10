@@ -1,0 +1,53 @@
+{
+  "studioName": "Weidler Studio",
+  "nav": {
+    "home": "Inicio",
+    "projects": "Nuestros Proyectos",
+    "services": "Servicios",
+    "gallery": "Galería",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "badge": "Juego destacado",
+    "title": "Terre Libre",
+    "description": "Un juego de simulación, autonomía y permacultura. Cultiva tu tierra, gestiona un clima dinámico y modifica el terreno a tu gusto en un mundo vivo e inmersivo.",
+    "cta": "Descargar la demo",
+    "visualLabel": "Terre Libre — Vista previa"
+  },
+  "home": {
+    "subtitle": "Diseñador de soluciones digitales mediante la orquestación de la inteligencia artificial",
+    "lead": "No programo directamente. Analizo las necesidades, concibo la arquitectura y las funcionalidades, y luego dirijo las herramientas de inteligencia artificial que realizan el código. Superviso, pruebo y mejoro cada resultado hasta obtener un producto funcional, fiable y evolutivo.",
+    "cta": "Descubrir mis proyectos →",
+    "metaDescription": "Portfolio de Francis Manseau, diseñador de soluciones digitales mediante orquestación de IA. Concepción, dirección, supervisión y validación de productos Android y sistemas automatizados."
+  },
+  "contact": {
+    "title": "Contacto",
+    "p1": "Actualmente busco una oportunidad profesional que me permita aprovechar mi capacidad para analizar necesidades, concebir soluciones digitales y dirigir su realización con inteligencia artificial.",
+    "p2": "Deseo integrarme en un entorno donde pueda contribuir a proyectos concretos, colaborar con un equipo y seguir desarrollando mis competencias en arquitectura funcional, automatización y orquestación de herramientas de IA.",
+    "p3": "¿Desea hablar de un puesto, de una colaboración o de mi trayectoria? Comuníquese directamente conmigo."
+  },
+  "skills": {
+    "title": "Competencias",
+    "role": "Diseñador de soluciones digitales mediante la orquestación de la inteligencia artificial",
+    "lead": "No programo directamente. Concibo las soluciones, defino su arquitectura y su funcionamiento, y luego dirijo su realización mediante herramientas y agentes de inteligencia artificial.",
+    "designsFeatures": "Concibe las funcionalidades",
+    "directsCorrections": "Dirige las correcciones"
+  },
+  "discussion": {
+    "title": "Discusión comunitaria",
+    "subtitle": "Comparte tus ideas — no se requiere registro.",
+    "pseudonymLabel": "Seudónimo",
+    "pseudonymPlaceholder": "Tu apodo",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Escribe tu mensaje…",
+    "noImages": "No está disponible la subida de imágenes.",
+    "submit": "Publicar comentario",
+    "empty": "Aún no hay comentarios. ¡Sé el primero!",
+    "translate": "Traducir",
+    "translating": "Traduciendo…",
+    "translatedLabel": "Traducción:"
+  },
+  "footer": {
+    "copyright": ""
+  }
+}

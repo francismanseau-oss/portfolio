@@ -1,0 +1,53 @@
+{
+  "studioName": "Weidler Studio",
+  "nav": {
+    "home": "Início",
+    "projects": "Nossos Projetos",
+    "services": "Serviços",
+    "gallery": "Galeria",
+    "contact": "Contato"
+  },
+  "hero": {
+    "badge": "Jogo em destaque",
+    "title": "Terre Libre",
+    "description": "Um jogo de simulação, autonomia e permacultura. Cultive sua terra, gerencie clima dinâmico e modifique o terreno à vontade num mundo vivo e imersivo.",
+    "cta": "Baixar a demo",
+    "visualLabel": "Terre Libre — Prévia"
+  },
+  "home": {
+    "subtitle": "Conceptor de soluções digitais por orquestração da inteligência artificial",
+    "lead": "Não programo diretamente. Analiso as necessidades, concebo a arquitetura e as funcionalidades, e depois dirijo as ferramentas de inteligência artificial que realizam o código. Superviso, testo e melhoro cada resultado até obter um produto funcional, fiável e evolutivo.",
+    "cta": "Descobrir os meus projetos →",
+    "metaDescription": "Portfolio de Francis Manseau, conceptor de soluções digitais por orquestração de IA. Conceção, direção, supervisão e validação de produtos Android e sistemas automatizados."
+  },
+  "contact": {
+    "title": "Contacto",
+    "p1": "Procuro atualmente uma oportunidade profissional que me permita aproveitar a minha capacidade de analisar necessidades, conceber soluções digitais e dirigir a sua realização com inteligência artificial.",
+    "p2": "Desejo integrar um ambiente onde possa contribuir para projetos concretos, colaborar com uma equipa e continuar a desenvolver as minhas competências em arquitetura funcional, automatização e orquestração de ferramentas de IA.",
+    "p3": "Pretende falar de um posto, de uma colaboração ou do meu percurso? Contacte-me diretamente."
+  },
+  "skills": {
+    "title": "Competências",
+    "role": "Conceptor de soluções digitais por orquestração da inteligência artificial",
+    "lead": "Não programo diretamente. Concebo as soluções, defino a sua arquitetura e o seu funcionamento, e depois dirijo a sua realização através de ferramentas e agentes de inteligência artificial.",
+    "designsFeatures": "Concebe as funcionalidades",
+    "directsCorrections": "Dirige as correções"
+  },
+  "discussion": {
+    "title": "Discussão da comunidade",
+    "subtitle": "Compartilhe suas ideias — sem cadastro.",
+    "pseudonymLabel": "Pseudônimo",
+    "pseudonymPlaceholder": "Seu apelido",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Escreva sua mensagem…",
+    "noImages": "O envio de imagens não está disponível.",
+    "submit": "Publicar comentário",
+    "empty": "Nenhum comentário ainda. Seja o primeiro!",
+    "translate": "Traduzir",
+    "translating": "Traduzindo…",
+    "translatedLabel": "Tradução:"
+  },
+  "footer": {
+    "copyright": ""
+  }
+}

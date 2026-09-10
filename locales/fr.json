@@ -1,0 +1,90 @@
+{
+  "studioName": "Francis Manseau",
+  "tagline": "Créer. Solutionner. Connecter.",
+  "nav": {
+    "home": "Accueil",
+    "kios": "Kios",
+    "cribleplus": "Crible+",
+    "haven": "Haven",
+    "nexusBridge": "Nexus Bridge"
+  },
+  "pillars": {
+    "create": "Créer",
+    "solve": "Solutionner",
+    "connect": "Connecter"
+  },
+  "status": {
+    "available": "Disponible",
+    "development": "En développement",
+    "soon": "Bientôt",
+    "tool": "Outil"
+  },
+  "kios": {
+    "title": "Kios",
+    "demoSoon": "Démo bientôt disponible"
+  },
+  "cribleplus": {
+    "title": "Crible+",
+    "download": "Télécharger v1.6 (Android)"
+  },
+  "haven": {
+    "title": "Haven"
+  },
+  "nexusBridge": {
+    "title": "Nexus Bridge",
+    "download": "Télécharger Nexus Bridge",
+    "downloadSub": "Windows · fichier ZIP · gratuit",
+    "downloadNote": "Dézippez le fichier, puis double-cliquez sur NexusBridge.exe. Un guide de démarrage est intégré dans l'application."
+  },
+  "discussion": {
+    "title": "Retours bêta Kios",
+    "subtitle": "Partagez vos impressions — aucune inscription requise.",
+    "empty": "Aucun commentaire pour l'instant. Soyez le premier !"
+  },
+  "home": {
+    "subtitle": "Analyste et concepteur de solutions techniques",
+    "lead": "Les technologies évoluent. La résolution de problèmes demeure. J’analyse un besoin, conçois une solution et vais jusqu’à un résultat fiable — avec Android, l’automatisation et l’intelligence artificielle comme outils.",
+    "cta": "Explorer le laboratoire",
+    "metaDescription": "Francis Manseau — laboratoire de conception. Chaque solution commence par une idée.",
+    "contactLead": "Pour une collaboration ou une question — écrivez-moi.",
+    "thresholdEyebrow": "Le Laboratoire",
+    "thresholdLine": "Chaque solution commence par une idée.",
+    "thresholdEnter": "Franchir le seuil",
+    "thresholdHint": "ou faites défiler doucement",
+    "welcome": "Bienvenue.",
+    "playground": "Vous n’entrez pas dans un simple portfolio. Vous entrez dans un laboratoire de conception.",
+    "manifesto1": "Ici, les idées naissent, évoluent, sont testées, parfois abandonnées, puis réinventées.",
+    "manifesto2": "Certaines deviennent des applications. D’autres restent des prototypes. Quelques-unes ne dépasseront jamais le stade de l’expérimentation.",
+    "manifestoCommon": "Toutes participent pourtant à une même quête.",
+    "cycleUnderstand": "Comprendre",
+    "cycleBuild": "Construire",
+    "cycleTest": "Tester",
+    "cycleImprove": "Améliorer",
+    "signature": "Les technologies évoluent. La résolution de problèmes demeure.",
+    "terrainTitle": "Dans le laboratoire",
+    "terrainLead": "Applications, prototypes, outils d’atelier et idées en cours — chaque pièce raconte une irritation, puis une démarche.",
+    "credo": "Je ne considère aucun projet comme terminé. Seulement suffisamment abouti pour passer au suivant.",
+    "noteHypothesis": "Hypothèse",
+    "notePrototype": "Prototype",
+    "noteExperiment": "Expérimentation",
+    "noteValidation": "Validation",
+    "noteImprove": "Amélioration",
+    "noteDesign": "Conception"
+  },
+  "contact": {
+    "title": "Contact",
+    "p1": "Les technologies évoluent. La résolution de problèmes demeure.",
+    "p2": "J’aimerais rejoindre une entreprise où l’analyse précède l’action — pour concevoir des solutions et contribuer à des projets qui ont un impact concret.",
+    "p3": "Pour discuter d’une collaboration ou de mon parcours, écrivez-moi."
+  },
+  "skills": {
+    "title": "Démarche",
+    "role": "Analyste et concepteur de solutions techniques",
+    "lead": "Les technologies évoluent. La résolution de problèmes demeure. Je comprends un problème, je conçois une solution, et je vais jusqu’au résultat fiable — l’IA accélère la réalisation, elle ne remplace pas l’analyse.",
+    "designsFeatures": "Conçoit les fonctionnalités",
+    "directsCorrections": "Dirige les corrections"
+  },
+  "footer": {
+    "copyright": ""
+  }
+}

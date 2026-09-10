@@ -1,0 +1,259 @@
+/* Vision — Sprint 1 : première rencontre (overlay portfolio) */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.vision-encounter {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1.25rem 3rem;
+  background: rgba(4, 6, 12, 0.92);
+  color: #d8e8ff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+.vision-encounter.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.vision-encounter.is-dismissed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.vision-encounter__ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 40%, rgba(30, 50, 90, 0.35), transparent 70%),
+    radial-gradient(circle at 50% 100%, rgba(10, 20, 40, 0.8), transparent 55%);
+  opacity: 0.6;
+  transition: opacity 1.2s cubic-bezier(0.33, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.vision-encounter__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 42%, rgba(120, 180, 255, 0.08), transparent 62%);
+  opacity: 0;
+  transition: opacity 1.4s cubic-bezier(0.33, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.vision-encounter.is-awake .vision-encounter__ambient {
+  opacity: 1;
+}
+
+.vision-encounter.is-lit .vision-encounter__glow {
+  opacity: 1;
+}
+
+.vision-encounter__hint {
+  position: absolute;
+  bottom: 1.5rem;
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: rgba(200, 220, 245, 0.55);
+}
+
+.vision-encounter__presence {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.vision-encounter__figure {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+}
+
+.vision-encounter__eyes {
+  display: flex;
+  gap: 1.4rem;
+  opacity: 0;
+  transform: scaleY(0.15);
+  transform-origin: center;
+  transition:
+    opacity 1s cubic-bezier(0.33, 0, 0.2, 1),
+    transform 1.2s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.vision-encounter__eye {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #a8d4ff;
+  box-shadow: 0 0 18px rgba(140, 200, 255, 0.35);
+  transition: transform 0.5s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.vision-encounter__smile {
+  position: absolute;
+  bottom: 28px;
+  width: 28px;
+  height: 14px;
+  border-bottom: 2px solid rgba(160, 210, 255, 0.55);
+  border-radius: 0 0 28px 28px;
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition:
+    opacity 0.5s cubic-bezier(0.33, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.vision-encounter__speech {
+  margin: 0;
+  font-size: clamp(1.1rem, 3.5vw, 1.45rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  text-align: center;
+  color: #d8e8ff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.8s cubic-bezier(0.33, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.33, 0, 0.2, 1);
+  max-width: 28ch;
+}
+
+.vision-encounter__speech.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vision-encounter__dialogue {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 420px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.7s cubic-bezier(0.33, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.vision-encounter__dialogue.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vision-encounter__dialogue textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 3rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(120, 160, 210, 0.25);
+  border-radius: 10px;
+  background: rgba(8, 14, 28, 0.72);
+  color: #d8e8ff;
+  font: inherit;
+  line-height: 1.45;
+}
+
+.vision-encounter__dialogue textarea:focus {
+  outline: 2px solid rgba(126, 184, 255, 0.45);
+  outline-offset: 2px;
+}
+
+.vision-encounter__dialogue button[type="submit"] {
+  align-self: flex-end;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid rgba(126, 184, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(126, 184, 255, 0.12);
+  color: #7eb8ff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.vision-encounter__dialogue button[type="submit"]:disabled {
+  opacity: 0.45;
+  cursor: wait;
+}
+
+.vision-encounter__continue {
+  position: relative;
+  z-index: 2;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  color: rgba(200, 220, 245, 0.65);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.vision-encounter[data-beat="eyes_open"] .vision-encounter__eyes,
+.vision-encounter.is-eyes-open .vision-encounter__eyes {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.vision-encounter[data-beat="look_visitor"] .vision-encounter__eye,
+.vision-encounter.is-looking .vision-encounter__eye {
+  transform: scale(1.08);
+}
+
+.vision-encounter[data-beat="breathe"] .vision-encounter__figure,
+.vision-encounter.is-breathing .vision-encounter__figure {
+  animation: vision-breathe 1.1s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
+.vision-encounter[data-beat="smile"] .vision-encounter__smile,
+.vision-encounter.is-smiling .vision-encounter__smile {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.vision-encounter.is-lit .vision-encounter__glow {
+  background: radial-gradient(circle at 50% 42%, rgba(140, 200, 255, 0.22), transparent 58%);
+}
+
+@keyframes vision-breathe {
+  0%, 100% { transform: scale(1); }
+  45% { transform: scale(1.035); }
+  70% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vision-encounter *,
+  .vision-encounter *::before,
+  .vision-encounter *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

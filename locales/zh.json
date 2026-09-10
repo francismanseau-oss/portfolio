@@ -1,0 +1,53 @@
+{
+  "studioName": "Weidler Studio",
+  "nav": {
+    "home": "首页",
+    "projects": "我们的项目",
+    "services": "服务",
+    "gallery": "画廊",
+    "contact": "联系"
+  },
+  "hero": {
+    "badge": "旗舰游戏",
+    "title": "Terre Libre",
+    "description": "一款关于自主与永续农业的模拟游戏。在生动沉浸的世界中耕种土地、管理动态天气，并自由改造地形。",
+    "cta": "下载试玩版",
+    "visualLabel": "Terre Libre — 预览"
+  },
+  "home": {
+    "subtitle": "通过人工智能编排设计数字解决方案的构想者",
+    "lead": "我并不直接编写代码。我分析需求、设计架构与功能，然后指导人工智能工具完成代码实现。我监督、测试并改进每一项成果，直至得到功能完善、可靠且可演进的产品。",
+    "cta": "发现我的项目 →",
+    "metaDescription": "Francis Manseau 作品集：通过人工智能编排构想数字解决方案。负责 Android 产品与自动化系统的设计、指导、监督与验证。"
+  },
+  "contact": {
+    "title": "联系",
+    "p1": "我目前正在寻找一份职业机会，以便发挥我分析需求、构想数字解决方案并以人工智能指导其实现的能力。",
+    "p2": "我希望加入一个能够参与具体项目、与团队协作，并继续发展功能架构、自动化与人工智能工具编排能力的环境。",
+    "p3": "想讨论职位、合作或我的经历？请直接与我联系。"
+  },
+  "skills": {
+    "title": "能力",
+    "role": "通过人工智能编排设计数字解决方案的构想者",
+    "lead": "我并不直接编写代码。我构想解决方案、定义其架构与运作方式，然后通过人工智能工具与智能体指导其实现。",
+    "designsFeatures": "构想功能",
+    "directsCorrections": "指导修正"
+  },
+  "discussion": {
+    "title": "社区讨论",
+    "subtitle": "分享您的想法 — 无需注册。",
+    "pseudonymLabel": "昵称",
+    "pseudonymPlaceholder": "您的昵称",
+    "messageLabel": "留言",
+    "messagePlaceholder": "写下您的留言…",
+    "noImages": "不支持上传图片。",
+    "submit": "发布留言",
+    "empty": "暂无留言，成为第一个吧！",
+    "translate": "翻译",
+    "translating": "翻译中…",
+    "translatedLabel": "译文："
+  },
+  "footer": {
+    "copyright": ""
+  }
+}

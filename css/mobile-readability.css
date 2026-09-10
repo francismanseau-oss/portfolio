@@ -1,0 +1,118 @@
+/* ── Lisibilité mobile (pages principales, ≤768px) ──
+   Chargé en dernier. !important + px explicites pour battre tous les clamp().
+   Select soumission : taille réduite séparément (voir fin de fichier). */
+
+@media (max-width: 768px) {
+    body {
+        --mobile-text-size: 20px;
+        --mobile-text-leading: 1.72;
+        font-size: var(--mobile-text-size);
+        line-height: var(--mobile-text-leading);
+    }
+
+    body main p,
+    body main li,
+    body main label,
+    body main figcaption,
+    body main blockquote,
+    body main dd,
+    body main dt,
+    body main h2,
+    body main h3,
+    body main .lead,
+    body main .discussion-subtitle,
+    body main .note-muted,
+    body main .submission-field-error,
+    body main .submission-required-notice,
+    body main .char-counter,
+    body main .submission-consent span,
+    body main .about-quote,
+    body main .feature-card p,
+    body main .feature-card h3,
+    body main .comment-card p,
+    body main .teaser-box p,
+    body main .submission-panel p,
+    body main .submission-panel h2,
+    body main .submission-panel h3,
+    body main .form-group label,
+    body main .submission-panel label,
+    body main .studio-cta .lead,
+    body main .page-hero .lead,
+    body main .page-intro .lead,
+    body main .about-block p,
+    body main .about-block .lead,
+    body main .about-story p,
+    body main .about-list li,
+    body main .submission-list li,
+    body main .about-principles li,
+    body main .home-lead,
+    body main .home-subtitle,
+    body main .home-card p,
+    body main .home-card h3,
+    body main .home-project-card p,
+    body main .home-process-item p,
+    body main .home-process-item h3,
+    body main .home-approach-quote p,
+    body main .home-approach-list li,
+    body main .home-contact-lead,
+    body main .home-section-link,
+    body main .home-footer-tagline,
+    body main .section-label,
+    body main .features-title,
+    body main .haven-subtitle,
+    body main .haven-summary-box .lead,
+    body main .pi-report-intro,
+    body main.page-projects p,
+    body main.page-projects .lead,
+    body main.page-projects .discussion-subtitle,
+    body main.page-projects li,
+    body main.page-projects .pi-workflow-step p,
+    body main.page-projects figcaption,
+    #submissionStepRates p,
+    #submissionStepRates h2,
+    #submissionStepRates h3,
+    #submissionStepRates h4,
+    .mobile-page-progress,
+    .mobile-page-progress__label,
+    .mobile-page-progress__step,
+    .site-footer,
+    .site-footer p,
+    .site-footer-copy {
+        font-size: var(--mobile-text-size) !important;
+        line-height: var(--mobile-text-leading) !important;
+    }
+
+    .page-soumission .submission-actions .btn-primary,
+    .page-soumission .submission-actions .btn-outline,
+    .page-soumission #submissionStartBtn {
+        font-size: 16px !important;
+        line-height: 1.25 !important;
+    }
+
+    body[data-nav-active="services"] .feature-card p {
+        font-size: 19px !important;
+        line-height: var(--mobile-text-leading) !important;
+    }
+
+    .page-soumission .submission-select-toggle {
+        font-size: 13px !important;
+        line-height: 1.35 !important;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    .page-soumission .submission-select-option {
+        font-size: 16px !important;
+        line-height: 1.3 !important;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    .page-soumission select,
+    .page-soumission select option {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+}

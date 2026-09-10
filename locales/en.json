@@ -1,0 +1,62 @@
+{
+  "studioName": "Francis Manseau",
+  "tagline": "Create. Solve. Connect.",
+  "nav": {
+    "home": "Home",
+    "kios": "Kios",
+    "cribleplus": "Crible+",
+    "haven": "Haven",
+    "nexusBridge": "Nexus Bridge"
+  },
+  "status": {
+    "available": "Available",
+    "development": "In development",
+    "soon": "Coming soon",
+    "tool": "Tool"
+  },
+  "home": {
+    "subtitle": "Technical solutions analyst and designer",
+    "lead": "Technologies evolve. Problem-solving remains. I analyze a need, design a solution, and follow through to a reliable result — using Android, automation, and artificial intelligence as tools.",
+    "cta": "Explore the laboratory",
+    "metaDescription": "Francis Manseau — design laboratory. Every solution begins with an idea.",
+    "thresholdEyebrow": "The Laboratory",
+    "thresholdLine": "Every solution begins with an idea.",
+    "thresholdEnter": "Cross the threshold",
+    "thresholdHint": "or scroll gently",
+    "welcome": "Welcome.",
+    "playground": "You are not entering a simple portfolio. You are entering a design laboratory.",
+    "manifesto1": "Here, ideas are born, evolve, are tested, sometimes abandoned, then reinvented.",
+    "manifesto2": "Some become applications. Others remain prototypes. A few will never leave the experiment stage.",
+    "manifestoCommon": "Yet all take part in the same quest.",
+    "cycleUnderstand": "Understand",
+    "cycleBuild": "Build",
+    "cycleTest": "Test",
+    "cycleImprove": "Improve",
+    "signature": "Technologies evolve. Problem-solving remains.",
+    "terrainTitle": "In the laboratory",
+    "terrainLead": "Applications, prototypes, workshop tools, and ideas in progress — each piece tells an irritation, then a method.",
+    "credo": "I do not consider any project finished. Only complete enough to move on to the next.",
+    "noteHypothesis": "Hypothesis",
+    "notePrototype": "Prototype",
+    "noteExperiment": "Experiment",
+    "noteValidation": "Validation",
+    "noteImprove": "Improvement",
+    "noteDesign": "Design"
+  },
+  "contact": {
+    "title": "Contact",
+    "p1": "Technologies evolve. Problem-solving remains.",
+    "p2": "I would like to join a company where analysis comes before action — to design solutions and contribute to projects with real impact.",
+    "p3": "To discuss a collaboration or my background, email me."
+  },
+  "skills": {
+    "title": "Approach",
+    "role": "Technical solutions analyst and designer",
+    "lead": "Technologies evolve. Problem-solving remains. I understand a problem, design a solution, and follow through to a reliable result — AI speeds delivery; it does not replace analysis.",
+    "designsFeatures": "Designs the features",
+    "directsCorrections": "Directs the corrections"
+  },
+  "footer": {
+    "copyright": ""
+  }
+}

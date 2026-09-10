@@ -1,0 +1,1584 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Le Laboratoire Francis Manseau — études de conception : applications, systèmes, prototypes, expérimentations.">
+<title>Laboratoire | Francis Manseau</title>
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/brand/favicon/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../assets/brand/favicon/favicon-16.png" type="image/png" sizes="16x16">
+    <link rel="shortcut icon" href="../assets/logo/favicon.png" type="image/png">
+<script src="../js/theme.js"></script>
+<link rel="stylesheet" href="../css/site.css?v=12">
+<link rel="stylesheet" href="../css/themes.css?v=12">
+<link rel="stylesheet" href="../css/layout.css?v=12">
+<link rel="stylesheet" href="../css/interactive.css?v=12">
+<link rel="stylesheet" href="../css/lab-studies.css?v=2">
+
+<style>
+:root {
+    --card-width: 100%;
+    --card-gap: 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+figure { margin: 0; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-deep) 55%, var(--bg-gradient-end) 100%);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+main.page-projects {
+    max-width: min(1100px, 100%);
+    margin: 0 auto;
+    padding-bottom: clamp(48px, 8vw, 80px);
+}
+
+.page-projects .page-intro {
+    width: min(760px, 92%);
+    margin: 0 auto clamp(36px, 6vw, 56px);
+    text-align: center;
+}
+
+.page-projects .page-intro h1 {
+    margin: 0 0 14px;
+}
+
+.page-intro__lead {
+    margin: 0;
+    color: var(--lead-color);
+    font-size: clamp(1rem, 2.4vw, 1.08rem);
+    line-height: 1.75;
+    max-width: 52ch;
+    margin-inline: auto;
+}
+
+/* -- Carrousel portfolio -- */
+
+.projects-showcase {
+    width: min(760px, 92%);
+    margin: 0 auto;
+}
+
+.showcase-carousel {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr) 46px;
+    align-items: center;
+    gap: 12px;
+}
+
+.showcase-viewport {
+    width: 100%;
+    overflow: hidden;
+    padding: 8px 0 20px;
+}
+
+.showcase-track {
+    display: flex;
+    align-items: stretch;
+    gap: var(--card-gap);
+    will-change: transform;
+    transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card {
+    flex: 0 0 var(--card-width);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    box-shadow: var(--card-shadow, 0 10px 40px rgba(0, 0, 0, 0.18));
+    overflow: hidden;
+    opacity: 0.88;
+    transform: scale(0.97);
+    transition: opacity 0.38s ease, transform 0.38s ease, border-color 0.38s ease, box-shadow 0.38s ease;
+}
+
+.project-card.is-active {
+    opacity: 1;
+    transform: scale(1);
+    border-color: rgba(34, 211, 238, 0.42);
+    box-shadow: var(--card-shadow, 0 16px 48px rgba(0, 0, 0, 0.18)), var(--glow-cyan);
+}
+
+.project-card__media {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(139, 92, 246, 0.14));
+    border-bottom: 1px solid rgba(56, 80, 120, 0.35);
+}
+
+.project-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.project-card__media--contain img {
+    object-fit: contain;
+    padding: 18px;
+    background: var(--bg-surface);
+}
+
+.project-card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: clamp(22px, 4vw, 30px);
+    text-align: left;
+}
+
+.project-card__title {
+    margin: 0 0 12px;
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.project-card__desc {
+    margin: 0 0 20px;
+    color: var(--lead-color);
+    line-height: 1.72;
+    font-size: clamp(0.96rem, 2.2vw, 1.04rem);
+}
+
+.project-card__tech-label {
+    margin: 0 0 8px;
+    font-size: 0.78rem;
+    color: var(--text-muted, #94a3b8);
+    line-height: 1.4;
+}
+.project-card__tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.project-card__tech {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 22px;
+}
+
+.tech-tag {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    background: rgba(59, 130, 246, 0.12);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.28);
+}
+
+.tech-tag:nth-child(3n + 2) {
+    background: rgba(139, 92, 246, 0.12);
+    color: #c4b5fd;
+    border-color: rgba(139, 92, 246, 0.28);
+}
+
+.tech-tag:nth-child(3n + 3) {
+    background: rgba(34, 211, 238, 0.1);
+    color: #67e8f9;
+    border-color: rgba(34, 211, 238, 0.28);
+}
+
+.project-card__actions {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-learn-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: var(--btn-radius);
+    background: var(--btn-primary-bg);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid var(--btn-primary-border);
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.12), 0 4px 12px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.btn-learn-more:hover {
+    border-color: rgba(34, 211, 238, 0.72);
+    box-shadow: 0 0 22px rgba(34, 211, 238, 0.22);
+    transform: translateY(-1px);
+}
+
+.project-download-cta {
+    margin: 1.25rem 0 0;
+}
+
+.project-download-cta .btn-learn-more {
+    text-decoration: none;
+}
+
+.showcase-arrow {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--btn-primary-border);
+    border-radius: 50%;
+    background: var(--bg-card);
+    color: var(--text);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--card-shadow, 0 0 14px rgba(34, 211, 238, 0.1));
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.showcase-arrow:hover {
+    border-color: rgba(34, 211, 238, 0.62);
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.24);
+    transform: translateY(-1px) scale(1.04);
+}
+
+.showcase-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.showcase-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(148, 163, 184, 0.42);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.showcase-dot.is-active {
+    background: var(--accent);
+    transform: scale(1.15);
+}
+
+/* -- Détail projet -- */
+
+.project-detail {
+    width: min(760px, 92%);
+    margin: clamp(40px, 7vw, 56px) auto 0;
+    opacity: 1;
+    transition: opacity 0.32s ease;
+}
+
+.project-detail[hidden] {
+    display: none;
+}
+
+/* -- Information avant téléchargement d'un APK -- */
+
+.apk-download-dialog {
+    --apk-warning: #b77b00;
+    --apk-warning: color-mix(in srgb, #e5a91a 72%, var(--text));
+    width: min(520px, calc(100% - 32px));
+    padding: 0;
+    border: 1px solid color-mix(in srgb, var(--apk-warning) 62%, transparent);
+    border-radius: 18px;
+    background: var(--bg-card);
+    color: var(--text);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42), 0 0 28px color-mix(in srgb, var(--apk-warning) 18%, transparent);
+}
+
+.apk-download-dialog::backdrop {
+    background: rgba(2, 6, 18, 0.76);
+    backdrop-filter: blur(5px);
+}
+
+.apk-download-dialog__content {
+    position: relative;
+    padding: clamp(24px, 5vw, 34px);
+    text-align: left;
+}
+
+.apk-download-dialog__close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.apk-download-dialog__close:hover {
+    background: rgba(148, 163, 184, 0.12);
+    color: var(--text);
+}
+
+.apk-download-dialog__eyebrow {
+    margin: 0 42px 8px 0;
+    color: var(--apk-warning);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.apk-download-dialog h2 {
+    margin: 0 42px 16px 0;
+    font-size: clamp(1.35rem, 4vw, 1.7rem);
+    line-height: 1.25;
+}
+
+.apk-download-dialog p {
+    margin: 0 0 14px;
+    color: var(--lead-color);
+    line-height: 1.68;
+}
+
+.apk-download-dialog__note {
+    padding: 12px 14px;
+    border-left: 3px solid var(--apk-warning);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--apk-warning) 11%, transparent);
+    color: var(--apk-warning) !important;
+    font-weight: 650;
+}
+
+.apk-download-dialog__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.apk-download-dialog__cancel,
+.apk-download-dialog__continue {
+    min-height: 44px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.apk-download-dialog__cancel {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+}
+
+.apk-download-dialog__continue {
+    border: 1px solid var(--btn-primary-border);
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-color);
+    text-decoration: none;
+}
+
+.page-hero,
+.features-section,
+.screenshots-section {
+    margin-top: 32px;
+    padding: 32px;
+    border-radius: var(--radius);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--glow-cyan);
+}
+
+.badge {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.project-card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.project-card-badges .badge { margin-bottom: 0; font-size: 0.68rem; padding: 4px 10px; }
+
+.badge-cat-type { background: rgba(139, 92, 246, 0.18); color: var(--accent-violet); }
+.badge-cat-platform { background: rgba(59, 130, 246, 0.15); color: var(--badge-tool); }
+.badge-available { background: var(--accent-soft); color: var(--accent); }
+.badge-soon { background: rgba(100, 116, 139, 0.2); color: var(--badge-soon); }
+.badge-dev { background: rgba(201, 162, 39, 0.18); color: #c9a227; }
+
+.features-title,
+.screenshots-title {
+    margin: 0 0 16px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .82rem;
+}
+
+.lead {
+    margin: 0 0 16px;
+    color: var(--lead-color);
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
+
+.lead:last-child { margin-bottom: 0; }
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.feature-card {
+    padding: 20px;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.06);
+}
+
+.feature-card h3 { margin: 0 0 10px; }
+.feature-card p { margin: 0; color: var(--text-muted-soft); line-height: 1.65; }
+
+.features-grid .feature-card:nth-child(3n + 1) { border-color: rgba(139, 92, 246, 0.28); box-shadow: var(--glow-violet); }
+.features-grid .feature-card:nth-child(3n + 2) { border-color: rgba(59, 130, 246, 0.28); box-shadow: var(--glow-blue); }
+.features-grid .feature-card:nth-child(3n + 3) { border-color: rgba(34, 211, 238, 0.28); box-shadow: var(--glow-cyan); }
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 18px);
+    align-items: start;
+    justify-items: center;
+}
+
+/* 3 ou 6 photos → 3 colonnes ; 2 ou 4 → 2 colonnes (défaut) */
+.screenshots-grid:has(> :nth-child(3):last-child),
+.screenshots-grid:has(> :nth-child(5):last-child),
+.screenshots-grid:has(> :nth-child(6):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.screenshot-card {
+    margin: 0;
+    width: 100%;
+    max-width: 220px;
+}
+
+.screenshot-card--landscape {
+    max-width: min(100%, 420px);
+}
+
+.screenshot-card--portrait {
+    max-width: 220px;
+}
+
+.screenshot-card img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+.screenshot-card--landscape img {
+    max-height: 240px;
+}
+
+.screenshot-card--portrait img {
+    max-height: 420px;
+    /* garde la page Support en portrait, sans rotation */
+    transform: none;
+}
+
+/* HK Crib GO : 2 paysages empilés à gauche, Support portrait à droite */
+.screenshots-grid--hk {
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.7fr);
+    align-items: center;
+    justify-items: stretch;
+    max-width: 720px;
+    margin-inline: auto;
+    gap: clamp(14px, 3vw, 22px);
+}
+
+.screenshots-stack {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 2vw, 14px);
+    min-width: 0;
+}
+
+.screenshots-grid--hk .screenshot-card--landscape {
+    max-width: none;
+    width: 100%;
+}
+
+.screenshots-grid--hk .screenshot-card--landscape img {
+    max-height: none;
+    width: 100%;
+    height: auto;
+}
+
+.screenshots-grid--hk .screenshot-card--portrait {
+    max-width: 200px;
+    justify-self: end;
+    align-self: center;
+}
+
+.screenshots-grid--hk .screenshot-card--portrait img {
+    max-height: 440px;
+}
+
+@media (max-width: 640px) {
+    .screenshots-grid--hk {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .screenshots-grid--hk .screenshot-card--portrait {
+        justify-self: center;
+        max-width: 180px;
+    }
+}
+
+.screenshot-card figcaption {
+    padding: 8px 6px 0;
+    font-size: 0.78rem;
+    color: var(--text-muted-soft);
+    text-align: center;
+    line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+    .screenshots-grid:not(.screenshots-grid--hk),
+    .screenshots-grid:not(.screenshots-grid--hk):has(> :nth-child(3):last-child),
+    .screenshots-grid:not(.screenshots-grid--hk):has(> :nth-child(5):last-child),
+    .screenshots-grid:not(.screenshots-grid--hk):has(> :nth-child(6):last-child) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .screenshot-card { max-width: 160px; }
+    .screenshot-card img { max-height: 320px; }
+}
+
+.hero-app-shot {
+    margin: 0 auto clamp(32px, 6vw, 48px);
+    max-width: 240px;
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--glow-cyan);
+    background: var(--bg-card);
+}
+
+.hero-app-shot img { display: block; width: 100%; height: auto; }
+
+.hero-pc-shot {
+    margin: 0 0 clamp(20px, 4vw, 28px);
+    max-width: 100%;
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--glow-cyan);
+    background: var(--bg-card);
+}
+
+.hero-pc-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.nexus-pc-explain {
+    margin: 0 0 clamp(28px, 5vw, 40px);
+}
+
+.nexus-pc-explain h2 {
+    margin: 0 0 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .82rem;
+}
+
+.nexus-pc-explain .lead { margin-bottom: 12px; }
+.nexus-pc-explain .lead:last-child { margin-bottom: 0; }
+
+/* Haven */
+.haven-summary-box {
+    padding: 32px;
+    border-radius: var(--radius);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--glow-cyan);
+    text-align: center;
+}
+
+.haven-summary-box h1 { margin: 0 0 16px; }
+.haven-subtitle { margin-bottom: 20px; color: var(--accent); font-weight: 600; }
+
+.haven-shots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: clamp(24px, 4vw, 32px);
+    margin-bottom: clamp(32px, 6vw, 48px);
+}
+
+.haven-shot {
+    flex: 1 1 160px;
+    max-width: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    box-shadow: var(--glow-cyan);
+}
+
+.haven-shot img { display: block; width: 100%; height: auto; }
+
+.haven-benefits-grid,
+.nexus-advantages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.haven-benefits.features-section,
+.cribleplus-benefits.features-section {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+.haven-challenges {
+    margin-top: 32px;
+    padding: 28px 32px;
+    border-radius: var(--radius);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+}
+
+.haven-challenges .features-title { margin-bottom: 12px; }
+
+.haven-challenges__intro,
+.haven-challenges__outro,
+.haven-calendar-note p {
+    margin: 0 0 14px;
+    color: var(--lead-color);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.haven-challenges__outro { margin-bottom: 0; margin-top: 16px; }
+
+.haven-challenges__list {
+    margin: 0;
+    padding: 0 0 0 1.15em;
+    color: var(--text-muted-soft);
+    line-height: 1.75;
+}
+
+.haven-challenges__list li { margin: 0 0 6px; }
+.haven-challenges__list li:last-child { margin-bottom: 0; }
+
+.haven-calendar-note {
+    margin-top: 20px;
+    padding: 18px 22px;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid rgba(34, 211, 238, 0.55);
+}
+
+.haven-calendar-note__label {
+    display: inline-block;
+    margin: 0 0 8px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(100, 116, 139, 0.2);
+    color: var(--badge-soon);
+}
+
+.haven-calendar-note p:last-child { margin-bottom: 0; }
+
+.cribleplus-legal-links {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.cribleplus-legal-links__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+}
+
+.cribleplus-legal-links__list a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .haven-benefits-grid,
+    .nexus-advantages-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+    .showcase-carousel {
+        grid-template-columns: 36px minmax(0, 1fr) 36px;
+        gap: 8px;
+    }
+
+    .showcase-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .project-card {
+        flex-basis: 100%;
+    }
+
+    .project-card:not(.is-active) {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .page-hero,
+    .features-section,
+    .screenshots-section,
+    .haven-summary-box {
+        padding: clamp(18px, 4vw, 22px);
+    }
+
+    .haven-shots {
+        margin-top: clamp(20px, 5vw, 28px);
+    }
+}
+</style>
+<link rel="stylesheet" href="../css/mobile-readability.css?v=9">
+</head>
+
+<body data-nav-root="../" data-nav-active="projects">
+    <script src="../js/site-bg.js"></script>
+
+    <header class="site-header">
+        <div class="header-top">
+            <div class="header-brand">
+                <a href="../index.html" class="logo-link">
+                    <img src="../assets/logo/logo-nav.png" alt="" class="logo-icon" width="56" height="56">
+                    <span class="logo-text">Francis <span>Manseau</span></span>
+                </a>
+            </div>
+            <nav class="main-nav" id="mainNav" aria-label="Navigation principale"></nav>
+            <script src="../js/site-nav.js?v=7"></script>
+            <span class="lang-status" id="langStatus" data-translate>Traduction…</span>
+            <nav class="lang-switcher" id="langFlags" aria-label="Choisir la langue">
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="de">DE</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="es">ES</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="it">IT</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="zh-CN">ZH</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="ja">JA</button>
+                <span class="lang-sep" aria-hidden="true">|</span>
+                <button type="button" class="lang-btn" data-lang="pt">PT</button>
+            </nav>
+            <script src="../js/lang-ui.js"></script>
+            <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+        </div>
+    </header>
+
+<main class="page-projects">
+    <header class="page-intro">
+        <h1 data-translate>Le Laboratoire</h1>
+        <p class="page-intro__lead" data-translate>Ici, chaque réalisation est une étude de conception. Le chemin compte autant que le résultat.</p>
+    </header>
+
+    <section class="projects-showcase" id="projectsShowcase" aria-label="Études de conception">
+        <div class="showcase-carousel">
+            <button class="showcase-arrow" type="button" data-direction="-1" aria-label="Projet précédent">‹</button>
+
+            <div class="showcase-viewport">
+                <div class="showcase-track" id="showcaseTrack"></div>
+            </div>
+
+            <button class="showcase-arrow" type="button" data-direction="1" aria-label="Projet suivant">›</button>
+        </div>
+
+        <div class="showcase-dots" id="showcaseDots" role="tablist" aria-label="Navigation des projets"></div>
+    </section>
+
+    <section class="project-detail" id="projectDetail" hidden aria-live="polite"></section>
+</main>
+
+<dialog class="apk-download-dialog" id="apkDownloadDialog" aria-labelledby="apkDownloadTitle">
+    <div class="apk-download-dialog__content">
+        <button class="apk-download-dialog__close" id="apkDownloadClose" type="button" aria-label="Fermer">×</button>
+        <p class="apk-download-dialog__eyebrow">⚠ À lire avant de continuer</p>
+        <h2 id="apkDownloadTitle">Information avant le téléchargement</h2>
+        <p>Cette application est distribuée directement par Francis Manseau, en dehors de Google Play. Android ou votre navigateur peut donc afficher un avertissement de sécurité.</p>
+        <p class="apk-download-dialog__note">Cet avertissement ne signifie pas qu’un virus a été détecté. Il indique que l’APK provient d’une source externe à Google Play.</p>
+        <p>Conservez Play Protect activé. Si vous le souhaitez, vous pouvez également faire analyser le fichier avec Windows Defender ou l’outil antivirus de votre choix avant l’installation.</p>
+        <div class="apk-download-dialog__actions">
+            <button class="apk-download-dialog__cancel" id="apkDownloadCancel" type="button">Annuler</button>
+            <a class="apk-download-dialog__continue" id="apkDownloadContinue" href="#" target="_blank" rel="noopener noreferrer">Continuer le téléchargement</a>
+        </div>
+    </div>
+</dialog>
+
+
+<script src="../js/nav.js"></script>
+<script src="../js/mobile-nav.js?v=16"></script>
+<script src="../js/portrait-lock.js"></script>
+<script src="../js/back-to-top.js"></script>
+<script src="../js/i18n.js?v=2"></script>
+<script>
+const projects = [
+    {
+        id: "hk-crib-go",
+        title: "HK Crib GO",
+        image: "../assets/project-gallery/cribleplus.png",
+        alt: "HK Crib GO — jeu de cribbage Android",
+        description: "Application mobile Android : jeu de cribbage moderne avec IA de jeu, statistiques détaillées et support technique intégré pour une expérience complète.",
+        technologies: ["Kotlin", "Android", "JavaScript", "Gradle", "WebView", "IA"],
+        downloadUrl: "https://github.com/francismanseau-oss/hk-crib-go-apk/releases/download/v2.0.10/HK-Crib-GO-2.0.10.apk",
+        downloadLabel: "Télécharger l'APK",
+        categories: ["applications", "ia"],
+        status: "abouti",
+        statusLabel: "Suffisamment abouti",
+        journalUrl: "../journals/hk-crib-go.html",
+        study: {
+            irritation: "Vouloir jouer au cribbage sur le téléphone… et ne trouver que des expériences lourdes, lentes ou trop loin du vrai jeu.",
+            why: "Rendre le cribbage accessible sur mobile sans perdre la profondeur stratégique.",
+            problem: "Les versions existantes freinaient le plaisir : friction, interface confuse, ou parties peu fluides.",
+            birth: "L’irritation est devenue un mandat : moderniser le rythme et l’UI, garder les règles intactes.",
+            choices: "Android natif hors ligne, adversaire IA, statistiques et support intégrés pour une boucle produit complète.",
+            challenges: "Lisibilité du plateau, latence perçue, et support sans alourdir le jeu.",
+            experiments: "Plusieurs densités d’UI et niveaux d’IA ; les parcours trop techniques ont été abandonnés.",
+            learnings: "Un produit jouable vaut mieux qu’une démo parfaite. Suffisamment abouti pour passer au suivant."
+        },
+        template: `
+            <section class="page-hero">
+                <div class="project-card-badges" aria-label="Informations projet">
+                    <span class="badge badge-cat-type" data-translate>Jeu</span>
+                    <span class="badge badge-cat-platform" data-translate>Android</span>
+                    <span class="badge badge-available" data-translate>Disponible</span>
+                </div>
+                <h1>HK Crib GO</h1>
+                <p class="lead" data-translate>HK Crib GO revisite le Crible Hong Kong dans une version modernisée, plus rapide et plus fluide. Pensé pour Android, il conserve l'esprit stratégique du jeu de cartes tout en rendant les parties plus accessibles.</p>
+                <p class="lead" data-translate>Le projet combine moteur de jeu, interface soignée, adversaire IA, statistiques et boucle de support — démontrant une maîtrise du mobile de bout en bout.</p>
+                <p class="project-download-cta">
+                    <a class="btn-learn-more" href="https://github.com/francismanseau-oss/hk-crib-go-apk/releases/download/v2.0.10/HK-Crib-GO-2.0.10.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
+                </p>
+            </section>
+
+            <section class="features-section cribleplus-benefits">
+                <h2 class="features-title" data-translate>Ce qui distingue HK Crib GO</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <h3 data-translate>Hors ligne</h3>
+                        <p data-translate>Jouez sans connexion. Idéal en déplacement ou sans données mobiles.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Adversaire intégré</h3>
+                        <p data-translate>Affrontez l'ordinateur à votre rythme, avec plusieurs niveaux de difficulté.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Statistiques & support</h3>
+                        <p data-translate>Suivi des performances, historique et assistance intégrée pour une expérience produit complète.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="screenshots-section">
+                <h2 class="screenshots-title" data-translate>Aperçu du jeu</h2>
+                <div class="screenshots-grid screenshots-grid--hk">
+                    <div class="screenshots-stack">
+                        <figure class="screenshot-card screenshot-card--landscape">
+                            <img src="../assets/projects/cribleplus/partie-en-cours.png" alt="HK Crib GO — Partie en cours contre l'IA" width="1024" height="460" loading="lazy" decoding="async">
+                            <figcaption data-translate>Partie en cours — plateau et score</figcaption>
+                        </figure>
+                        <figure class="screenshot-card screenshot-card--landscape">
+                            <img src="../assets/projects/cribleplus/menu-parametres.png" alt="HK Crib GO — Menu paramètres et aide" width="1024" height="460" loading="lazy" decoding="async">
+                            <figcaption data-translate>Menu — paramètres et aide</figcaption>
+                        </figure>
+                    </div>
+                    <figure class="screenshot-card screenshot-card--portrait">
+                        <img src="../assets/projects/cribleplus/support-centre.png" alt="HK Crib GO — Centre de support technique" width="460" height="1024" loading="lazy" decoding="async">
+                        <figcaption data-translate>Centre Support — ticket technique</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            
+        `
+    },
+    {
+        id: "nexus",
+        title: "Nexus (PC & Mobile)",
+        image: "../assets/project-gallery/nexus-bridge.png",
+        imageClass: "project-card__media--contain",
+        alt: "Nexus — Mobile et PC pour piloter Cursor à distance",
+        description: "Écosystème privé réunissant Nexus Mobile et Nexus PC pour piloter Virtuose/Cursor à distance, préserver le contexte récent des conversations et suivre l'exécution grâce au serveur WSAI.",
+        technologies: ["Kotlin", "Python", "Android", "Windows", "REST", "Automatisation"],
+        categories: ["systemes", "applications", "ia"],
+        status: "en-developpement",
+        statusLabel: "En développement",
+        journalUrl: "../journals/nexus.html",
+        study: {
+            irritation: "Être en déplacement ou loin du bureau… et ne plus pouvoir avancer sur Cursor / le workspace sans rester collé à l’écran du PC.",
+            why: "Commander le travail de conception à distance, sans couper le fil des conversations.",
+            problem: "Le cerveau du projet vit sur le PC ; le téléphone ne servait à rien pour continuer vraiment.",
+            birth: "L’irritation a forcé un système : mobile pour décider, PC pour exécuter, file pour tenir le contexte.",
+            choices: "Deux faces (Mobile + PC), serveur discret, continuité des conversationId plutôt qu’une vitrine.",
+            challenges: "Fiabiliser la file, préserver le contexte, rester sobre côté interface.",
+            experiments: "Plusieurs schémas de transport et d’agents ; la simplicité du parcours a gagné.",
+            learnings: "Un système discret qui tient vaut mieux qu’une démo spectaculaire qui casse."
+        },
+        template: `
+            <section class="page-hero">
+                <div class="project-card-badges" aria-label="Informations projet">
+                    <span class="badge badge-cat-type" data-translate>Écosystème</span>
+                    <span class="badge badge-cat-platform" data-translate>PC & Mobile</span>
+                    <span class="badge badge-available" data-translate>Outil privé</span>
+                </div>
+                <h1>Nexus (PC & Mobile)</h1>
+                <p class="lead" data-translate>Nexus est un seul projet en deux interfaces : Nexus Mobile et Nexus PC. Ensemble, elles permettent de piloter Virtuose/Cursor à distance, de préserver le contexte récent des conversations et de suivre l'exécution.</p>
+                <p class="lead" data-translate>Le serveur WSAI demeure volontairement en arrière-plan : il assure le transport et la conservation des demandes sans constituer une interface destinée à l'utilisateur.</p>
+            </section>
+
+            <section class="nexus-pc-explain">
+                <h2 data-translate>Comment ça circule</h2>
+                <p class="lead" data-translate>Nexus Mobile permet d'envoyer les demandes et de suivre leur progression à distance.</p>
+                <p class="lead" data-translate>WSAI reçoit les demandes et les conserve dans sa file de traitement.</p>
+                <p class="lead" data-translate>Nexus PC récupère les demandes, les adapte à cursor-agent et communique avec Virtuose/Cursor.</p>
+                <p class="lead" data-translate>Nexus PC maintient la continuité des conversations en rattachant le conversationId et le contexte récent.</p>
+                <p class="lead" data-translate>Les réponses reviennent ensuite vers Nexus Mobile par le même parcours.</p>
+            </section>
+
+            <section class="nexus-pc-explain">
+                <h2 data-translate>Nexus Mobile</h2>
+                <p class="lead" data-translate>Interface Android pour écrire les demandes (@admin), choisir l'agent et suivre l'avancement — même en mobilité, sans ouvrir Cursor sur le PC.</p>
+            </section>
+
+            <section class="screenshots-section">
+                <h2 class="screenshots-title" data-translate>Aperçu Nexus Mobile</h2>
+                <div class="screenshots-grid">
+                    <figure class="screenshot-card">
+                        <img src="../assets/projects/nexus/mobile/04-chat-mission.jpg" alt="Nexus Mobile — chat mission et session Cursor" width="1080" height="2340" loading="lazy" decoding="async">
+                        <figcaption data-translate>Chat mission — envoi et suivi à distance</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../assets/projects/nexus/mobile/02-agents.jpg" alt="Nexus Mobile — menu agents" width="1080" height="2340" loading="lazy" decoding="async">
+                        <figcaption data-translate>Choix d'agent (Virtuose, Mia, Kenji…)</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../assets/projects/nexus/mobile/01-options.jpg" alt="Nexus Mobile — options et Wake-on-LAN" width="1080" height="2340" loading="lazy" decoding="async">
+                        <figcaption data-translate>Options — réveil PC et préférences</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="nexus-pc-explain">
+                <h2 data-translate>Nexus PC</h2>
+                <p class="lead" data-translate>Centre de contrôle Windows : récupère les demandes via WSAI, les lance avec cursor-agent (CLI), rattache le conversationId et le contexte récent, puis renvoie le résultat vers le mobile.</p>
+            </section>
+
+            <figure class="hero-pc-shot">
+                <img src="../assets/projects/nexus/pc/nexus-bridge-control-center.png" alt="Nexus PC — Control Center" width="1600" height="1000" loading="lazy" decoding="async">
+            </figure>
+
+            <section class="features-section">
+                <h2 class="features-title" data-translate>Ce que démontre Nexus</h2>
+                <div class="features-grid nexus-advantages-grid">
+                    <article class="feature-card">
+                        <h3 data-translate>Un projet, deux faces</h3>
+                        <p data-translate>Mobile pour commander et suivre ; PC pour exécuter Cursor en CLI sur le workspace.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Continuité des conversations</h3>
+                        <p data-translate>conversationId et contexte récent conservés pour reprendre le fil sans recommencer à zéro.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>File en arrière-plan</h3>
+                        <p data-translate>WSAI transporte et conserve les demandes — invisible côté vitrine, essentiel au parcours.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Boucle complète</h3>
+                        <p data-translate>Demande mobile → file → exécution PC → réponse mobile, sans rester devant l'écran.</p>
+                    </article>
+                </div>
+            </section>
+        `
+    },
+    {
+        id: "haven",
+        title: "Haven",
+        image: "../assets/project-gallery/haven.png",
+        alt: "Haven — gestion intelligente des appels, notifications, messages et courriels",
+        description: "Application Android de gestion intelligente des appels, notifications, messages texte et courriels. Automatisation basée sur des règles personnalisées selon votre contexte — travail, conduite ou sommeil.",
+        technologies: ["Kotlin", "Android", "Règles", "Notifications", "Automatisation"],
+        downloadUrl: "https://github.com/francismanseau-oss/haven-apk/releases/latest/download/haven.apk",
+        downloadLabel: "Télécharger l'APK",
+        categories: ["applications", "systemes"],
+        status: "abouti",
+        statusLabel: "Suffisamment abouti",
+        journalUrl: "../journals/haven.html",
+        study: {
+            irritation: "Le téléphone qui n’arrête pas d’interrompre — appels, notifications, messages — au mauvais moment (conduite, sommeil, travail).",
+            why: "Reprendre le contrôle des interruptions selon le contexte de vie.",
+            problem: "Les modes silencieux classiques sont trop binaires ; la vraie vie demande des règles fines.",
+            birth: "Une frustration quotidienne transformée en moteur de règles : travail, conduite, sommeil.",
+            choices: "Android, règles par contexte, configuration une fois puis automatisation en arrière-plan.",
+            challenges: "Exceptions d’urgence, horaires, clarté de l’UI sans noyer l’utilisateur.",
+            experiments: "Plusieurs modèles de priorités ; les trop complexes ont été simplifiés.",
+            learnings: "La meilleure automatisation est celle qu’on oublie — parce qu’elle respecte le contexte."
+        },
+        template: `
+            <section class="haven-summary-box">
+                <div class="project-card-badges" aria-label="Informations projet">
+                    <span class="badge badge-cat-type" data-translate>Application</span>
+                    <span class="badge badge-cat-platform" data-translate>Android</span>
+                    <span class="badge badge-available" data-translate>Disponible</span>
+                </div>
+                <h1>Haven</h1>
+                <p class="haven-subtitle" data-translate>Réappropriez-vous votre tranquillité d'esprit.</p>
+                <p class="lead" data-translate>Application Android de gestion intelligente des appels, notifications, messages texte et courriels. Automatisation basée sur des règles personnalisées selon votre contexte — travail, conduite ou sommeil.</p>
+                <p class="lead" data-translate>Configurez Haven une seule fois selon vos préférences, puis laissez-le travailler automatiquement en arrière-plan selon vos horaires et votre contexte.</p>
+                <p class="project-download-cta">
+                    <a class="btn-learn-more" href="https://github.com/francismanseau-oss/haven-apk/releases/latest/download/haven.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
+                </p>
+            </section>
+
+            <section class="haven-shots" aria-label="Captures d'écran Haven">
+                <figure class="haven-shot">
+                    <img src="../assets/projects/haven/01-accueil.png" alt="Haven — Accueil : modes Jour, Conduite, Sommeil, Travail" width="460" height="1024" loading="lazy" decoding="async">
+                </figure>
+                <figure class="haven-shot">
+                    <img src="../assets/projects/haven/02-historique.png" alt="Haven — Historique : interruptions évitées" width="460" height="1024" loading="lazy" decoding="async">
+                </figure>
+                <figure class="haven-shot">
+                    <img src="../assets/projects/haven/03-horaire.png" alt="Haven — Horaire automatique hebdomadaire" width="460" height="1024" loading="lazy" decoding="async">
+                </figure>
+            </section>
+
+            <section class="features-section haven-benefits">
+                <h2 class="features-title" data-translate>Pourquoi Haven est différent</h2>
+                <div class="features-grid haven-benefits-grid">
+                    <article class="feature-card">
+                        <h3 data-translate>Une seule configuration</h3>
+                        <p data-translate>Configurez vos règles une fois — Haven applique automatiquement les bons comportements selon vos modes et horaires.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Conduite automatique</h3>
+                        <p data-translate>Détection des trajets et activation du mode conduite sans intervention manuelle.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Contexte scolaire</h3>
+                        <p data-translate>Règles par plages horaires pour réduire les distractions en classe et les réactiver aux pauses.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Sommeil sans inquiétude</h3>
+                        <p data-translate>Filtrage nocturne intelligent avec exceptions d'urgence et alertes gouvernementales préservées.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="haven-challenges" aria-labelledby="haven-challenges-title">
+                <h2 id="haven-challenges-title" class="features-title" data-translate>Défis techniques relevés</h2>
+                <p class="haven-challenges__intro" data-translate>Au cours du développement de Haven, plusieurs problématiques indépendantes ont été étudiées et résolues.</p>
+                <ul class="haven-challenges__list">
+                    <li data-translate>Architecture des appels d'urgence (911 / 112)</li>
+                    <li data-translate>Conception d'une logique permettant le déblocage d'un deuxième appel en moins de cinq minutes</li>
+                    <li data-translate>Filtrage intelligent des appels et des notifications</li>
+                    <li data-translate>Profils automatiques selon le contexte</li>
+                    <li data-translate>Automatisation Android</li>
+                    <li data-translate>Validation sur appareil réel</li>
+                    <li data-translate>Nombreuses itérations de conception, de tests et d'amélioration</li>
+                </ul>
+                <p class="haven-challenges__outro" data-translate>Ces défis représentent une partie importante du travail réalisé et illustrent davantage une démarche de conception de solutions qu'un simple développement d'application.</p>
+            </section>
+
+            <aside class="haven-calendar-note" aria-label="Calendrier Haven">
+                <span class="haven-calendar-note__label" data-translate>En préparation</span>
+                <p data-translate>Le calendrier Haven sert à configurer les journées flottantes, fériés, congés et journées pédagogiques — pour voir en un coup d'œil sa journée, sa semaine ou son mois. Cette fonctionnalité n'est pas encore disponible dans la version actuelle.</p>
+            </aside>
+        `
+    },
+    {
+        id: "kios",
+        title: "Kios",
+        image: "../assets/project-gallery/kios.png",
+        alt: "Kios — prototype de terrain Godot",
+        description: "Prototype embryonnaire d’un univers de terrain en Godot : exploration, construction de monde, et expérimentations voxel.",
+        technologies: ["Godot", "GDScript", "Prototype terrain"],
+        categories: ["prototypes"],
+        status: "prototype",
+        statusLabel: "Prototype — terrain",
+        journalUrl: "../journals/index.html",
+        study: {
+            irritation: "Avoir des idées de monde et de terrain… et nulle part où les tester vite, concrètement, sans attendre un « vrai » produit fini.",
+            why: "Ouvrir un bac à sable de conception : un terrain où les idées de monde peuvent naître et se casser.",
+            problem: "Sans prototype spatial, les idées restent abstraites ; le terrain force à voir ce qui tient vraiment.",
+            birth: "Phase de prototypage Godot : terrain, exploration, essais — volontairement embryonnaire.",
+            choices: "Godot comme environnement de conception. Godot Voxel reste un détail d’expérimentation, pas une promesse de produit.",
+            challenges: "Rester honnête sur le stade (prototype) tout en montrant la démarche.",
+            experiments: "Blocs de terrain, rythme de déplacement, premières structures — plusieurs pistes encore ouvertes.",
+            learnings: "Un prototype visible vaut mieux qu’une idée parfaite sur papier. Kios grandira avec le laboratoire."
+        },
+        template: `
+            <section class="page-hero">
+                <div class="project-card-badges" aria-label="Informations projet">
+                    <span class="badge badge-cat-type" data-translate>Prototype</span>
+                    <span class="badge badge-cat-platform" data-translate>Godot</span>
+                    <span class="badge badge-dev" data-translate>Terrain en prototypage</span>
+                </div>
+                <h1>Kios</h1>
+                <p class="lead" data-translate>Kios n’est pas encore un produit. C’est un terrain de conception : un espace Godot où tester des idées de monde avant qu’elles deviennent autre chose.</p>
+                <p class="lead" data-translate>Le stade est embryonnaire — et c’est volontaire. Ici, on montre le chemin, pas une vitrine finie.</p>
+            </section>
+            <section class="screenshots-section">
+                <h2 class="screenshots-title" data-translate>Aperçu du terrain</h2>
+                <div class="screenshots-grid">
+                    <figure class="screenshot-card">
+                        <img src="../assets/projects/kios/kios-pure-world.webp" alt="Kios — aperçu du monde" width="1280" height="720" loading="lazy" decoding="async">
+                        <figcaption data-translate>Prototype de terrain — exploration</figcaption>
+                    </figure>
+                </div>
+            </section>
+        `
+    },
+    {
+        id: "project-inspector",
+        title: "Project Inspector",
+        image: "../assets/project-gallery/project-inspector.png",
+        alt: "Project Inspector — outil d’inspection de projets",
+        description: "Outil né d’une irritation concrète : inspecter plus vite ce qui bloque dans un projet, sans perdre le fil.",
+        technologies: ["Automatisation", "Windows", "Scripts"],
+        categories: ["systemes", "experimentations"],
+        status: "en-developpement",
+        statusLabel: "En développement",
+        journalUrl: "../journals/index.html",
+        study: {
+            irritation: "Perdre du temps à chercher où ça coince dans un projet — fichiers, états, détails — alors que l’énergie devrait aller à la solution.",
+            why: "Accélérer l’inspection : voir plus clair, plus vite, pour décider.",
+            problem: "Sans vue structurée, le diagnostic devient du bricolage répété.",
+            birth: "Un outil de laboratoire pour soutenir la méthode Comprendre → Construire → Tester → Améliorer.",
+            choices: "Priorité à la clarté du diagnostic plutôt qu’à une interface spectaculaire.",
+            challenges: "Rester utile sans devenir un monstre de fonctionnalités.",
+            experiments: "Plusieurs formats de rapport et de parcours ; simplification en cours.",
+            learnings: "Les meilleurs outils d’atelier naissent d’une irritation répétée — pas d’une feature list."
+        },
+        template: `
+            <section class="page-hero">
+                <div class="project-card-badges" aria-label="Informations projet">
+                    <span class="badge badge-cat-type" data-translate>Outil</span>
+                    <span class="badge badge-cat-platform" data-translate>Atelier</span>
+                    <span class="badge badge-dev" data-translate>En développement</span>
+                </div>
+                <h1>Project Inspector</h1>
+                <p class="lead" data-translate>Un outil du laboratoire pour inspecter plus vite ce qui bloque — au service de la conception, pas de la démo.</p>
+            </section>
+        `
+    },
+    {
+        id: "chatgpt-web",
+        title: "ChatGPT-web (affichage allégé)",
+        image: "../assets/project-gallery/chatgpt-web.png",
+        alt: "ChatGPT-web — userscript Violentmonkey, affichage allégé",
+        description: "Script expérimental pour n’afficher que les derniers messages du fil (environ 5), accélérer le travail avec l’agent — sans couper le contexte AI.",
+        technologies: ["JavaScript", "Violentmonkey", "Navigateur"],
+        categories: ["idees"],
+        status: "experimentation",
+        statusLabel: "Idée / expérimentation",
+        journalUrl: "../journals/index.html",
+        study: {
+            irritation: "Un fil qui s’allonge… la page devient lourde, le scroll devient lent, alors que l’agent a encore besoin de tout le contexte.",
+            why: "Alléger l’affichage (garder les ~5 derniers messages visibles) sans couper le contexte AI.",
+            problem: "Performance et lisibilité du fil vs conservation du contexte pour l’agent.",
+            birth: "Une irritation quotidienne de session longue, transformée en micro-script d’atelier.",
+            choices: "Masquer à l’écran seulement — le contexte reste ; approche fragile après les mises à jour.",
+            challenges: "Compatibilité après update, ne rien casser côté agent.",
+            experiments: "Plusieurs seuils d’affichage ; règle actuelle : derniers messages seulement.",
+            learnings: "Parfois le bon outil est un script né d’une vraie friction — pas un produit."
+        },
+        template: `
+            <section class="page-hero">
+                <div class="project-card-badges" aria-label="Informations projet">
+                    <span class="badge badge-cat-type" data-translate>Idée</span>
+                    <span class="badge badge-cat-platform" data-translate>Web</span>
+                    <span class="badge badge-cat-type" data-translate>Script</span>
+                </div>
+                <h1>ChatGPT-web</h1>
+                <p class="lead" data-translate>Afficher moins pour travailler plus vite — sans priver l’agent de son contexte. Micro-script Violentmonkey d’atelier.</p>
+            </section>
+        `
+    },
+    {
+        id: "mail-perso",
+        title: "Courriel privé",
+        image: "../assets/project-gallery/mail-perso.png",
+        alt: "Courriel privé — projet en cours",
+        description: "Projet embryonnaire : reprendre la main sur le courriel privé. Pas encore abouti — déjà une irritation claire.",
+        technologies: ["Prototype", "Vie privée"],
+        categories: ["prototypes", "experimentations"],
+        status: "experimentation",
+        statusLabel: "En expérimentation — non abouti",
+        journalUrl: "../journals/index.html",
+        study: {
+            irritation: "Le courriel privé qui ne se comporte pas comme on le voudrait — bruit, dépendance, manque de contrôle.",
+            why: "Explorer une approche plus maîtrisée du courriel, alignée sur la même méthode de conception.",
+            problem: "Les boîtes classiques imposent leurs règles ; l’irritation, c’est le manque de leviers simples.",
+            birth: "Encore ouvert : idée et premiers essais, pas un produit à promettre.",
+            choices: "Dire la vérité du stade — non fini — plutôt que d’inventer une vitrine.",
+            challenges: "Ne pas sur-vendre ; garder la place pour l’évolution dans le laboratoire.",
+            experiments: "Pistes en cours ; plusieurs hypothèses non tranchées.",
+            learnings: "Montrer un projet non abouti, c’est aussi montrer comment on pense — pas seulement ce qui est livré."
+        },
+        template: `
+            <section class="page-hero">
+                <div class="project-card-badges" aria-label="Informations projet">
+                    <span class="badge badge-cat-type" data-translate>Idée</span>
+                    <span class="badge badge-soon" data-translate>Non abouti</span>
+                </div>
+                <h1 data-translate>Courriel privé</h1>
+                <p class="lead" data-translate>Une irritation réelle, un projet encore ouvert. Le laboratoire l’accueille comme expérimentation — pas comme promesse marketing.</p>
+            </section>
+        `
+    }
+];
+
+let currentIndex = 0;
+let visualIndex = 1;
+let isAnimating = false;
+
+const track = document.getElementById("showcaseTrack");
+const dotsContainer = document.getElementById("showcaseDots");
+const viewport = document.querySelector(".showcase-viewport");
+const detail = document.getElementById("projectDetail");
+const arrows = document.querySelectorAll(".showcase-arrow");
+const apkDownloadDialog = document.getElementById("apkDownloadDialog");
+const apkDownloadClose = document.getElementById("apkDownloadClose");
+const apkDownloadCancel = document.getElementById("apkDownloadCancel");
+const apkDownloadContinue = document.getElementById("apkDownloadContinue");
+
+document.addEventListener("click", function (event) {
+    const downloadLink = event.target.closest('a[href*=".apk"]');
+    if (!downloadLink || downloadLink === apkDownloadContinue) return;
+
+    event.preventDefault();
+    apkDownloadContinue.href = downloadLink.href;
+
+    if (typeof apkDownloadDialog.showModal === "function") {
+        apkDownloadDialog.showModal();
+    } else if (window.confirm("Cette application est distribuée en dehors de Google Play. Android peut afficher un avertissement de sécurité. Continuer le téléchargement ?")) {
+        window.open(downloadLink.href, "_blank", "noopener,noreferrer");
+    }
+});
+
+function closeApkDownloadDialog() {
+    apkDownloadDialog.close();
+}
+
+apkDownloadClose.addEventListener("click", closeApkDownloadDialog);
+apkDownloadCancel.addEventListener("click", closeApkDownloadDialog);
+apkDownloadContinue.addEventListener("click", function () {
+    apkDownloadDialog.close();
+});
+
+function createCard(project, index) {
+    const card = document.createElement("article");
+    card.className = "project-card" + (index === currentIndex ? " is-active" : "");
+    card.setAttribute("role", "tabpanel");
+    card.setAttribute("aria-hidden", index === currentIndex ? "false" : "true");
+    card.dataset.index = String(index);
+
+    const media = document.createElement("div");
+    media.className = "project-card__media" + (project.imageClass ? " " + project.imageClass : "");
+
+    if (project.noImage) {
+        media.classList.add("project-card__media--placeholder");
+        const label = document.createElement("span");
+        label.className = "project-card__placeholder-label";
+        label.setAttribute("data-translate", "");
+        label.textContent = project.placeholderLabel || "Sans capture";
+        media.appendChild(label);
+        media.setAttribute("role", "img");
+        media.setAttribute("aria-label", project.alt || "Sans capture");
+        card.appendChild(media);
+        return card;
+    }
+
+    const img = document.createElement("img");
+    img.src = project.image;
+    img.alt = project.alt;
+    img.loading = index === currentIndex ? "eager" : "lazy";
+    img.decoding = "async";
+    if (project.imageFallback) {
+        img.addEventListener("error", function onError() {
+            img.removeEventListener("error", onError);
+            img.src = project.imageFallback;
+        }, { once: true });
+    }
+    media.appendChild(img);
+    card.appendChild(media);
+    return card;
+}
+
+function renderDots() {
+    dotsContainer.innerHTML = "";
+    projects.forEach(function (_, index) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "showcase-dot" + (index === currentIndex ? " is-active" : "");
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-label", "Projet " + (index + 1) + " sur " + projects.length);
+        dot.setAttribute("aria-selected", index === currentIndex ? "true" : "false");
+        dot.addEventListener("click", function () {
+            goToProject(index, false);
+        });
+        dotsContainer.appendChild(dot);
+    });
+}
+
+function updateTrackPosition() {
+    const card = track.querySelector(".project-card");
+    if (!card || !viewport) return;
+
+    const cardWidth = card.offsetWidth;
+    const gap = parseFloat(getComputedStyle(track).gap) || 24;
+    const viewportWidth = viewport.offsetWidth;
+    const offset = (viewportWidth - cardWidth) / 2 - visualIndex * (cardWidth + gap);
+    track.style.transform = "translateX(" + offset + "px)";
+}
+
+function renderCarousel() {
+    track.innerHTML = "";
+
+    const lastIndex = projects.length - 1;
+    const firstClone = createCard(projects[lastIndex], lastIndex);
+    firstClone.classList.remove("is-active");
+    firstClone.setAttribute("aria-hidden", "true");
+    firstClone.dataset.clone = "true";
+    track.appendChild(firstClone);
+
+    projects.forEach(function (project, index) {
+        track.appendChild(createCard(project, index));
+    });
+
+    const lastClone = createCard(projects[0], 0);
+    lastClone.classList.remove("is-active");
+    lastClone.setAttribute("aria-hidden", "true");
+    lastClone.dataset.clone = "true";
+    track.appendChild(lastClone);
+
+    renderDots();
+    renderProjectDetail(currentIndex);
+    requestAnimationFrame(updateTrackPosition);
+}
+
+function updateActiveCard() {
+    track.querySelectorAll(".project-card").forEach(function (card) {
+        const isActive = card.dataset.clone !== "true" && Number(card.dataset.index) === currentIndex;
+        card.classList.toggle("is-active", isActive);
+        card.setAttribute("aria-hidden", isActive ? "false" : "true");
+    });
+    renderDots();
+}
+
+function goToProject(index) {
+    if (isAnimating) return;
+    const next = ((index % projects.length) + projects.length) % projects.length;
+    if (next === currentIndex) {
+        visualIndex = currentIndex + 1;
+        updateActiveCard();
+        updateTrackPosition();
+        renderProjectDetail(currentIndex);
+        return;
+    }
+
+    isAnimating = true;
+    detail.style.opacity = "0";
+
+    currentIndex = next;
+    visualIndex = currentIndex + 1;
+    updateActiveCard();
+    updateTrackPosition();
+    renderProjectDetail(currentIndex);
+    requestAnimationFrame(function () {
+        detail.style.opacity = "1";
+    });
+
+    setTimeout(function () {
+        isAnimating = false;
+    }, 480);
+}
+
+function changeProject(direction) {
+    if (isAnimating) return;
+    isAnimating = true;
+    detail.style.opacity = "0";
+
+    currentIndex = (currentIndex + direction + projects.length) % projects.length;
+    visualIndex += direction;
+    updateActiveCard();
+    renderProjectDetail(currentIndex);
+    requestAnimationFrame(function () {
+        detail.style.opacity = "1";
+    });
+
+    if (visualIndex === 0 || visualIndex === projects.length + 1) {
+        const clone = visualIndex === 0 ? track.firstElementChild : track.lastElementChild;
+        clone.classList.add("is-active");
+    }
+
+    updateTrackPosition();
+
+    setTimeout(function () {
+        if (visualIndex === 0 || visualIndex === projects.length + 1) {
+            track.style.transition = "none";
+            visualIndex = currentIndex + 1;
+            updateTrackPosition();
+            track.offsetHeight;
+            track.style.transition = "";
+            updateActiveCard();
+        }
+        isAnimating = false;
+    }, 480);
+}
+
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+
+function renderStudyBoard(project) {
+    if (!project.study) return "";
+    const s = project.study;
+    const blocks = [
+        { note: "Irritation", title: "L’irritation de départ", body: s.irritation },
+        { note: "Intention", title: "Pourquoi ce projet existe-t-il ?", body: s.why },
+        { note: "Problème", title: "Quel problème souhaitais-je résoudre ?", body: s.problem },
+        { note: "Naissance", title: "Comment le projet est né", body: s.birth },
+        { note: "Choix", title: "Les choix de conception", body: s.choices },
+        { note: "Défis", title: "Les défis", body: s.challenges },
+        { note: "Expérimentations", title: "Les expérimentations", body: s.experiments },
+        { note: "Apprentissages", title: "Les apprentissages", body: s.learnings }
+    ];
+
+    let html = '<section class="study-board" aria-label="Étude de conception">';
+    html += '<h2 class="study-board__title" data-translate>Étude de conception</h2>';
+    if (project.statusLabel) {
+        html += '<p class="lab-status" data-translate>' + escapeHtml(project.statusLabel) + "</p>";
+    }
+    blocks.forEach(function (block) {
+        if (!block.body) return;
+        html += '<article class="study-block">';
+        html += '<span class="study-note" data-translate>' + escapeHtml(block.note) + "</span>";
+        html += "<h3 data-translate>" + escapeHtml(block.title) + "</h3>";
+        html += '<p data-translate>' + escapeHtml(block.body) + "</p>";
+        html += "</article>";
+    });
+    if (project.journalUrl) {
+        html += '<a class="study-journal-link" href="' + escapeHtml(project.journalUrl) + '" data-translate>Ouvrir le journal du concepteur →</a>';
+    }
+    html += "</section>";
+    return html;
+}
+
+function renderProjectDetail(index) {
+    const project = projects[index];
+    detail.hidden = false;
+    detail.innerHTML = project.template + renderStudyBoard(project);
+    if (window.WeidlerI18n && typeof window.WeidlerI18n.applyCurrentLang === "function") {
+        window.WeidlerI18n.applyCurrentLang();
+    }
+}
+
+arrows.forEach(function (arrow) {
+    arrow.addEventListener("click", function () {
+        changeProject(Number(arrow.dataset.direction));
+    });
+});
+
+let touchStartX = 0;
+viewport.addEventListener("touchstart", function (event) {
+    touchStartX = event.changedTouches[0].screenX;
+}, { passive: true });
+
+viewport.addEventListener("touchend", function (event) {
+    const delta = event.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(delta) < 50) return;
+    changeProject(delta < 0 ? 1 : -1);
+}, { passive: true });
+
+window.addEventListener("resize", updateTrackPosition);
+
+(function openProjectFromHash() {
+    const raw = (location.hash || "").replace(/^#/, "").trim();
+    if (!raw) return;
+    const idx = projects.findIndex(function (p) { return p.id === raw; });
+    if (idx < 0) return;
+    currentIndex = idx;
+    visualIndex = currentIndex + 1;
+})();
+
+renderCarousel();
+</script>
+
+</body>
+</html>
