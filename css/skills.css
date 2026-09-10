@@ -319,6 +319,30 @@ html[data-theme="auto"][data-theme-effective="day"] .skill-badge--train {
     counter-reset: orientation;
 }
 
+.skills-transversal {
+    max-width: 100%;
+}
+
+.skills-transversal__title {
+    margin: 0;
+    flex: 1 1 14rem;
+    font-size: clamp(0.98rem, 2.4vw, 1.08rem);
+    font-weight: 650;
+    line-height: 1.35;
+    color: var(--text, #e8eef8);
+}
+
+.skills-transversal p {
+    margin: 0 0 0.75em;
+    color: var(--text-muted, #b4c1d3);
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+.skills-transversal p:last-child {
+    margin-bottom: 0;
+}
+
 .skills-orientation {
     counter-increment: orientation;
 }
