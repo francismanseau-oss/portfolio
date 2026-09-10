@@ -624,14 +624,39 @@ html[data-theme="auto"][data-theme-effective="day"] .skills-method li {
         grid-template-columns: 1fr;
     }
 
-    .skills-orientation__head {
+    .skills-orientation__head,
+    .skills-transversal .skills-orientation__head {
         flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-bottom: 8px;
+        min-height: 0;
+    }
+
+    .skills-orientation__title,
+    .skills-transversal__title {
+        flex: 0 1 auto;
+        width: 100%;
+        min-height: 0;
     }
 
     .skill-rating {
-        width: 100%;
-        justify-content: space-between;
+        width: auto;
+        max-width: 100%;
+        justify-content: flex-start;
+        flex-shrink: 0;
+    }
+
+    .skills-card .skill-badges {
+        margin-bottom: 8px;
+    }
+
+    .skills-orientation.skills-card,
+    .skills-transversal.skills-card {
+        min-height: 0;
+        height: auto;
+        justify-content: flex-start;
     }
 }
 
