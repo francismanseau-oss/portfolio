@@ -79,11 +79,15 @@
 }
 
 .skills-preference p {
-    margin: 0;
+    margin: 0 0 0.85em;
     color: var(--text, #e8eef8);
     font-size: 0.95rem;
     font-weight: 550;
     line-height: 1.65;
+}
+
+.skills-preference p:last-child {
+    margin-bottom: 0;
 }
 
 html[data-theme="day"] .skills-preference,
@@ -235,7 +239,7 @@ html[data-theme="auto"][data-theme-effective="day"] .skills-disclaimer {
     border: 1px solid transparent;
 }
 
-.skill-badge--priority {
+.skill-badge--strong {
     color: #fde68a;
     border-color: rgba(251, 191, 36, 0.35);
     background: rgba(251, 191, 36, 0.12);
@@ -253,8 +257,8 @@ html[data-theme="auto"][data-theme-effective="day"] .skills-disclaimer {
     background: rgba(139, 92, 246, 0.1);
 }
 
-html[data-theme="day"] .skill-badge--priority,
-html[data-theme="auto"][data-theme-effective="day"] .skill-badge--priority {
+html[data-theme="day"] .skill-badge--strong,
+html[data-theme="auto"][data-theme-effective="day"] .skill-badge--strong {
     color: #92400e;
     border-color: rgba(180, 83, 9, 0.3);
     background: rgba(254, 243, 199, 0.9);
