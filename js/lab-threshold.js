@@ -7,7 +7,6 @@
     var main = document.getElementById("labMain");
     var cycle = document.getElementById("labCycle");
     var STORAGE_KEY = "fm-lab-threshold-entered";
-    var VISION_RETURNING_KEY = "vision.returning";
     var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var entered = false;
     var cycleTimer = null;
@@ -52,17 +51,6 @@
         }, 1600);
     }
 
-    function startVisionEncounter() {
-        if (!window.VisionEncounter) return;
-        var returning = false;
-        try {
-            returning = sessionStorage.getItem(VISION_RETURNING_KEY) === "1";
-        } catch (err) {
-            /* private mode */
-        }
-        window.VisionEncounter.start({ returning: returning });
-    }
-
     function enterAtelier() {
         if (entered) return;
         entered = true;
@@ -82,7 +70,6 @@
             setState("atelier");
             if (threshold) threshold.setAttribute("aria-hidden", "true");
             revealCycle();
-            startVisionEncounter();
             return;
         }
 
@@ -97,7 +84,6 @@
                 threshold.setAttribute("aria-hidden", "true");
             }
             revealCycle();
-            startVisionEncounter();
             window.scrollTo({ top: 0, behavior: "smooth" });
         }, 720);
     }

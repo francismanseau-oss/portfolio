@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0e1a">
     <meta name="color-scheme" content="light dark">
-    <meta name="description" content="Le Laboratoire Francis Manseau — chaque solution commence par une idée. Les technologies évoluent. La résolution de problèmes demeure.">
+    <meta name="description" content="Francis Manseau — diagnostic et résolution de problèmes. Curiosité, analyse, ténacité. Laboratoire de conception.">
     <meta name="portfolio-version" content="1.0">
-    <meta name="vision-api" content="http://127.0.0.1:8787">
     <title>Le Laboratoire Francis Manseau</title>
     <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="assets/brand/favicon/favicon-32.png" type="image/png" sizes="32x32">
@@ -20,7 +19,6 @@
     <link rel="stylesheet" href="css/interactive.css?v=12">
     <link rel="stylesheet" href="css/home.css?v=12">
     <link rel="stylesheet" href="css/lab-home.css?v=6">
-    <link rel="stylesheet" href="css/vision-encounter.css?v=1">
     <link rel="stylesheet" href="css/mobile-readability.css?v=12">
 </head>
 <body class="page-home page-home--lab" data-nav-root="" data-nav-active="home" data-lab-state="threshold">
@@ -35,7 +33,7 @@
                 </a>
             </div>
             <nav class="main-nav" id="mainNav" aria-label="Navigation principale"></nav>
-            <script src="js/site-nav.js?v=8"></script>
+            <script src="js/site-nav.js?v=7"></script>
             <span class="lang-status" id="langStatus" data-translate>Traduction…</span>
             <nav class="lang-switcher" id="langFlags" aria-label="Choisir la langue">
                 <button type="button" class="lang-btn" data-lang="en" title="English">EN</button>
@@ -101,9 +99,11 @@
                 </div>
             </figure>
 
-            <p class="lab-role" data-translate>Analyste et concepteur de solutions techniques</p>
+            <p class="lab-role" data-translate>Diagnostic et résolution de problèmes techniques</p>
 
             <h2 class="lab-welcome" data-translate>Bienvenue.</h2>
+            <p class="lab-specialty" data-translate>Ma spécialité n’est pas un outil. C’est de comprendre ce qui ne fonctionne pas.</p>
+            <p class="lab-pillars" data-translate>Curiosité · Analyse · Ténacité</p>
             <p class="lab-playground" data-translate>Vous n’entrez pas dans un simple portfolio. Vous entrez dans un laboratoire de conception.</p>
 
             <div class="lab-manifesto">
@@ -115,14 +115,15 @@
                     D’autres restent des prototypes.
                     Quelques-unes ne dépasseront jamais le stade de l’expérimentation.
                 </p>
-                <p class="lab-manifesto__common" data-translate>Toutes participent pourtant à une même quête.</p>
+                <p class="lab-manifesto__common" data-translate>Toutes participent pourtant à une même quête : comprendre, tester et résoudre.</p>
             </div>
 
-            <ol class="lab-cycle" id="labCycle" aria-label="Processus de conception">
+            <ol class="lab-cycle" id="labCycle" aria-label="Méthode de résolution">
                 <li class="lab-cycle__step is-active" data-step="0"><span data-translate>Comprendre</span></li>
-                <li class="lab-cycle__step" data-step="1" aria-hidden="true"><span class="lab-cycle__arrow" aria-hidden="true">↓</span><span data-translate>Construire</span></li>
-                <li class="lab-cycle__step" data-step="2" aria-hidden="true"><span class="lab-cycle__arrow" aria-hidden="true">↓</span><span data-translate>Tester</span></li>
-                <li class="lab-cycle__step" data-step="3" aria-hidden="true"><span class="lab-cycle__arrow" aria-hidden="true">↓</span><span data-translate>Améliorer</span></li>
+                <li class="lab-cycle__step" data-step="1" aria-hidden="true"><span class="lab-cycle__arrow" aria-hidden="true">↓</span><span data-translate>Tester</span></li>
+                <li class="lab-cycle__step" data-step="2" aria-hidden="true"><span class="lab-cycle__arrow" aria-hidden="true">↓</span><span data-translate>Corriger</span></li>
+                <li class="lab-cycle__step" data-step="3" aria-hidden="true"><span class="lab-cycle__arrow" aria-hidden="true">↓</span><span data-translate>Valider</span></li>
+                <li class="lab-cycle__step" data-step="4" aria-hidden="true"><span class="lab-cycle__arrow" aria-hidden="true">↓</span><span data-translate>Améliorer</span></li>
             </ol>
 
             <p class="lab-signature" data-translate>
@@ -159,34 +160,11 @@
 
     <footer class="site-footer site-footer--home lab-footer"></footer>
 
-    <div class="vision-encounter" id="visionEncounter" hidden aria-live="polite">
-        <div class="vision-encounter__ambient" aria-hidden="true"></div>
-        <div class="vision-encounter__glow" aria-hidden="true"></div>
-        <section class="vision-encounter__presence" aria-label="Vision">
-            <div class="vision-encounter__figure">
-                <div class="vision-encounter__eyes">
-                    <span class="vision-encounter__eye"></span>
-                    <span class="vision-encounter__eye"></span>
-                </div>
-                <div class="vision-encounter__smile" aria-hidden="true"></div>
-            </div>
-            <p class="vision-encounter__speech" id="visionSpeech" hidden></p>
-        </section>
-        <form class="vision-encounter__dialogue" id="visionDialogue" hidden>
-            <label class="visually-hidden" for="visionMessage">Votre message</label>
-            <textarea id="visionMessage" name="message" rows="2" placeholder="…" autocomplete="off" spellcheck="true"></textarea>
-            <button type="submit" id="visionSend">Envoyer</button>
-        </form>
-        <button type="button" class="vision-encounter__continue" id="visionContinue" hidden>Explorer le laboratoire</button>
-        <p class="vision-encounter__hint" id="visionHint">Le laboratoire est silencieux.</p>
-    </div>
-
     <script src="js/nav.js"></script>
     <script src="js/mobile-nav.js"></script>
     <script src="js/portrait-lock.js"></script>
     <script src="js/back-to-top.js"></script>
     <script src="js/i18n.js?v=2"></script>
-    <script src="js/vision-encounter.js?v=1"></script>
-    <script src="js/lab-threshold.js?v=3"></script>
+    <script src="js/lab-threshold.js?v=2"></script>
 </body>
 </html>
