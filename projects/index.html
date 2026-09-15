@@ -132,15 +132,11 @@ main.page-projects {
     box-sizing: border-box;
 }
 
-.project-card__media--fit-wide {
-    aspect-ratio: 1024 / 460;
-}
-
-.project-card__media--fit-wide img {
+.project-card__media--hk img {
     object-fit: contain;
     object-position: center;
-    padding: 10px;
-    background: var(--bg-surface);
+    padding: 0;
+    background: #0a1f14;
     box-sizing: border-box;
 }
 
@@ -902,7 +898,7 @@ const projects = [
         id: "hk-crib-go",
         title: "HK Crib GO",
         image: "../assets/projects/cribleplus/partie-en-cours.png",
-        imageClass: "project-card__media--fit-wide",
+        imageClass: "project-card__media--hk",
         alt: "HK Crib GO — jeu de cribbage Android",
         description: "Application mobile Android : jeu de cribbage moderne avec IA de jeu, statistiques détaillées et support technique intégré pour une expérience complète.",
         technologies: ["Kotlin", "Android", "JavaScript", "Gradle", "WebView", "IA"],
