@@ -900,7 +900,7 @@ const projects = [
         image: "../assets/projects/cribleplus/partie-en-cours.png",
         imageClass: "project-card__media--hk",
         alt: "HK Crib GO — jeu de cribbage Android",
-        description: "Application mobile Android : jeu de cribbage moderne avec IA de jeu, statistiques détaillées et support technique intégré pour une expérience complète.",
+        description: "HK Crib GO — Hong Kong Cribbage en version rapide : parties en rounds d’environ cinq minutes, cinq adversaires IA, six langues, pointage visuel, statistiques, récompenses et support technique intégré.",
         technologies: ["Kotlin", "Android", "JavaScript", "Gradle", "WebView", "IA"],
         downloadUrl: "https://github.com/francismanseau-oss/hk-crib-go-apk/releases/download/v2.0.11/HK-Crib-GO-2.0.11.apk",
         downloadLabel: "Télécharger l'APK",
@@ -909,14 +909,14 @@ const projects = [
         statusLabel: "Suffisamment abouti",
         journalUrl: "../journals/hk-crib-go.html",
         study: {
-            irritation: "Vouloir jouer au cribbage sur le téléphone… et ne trouver que des expériences lourdes, lentes ou trop loin du vrai jeu.",
-            why: "Rendre le cribbage accessible sur mobile sans perdre la profondeur stratégique.",
-            problem: "Les versions existantes freinaient le plaisir : friction, interface confuse, ou parties peu fluides.",
-            birth: "L’irritation est devenue un mandat : moderniser le rythme et l’UI, garder les règles intactes.",
-            choices: "Android natif hors ligne, adversaire IA, statistiques et support intégrés pour une boucle produit complète.",
-            challenges: "Lisibilité du plateau, latence perçue, et support sans alourdir le jeu.",
-            experiments: "Plusieurs densités d’UI et niveaux d’IA ; les parcours trop techniques ont été abandonnés.",
-            learnings: "Un produit jouable vaut mieux qu’une démo parfaite. Suffisamment abouti pour passer au suivant."
+            irritation: "J’aime jouer au cribbage Hong Kong dehors, mais dès qu’il vente, les cartes s’envolent et je passe mon temps à les ramasser.",
+            why: "Pouvoir jouer au Hong Kong n’importe où, sans cartes physiques, dans un format rapide adapté à une pause ou à l’heure du dîner.",
+            problem: "Je n’ai pas trouvé d’application correspondant à cette variante. À deux joueurs, une partie traditionnelle peut aussi exceptionnellement approcher 1 h 30, une durée que je trouvais mal adaptée à un usage mobile.",
+            birth: "Plutôt que d’abandonner l’idée, j’ai créé HK Crib GO : HK pour Hong Kong, Crib pour Cribbage et GO pour l’idée d’un jeu rapide, mobile et prêt à jouer.",
+            choices: "Conserver la mécanique propre au Hong Kong — comptage des combinaisons sans phase de pegging — puis repenser le pointage et le format en rounds pour obtenir des parties d’environ cinq minutes.",
+            challenges: "Rendre le calcul immédiatement compréhensible, garder les parties fluides et intégrer personnalisation, IA, statistiques, récompenses et soutien sans alourdir l’expérience.",
+            experiments: "Choix des cartes, de la table et du tableau de comptage, cinq adversaires IA, six langues, historique des pointages, médailles, trophées et petites animations de guidage.",
+            learnings: "Le résultat est un jeu Android jouable de bout en bout où le joueur peut comprendre son pointage, personnaliser son expérience et obtenir du soutien directement depuis l’application."
         },
         template: `
             <section class="page-hero">
@@ -926,8 +926,9 @@ const projects = [
                     <span class="badge badge-available" data-translate>Disponible</span>
                 </div>
                 <h1>HK Crib GO</h1>
-                <p class="lead" data-translate>HK Crib GO revisite le Crible Hong Kong dans une version modernisée, plus rapide et plus fluide. Pensé pour Android, il conserve l'esprit stratégique du jeu de cartes tout en rendant les parties plus accessibles.</p>
-                <p class="lead" data-translate>Le projet combine moteur de jeu, interface, adversaire IA, statistiques et boucle de support — une réalisation complète, testée et jouable de bout en bout.</p>
+                <p class="lead" data-translate><strong>HK</strong> pour Hong Kong, <strong>Crib</strong> pour Cribbage et <strong>GO</strong> pour l’idée d’un jeu rapide, mobile et prêt à jouer partout.</p>
+                <p class="lead" data-translate>Le projet est né d’une irritation concrète : j’aime jouer au cribbage Hong Kong dehors, mais dès qu’il vente, les cartes s’envolent. Après avoir cherché une application correspondant à cette variante sans en trouver, j’ai décidé de créer la mienne.</p>
+                <p class="lead" data-translate>Le Hong Kong conserve la logique de comptage des combinaisons du cribbage, mais sans phase de pegging. J’ai repensé le pointage et le format en rounds pour ramener une partie pouvant exceptionnellement approcher 1 h 30 à environ cinq minutes.</p>
                 <p class="project-download-cta">
                     <a class="btn-learn-more" href="https://github.com/francismanseau-oss/hk-crib-go-apk/releases/download/v2.0.11/HK-Crib-GO-2.0.11.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
                 </p>
@@ -941,14 +942,26 @@ const projects = [
                         <p data-translate>Jouez sans connexion. Idéal en déplacement ou sans données mobiles.</p>
                     </article>
                     <article class="feature-card">
-                        <h3 data-translate>Adversaire intégré</h3>
-                        <p data-translate>Affrontez l'ordinateur à votre rythme, avec plusieurs niveaux de difficulté.</p>
+                        <h3 data-translate>5 adversaires IA</h3>
+                        <p data-translate>Choisissez parmi cinq adversaires IA différents pour varier les parties.</p>
                     </article>
                     <article class="feature-card">
-                        <h3 data-translate>Statistiques & support</h3>
-                        <p data-translate>Suivi des performances, historique et assistance intégrée pour une expérience produit complète.</p>
+                        <h3 data-translate>Personnalisation & 6 langues</h3>
+                        <p data-translate>Choix des cartes, de la table et du tableau de comptage, avec une interface disponible en six langues.</p>
                     </article>
                 </div>
+            </section>
+
+            <section class="features-section">
+                <h2 class="features-title" data-translate>Un pointage visible et compréhensible</h2>
+                <p class="lead" data-translate>Chaque main est comptée individuellement et son total est affiché directement sous les cartes, puis les résultats sont cumulés pour obtenir le total du round.</p>
+                <p class="lead" data-translate>Pendant le comptage, les cartes qui participent au pointage changent de couleur. Lorsqu’une même carte intervient dans plusieurs combinaisons, une petite pastille indique combien de fois elle est comptabilisée : ×2, ×3, ×4, etc. Le joueur peut ainsi voir quelles cartes produisent les points et comment se construit le résultat.</p>
+            </section>
+
+            <section class="features-section">
+                <h2 class="features-title" data-translate>Expérience, historique et récompenses</h2>
+                <p class="lead" data-translate>HK Crib GO conserve un historique des pointages et attribue des médailles et des trophées selon les performances réalisées. Ces récompenses ne servent pas à déverrouiller des fonctions : elles représentent les résultats obtenus pendant les parties.</p>
+                <p class="lead" data-translate>De petites animations accompagnent le jeu : indicateur pendant que l’adversaire IA joue, animation de remise d’un trophée au gagnant et indications visuelles clignotantes pour guider le joueur lorsqu’un message du soutien technique est disponible.</p>
             </section>
 
             <section class="screenshots-section">
@@ -975,6 +988,11 @@ const projects = [
                 <h2 class="features-title" data-translate>Soutien technique relié à WSAI</h2>
                 <p class="lead" data-translate>Le centre de soutien de HK Crib GO communique avec WSAI, mon serveur IA hébergé sur mon ordinateur personnel. Lorsqu’un utilisateur soumet une demande de soutien, le système peut réveiller automatiquement mon PC par Wake-on-LAN (niveau 3). Une fois WSAI démarré et opérationnel, le serveur envoie d’abord un accusé de réception, puis analyse la demande et retourne une réponse de soutien adaptée au problème rencontré.</p>
                 <p class="lead" data-translate>Cette chaîne relie directement l’application Android, le réveil de la machine distante et mon infrastructure IA afin d’assurer le traitement du soutien technique.</p>
+            </section>
+
+            <section class="features-section">
+                <h2 class="features-title" data-translate>Évolution prévue</h2>
+                <p class="lead" data-translate>HK Crib GO est actuellement en phase de test sur Google Play et continue d’évoluer avant une diffusion plus large. Un Hall of Fame et un mode multijoueur font partie des évolutions prévues; le multijoueur attend notamment un bassin de joueurs suffisant pour être développé et testé dans de bonnes conditions.</p>
             </section>
 
             
