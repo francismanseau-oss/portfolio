@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/themes.css?v=10">
     <link rel="stylesheet" href="../css/layout.css?v=10">
     <link rel="stylesheet" href="../css/interactive.css?v=10">
-    <link rel="stylesheet" href="../css/skills.css?v=20">
+    <link rel="stylesheet" href="../css/skills.css?v=21">
     <link rel="stylesheet" href="../css/mobile-readability.css?v=10">
 </head>
 <body class="page-skills" data-nav-root="../" data-nav-active="skills">
@@ -312,24 +312,32 @@
             </div>
         </section>
 
-        <section class="skills-section" aria-labelledby="skills-ai-pipeline">
+        <section class="skills-section skills-section--pipeline" aria-labelledby="skills-ai-pipeline">
             <h2 id="skills-ai-pipeline" class="skills-section__title" data-translate>Pipeline IA & automatisation du développement</h2>
-            <div class="skills-prose">
-                <p data-translate>J’ai conçu et mis en pratique un workflow de développement assisté par IA reliant appareil mobile, Cursor CLI, agents IA, GitHub et GitHub Actions. L’objectif : piloter le travail à distance tout en conservant une validation humaine systématique des résultats.</p>
+            <p class="skills-pipeline__lead" data-translate>J’ai conçu et mis en pratique un workflow de développement assisté par IA reliant appareil mobile, Cursor CLI, agents IA, GitHub et GitHub Actions — avec validation humaine systématique.</p>
+
+            <div class="skills-pipeline__grid">
+                <article class="skills-pipeline__card skills-card">
+                    <p class="skills-pipeline__kicker" data-translate>01 · Piloter</p>
+                    <h3 data-translate>Orchestration à distance</h3>
+                    <p data-translate>Pilotage du travail depuis un appareil mobile avec Cursor CLI et des agents IA supervisés.</p>
+                </article>
+                <article class="skills-pipeline__card skills-card">
+                    <p class="skills-pipeline__kicker" data-translate>02 · Automatiser</p>
+                    <h3 data-translate>CI/CD & GitHub Actions</h3>
+                    <p data-translate>Gestion GitHub, builds automatisés et déploiement pour accélérer les cycles de réalisation.</p>
+                </article>
+                <article class="skills-pipeline__card skills-card">
+                    <p class="skills-pipeline__kicker" data-translate>03 · Vérifier</p>
+                    <h3 data-translate>QA & validation réelle</h3>
+                    <p data-translate>Tests sur appareil réel, diagnostic des écarts, correction puis nouvelle validation avant d’accepter le résultat.</p>
+                </article>
             </div>
-            <ul class="skills-tags">
-                <li data-translate>Orchestration à distance</li>
-                <li>Cursor CLI</li>
-                <li data-translate>Agents IA supervisés</li>
-                <li>GitHub</li>
-                <li>GitHub Actions</li>
-                <li>CI/CD</li>
-                <li data-translate>Tests QA</li>
-                <li data-translate>Validation sur appareil réel</li>
+
+            <ul class="skills-tags skills-pipeline__tags">
+                <li>Cursor CLI</li><li data-translate>Agents IA supervisés</li><li>GitHub</li><li>GitHub Actions</li><li>CI/CD</li><li data-translate>Tests QA</li>
             </ul>
-            <div class="skills-prose">
-                <p data-translate>La boucle de travail couvre le développement, le build automatisé, le déploiement, les tests sur appareil réel, le diagnostic des écarts, la correction et une nouvelle validation. Les résultats produits par l’IA sont traités comme des hypothèses à vérifier plutôt que comme des réponses automatiquement fiables.</p>
-            </div>
+            <p class="skills-pipeline__principle" data-translate><strong>Principe :</strong> un résultat produit par l’IA reste une hypothèse tant qu’il n’a pas été vérifié.</p>
         </section>
 
         <section class="skills-section" aria-labelledby="skills-proofs">
