@@ -851,7 +851,7 @@ main.page-projects {
 <main class="page-projects">
     <header class="page-intro">
         <h1 data-translate>Le Laboratoire</h1>
-        <p class="page-intro__lead" data-translate>Ici, chaque réalisation est une étude de conception. Le chemin compte autant que le résultat.</p>
+        <p class="page-intro__lead" data-translate>Ici, chaque projet est une preuve concrète de ma façon de travailler : comprendre un besoin ou un problème, construire une solution, la tester, diagnostiquer les écarts et l’améliorer. Bienvenue dans le Laboratoire.</p>
     </header>
 
     <section class="projects-showcase" id="projectsShowcase" aria-label="Études de conception">
@@ -927,7 +927,7 @@ const projects = [
                 </div>
                 <h1>HK Crib GO</h1>
                 <p class="lead" data-translate>HK Crib GO revisite le Crible Hong Kong dans une version modernisée, plus rapide et plus fluide. Pensé pour Android, il conserve l'esprit stratégique du jeu de cartes tout en rendant les parties plus accessibles.</p>
-                <p class="lead" data-translate>Le projet combine moteur de jeu, interface soignée, adversaire IA, statistiques et boucle de support — démontrant une maîtrise du mobile de bout en bout.</p>
+                <p class="lead" data-translate>Le projet combine moteur de jeu, interface, adversaire IA, statistiques et boucle de support — une réalisation complète, testée et jouable de bout en bout.</p>
                 <p class="project-download-cta">
                     <a class="btn-learn-more" href="https://github.com/francismanseau-oss/hk-crib-go-apk/releases/download/v2.0.11/HK-Crib-GO-2.0.11.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
                 </p>
@@ -960,8 +960,8 @@ const projects = [
                             <figcaption data-translate>Partie en cours — plateau et score</figcaption>
                         </figure>
                         <figure class="screenshot-card screenshot-card--landscape">
-                            <img src="../assets/projects/cribleplus/menu-parametres.png" alt="HK Crib GO — Menu paramètres et aide" width="1024" height="460" loading="lazy" decoding="async">
-                            <figcaption data-translate>Menu — paramètres et aide</figcaption>
+                            <img src="../assets/projects/cribleplus/menu-parametres.png" alt="HK Crib GO — Fin d’un round" width="1024" height="460" loading="lazy" decoding="async">
+                            <figcaption data-translate>Fin d’un round</figcaption>
                         </figure>
                     </div>
                     <figure class="screenshot-card screenshot-card--portrait">
@@ -976,7 +976,7 @@ const projects = [
     },
     {
         id: "nexus",
-        title: "Nexus (PC & Mobile)",
+        title: "Nexus (PC & Mobile) — avec WSAI",
         image: "../assets/project-gallery/nexus-bridge.png",
         imageClass: "project-card__media--contain",
         alt: "Nexus — Mobile et PC pour piloter Cursor à distance",
@@ -1003,8 +1003,8 @@ const projects = [
                     <span class="badge badge-cat-platform" data-translate>PC & Mobile</span>
                     <span class="badge badge-available" data-translate>Outil privé</span>
                 </div>
-                <h1>Nexus (PC & Mobile)</h1>
-                <p class="lead" data-translate>Nexus est un seul projet en deux interfaces : Nexus Mobile et Nexus PC. Ensemble, elles permettent de piloter Virtuose/Cursor à distance, de préserver le contexte récent des conversations et de suivre l'exécution.</p>
+                <h1>Nexus (PC & Mobile) — avec WSAI</h1>
+                <p class="lead" data-translate>Nexus est un écosystème en deux interfaces — Nexus Mobile et Nexus PC — soutenu par le serveur WSAI, qui relie les demandes, les conserve et assure le parcours jusqu’à Cursor. Ensemble, elles permettent de piloter Virtuose/Cursor à distance, de préserver le contexte récent des conversations et de suivre l’exécution.</p>
                 <p class="lead" data-translate>Le serveur WSAI demeure volontairement en arrière-plan : il assure le transport et la conservation des demandes sans constituer une interface destinée à l'utilisateur.</p>
             </section>
 
@@ -1106,6 +1106,7 @@ const projects = [
                 <p class="haven-subtitle" data-translate>Réappropriez-vous votre tranquillité d'esprit.</p>
                 <p class="lead" data-translate>Application Android de gestion intelligente des appels, notifications, messages texte et courriels. Automatisation basée sur des règles personnalisées selon votre contexte — travail, conduite ou sommeil.</p>
                 <p class="lead" data-translate>Configurez Haven une seule fois selon vos préférences, puis laissez-le travailler automatiquement en arrière-plan selon vos horaires et votre contexte.</p>
+                <p class="lead" data-translate>Haven illustre la même démarche de résolution de problèmes : partir d’un besoin réel, définir des règles, tester sur appareil, ajuster, puis aboutir à une solution fonctionnelle.</p>
                 <p class="project-download-cta">
                     <a class="btn-learn-more" href="https://github.com/francismanseau-oss/haven-apk/releases/latest/download/haven.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
                 </p>
@@ -1367,33 +1368,41 @@ function createCard(project, index) {
         media.setAttribute("role", "img");
         media.setAttribute("aria-label", project.alt || "Sans capture");
         card.appendChild(media);
-        return card;
+    } else {
+        const img = document.createElement("img");
+        img.src = project.image;
+        img.alt = project.alt;
+        img.loading = index === currentIndex ? "eager" : "lazy";
+        img.decoding = "async";
+        if (project.imageFallback) {
+            img.addEventListener("error", function onError() {
+                img.removeEventListener("error", onError);
+                img.src = project.imageFallback;
+            }, { once: true });
+        }
+        media.appendChild(img);
+        card.appendChild(media);
     }
 
-    const img = document.createElement("img");
-    img.src = project.image;
-    img.alt = project.alt;
-    img.loading = index === currentIndex ? "eager" : "lazy";
-    img.decoding = "async";
-    if (project.imageFallback) {
-        img.addEventListener("error", function onError() {
-            img.removeEventListener("error", onError);
-            img.src = project.imageFallback;
-        }, { once: true });
-    }
-    media.appendChild(img);
-    card.appendChild(media);
+    const body = document.createElement("div");
+    body.className = "project-card__body";
+    const title = document.createElement("h2");
+    title.className = "project-card__title";
+    title.textContent = project.title;
+    body.appendChild(title);
+    card.appendChild(body);
+
     return card;
 }
 
 function renderDots() {
     dotsContainer.innerHTML = "";
-    projects.forEach(function (_, index) {
+    projects.forEach(function (project, index) {
         const dot = document.createElement("button");
         dot.type = "button";
         dot.className = "showcase-dot" + (index === currentIndex ? " is-active" : "");
         dot.setAttribute("role", "tab");
-        dot.setAttribute("aria-label", "Projet " + (index + 1) + " sur " + projects.length);
+        dot.setAttribute("aria-label", project.title);
         dot.setAttribute("aria-selected", index === currentIndex ? "true" : "false");
         dot.addEventListener("click", function () {
             goToProject(index, false);

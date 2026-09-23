@@ -604,6 +604,11 @@ html[data-theme="auto"][data-theme-effective="day"] .skills-method li {
     gap: 12px;
 }
 
+/* Espace entre l’intro Preuves / projets et les cartes */
+.skills-prose--compact + .skills-proofs {
+    margin-top: 24px;
+}
+
 .skills-proof p {
     margin: 10px 0 0;
     color: var(--text-muted, #b4c1d3);
