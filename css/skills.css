@@ -738,3 +738,79 @@ html[data-theme="auto"][data-theme-effective="day"] .skills-method li {
         transition: none;
     }
 }
+
+
+/* ── Pipeline IA ── */
+.skills-section--pipeline {
+    margin-top: clamp(52px, 8vw, 76px);
+    margin-bottom: clamp(64px, 9vw, 88px);
+}
+
+.skills-pipeline__lead {
+    max-width: 62ch;
+    margin: 0 auto clamp(28px, 5vw, 38px);
+    text-align: center;
+    color: var(--text-muted, #b4c1d3);
+    font-size: clamp(1rem, 2.3vw, 1.08rem);
+    line-height: 1.8;
+}
+
+.skills-pipeline__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(14px, 2.5vw, 20px);
+    margin-bottom: clamp(26px, 4vw, 34px);
+}
+
+.skills-pipeline__card {
+    padding: clamp(20px, 3vw, 28px);
+}
+
+.skills-pipeline__kicker {
+    margin: 0 0 10px !important;
+    color: var(--accent, #22d3ee) !important;
+    font-size: 0.72rem !important;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.skills-pipeline__card h3 {
+    margin: 0 0 12px;
+    color: var(--text, #e8eef8);
+    font-size: clamp(1rem, 2.2vw, 1.14rem);
+    line-height: 1.35;
+}
+
+.skills-pipeline__card p {
+    margin: 0;
+    color: var(--text-muted, #b4c1d3);
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.skills-pipeline__tags {
+    justify-content: center;
+    max-width: 48rem;
+    margin: 0 auto clamp(26px, 4vw, 34px);
+}
+
+.skills-pipeline__principle {
+    max-width: 58ch;
+    margin: 0 auto;
+    padding: 16px 20px;
+    border-left: 3px solid var(--accent, #22d3ee);
+    color: var(--text-muted, #b4c1d3);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    background: rgba(8, 16, 32, 0.38);
+}
+
+.skills-pipeline__principle strong {
+    color: var(--text, #e8eef8);
+}
+
+@media (max-width: 720px) {
+    .skills-pipeline__grid { grid-template-columns: 1fr; }
+    .skills-section--pipeline { margin-bottom: 56px; }
+}
