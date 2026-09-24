@@ -7,6 +7,7 @@
         submission: true,
         about: true,
         contact: true,
+        lab: true,
         legal: true
     };
 
