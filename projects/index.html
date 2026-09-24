@@ -993,23 +993,13 @@ const projects = [
         title: "Nexus (PC & Mobile) — avec WSAI",
         image: "../assets/project-gallery/nexus-bridge.png",
         imageClass: "project-card__media--contain",
-        alt: "Nexus — Mobile et PC pour piloter Cursor à distance",
-        description: "Écosystème privé réunissant Nexus Mobile et Nexus PC pour piloter Cursor à distance, préserver le contexte récent des conversations et suivre l'exécution grâce au serveur WSAI.",
+        alt: "Nexus — Mobile, WSAI et PC pour piloter Cursor CLI à distance",
+        description: "Écosystème privé reliant Nexus Mobile, WSAI et Nexus PC pour piloter Cursor CLI et mes agents à distance, préserver le contexte de travail et fermer la boucle jusqu’au test sur téléphone.",
         technologies: ["Kotlin", "Python", "Android", "Windows", "REST", "Automatisation"],
         categories: ["systemes", "applications", "ia"],
         status: "en-developpement",
         statusLabel: "En développement",
         journalUrl: "../journals/nexus.html",
-        study: {
-            irritation: "Être en déplacement ou loin du bureau… et ne plus pouvoir avancer sur Cursor / le workspace sans rester collé à l’écran du PC.",
-            why: "Commander le travail de conception à distance, sans couper le fil des conversations.",
-            problem: "Le cerveau du projet vit sur le PC ; le téléphone ne servait à rien pour continuer vraiment.",
-            birth: "L’irritation a forcé un système : mobile pour décider, PC pour exécuter, file pour tenir le contexte.",
-            choices: "Deux faces (Mobile + PC), serveur discret, continuité des conversationId plutôt qu’une vitrine.",
-            challenges: "Fiabiliser la file, préserver le contexte, rester sobre côté interface.",
-            experiments: "Plusieurs schémas de transport et d’agents ; la simplicité du parcours a gagné.",
-            learnings: "Un système discret qui tient vaut mieux qu’une démo spectaculaire qui casse."
-        },
         template: `
             <section class="page-hero">
                 <div class="project-card-badges" aria-label="Informations projet">
@@ -1018,26 +1008,36 @@ const projects = [
                     <span class="badge badge-available" data-translate>Outil privé</span>
                 </div>
                 <h1>Nexus (PC & Mobile) — avec WSAI</h1>
-                <p class="lead" data-translate>Nexus est un écosystème en deux interfaces — Nexus Mobile et Nexus PC — soutenu par le serveur WSAI, qui relie les demandes, les conserve et assure le parcours jusqu’à Cursor. Ensemble, elles permettent de piloter Cursor à distance, de préserver le contexte récent des conversations et de suivre l’exécution.</p>
-                <p class="lead" data-translate>Le serveur WSAI demeure volontairement en arrière-plan : il assure le transport et la conservation des demandes sans constituer une interface destinée à l'utilisateur.</p>
+                <p class="lead" data-translate><strong>Pourquoi je l’ai construit :</strong> pouvoir avoir une idée loin de mon ordinateur, lancer le travail depuis mon téléphone et poursuivre le développement avec Cursor CLI et mes agents sans devoir retourner devant mon PC.</p>
+                <p class="lead" data-translate>L’objectif est de fermer la boucle complète : transmettre l’idée, conserver le contexte de travail, faire exécuter le développement sur mon environnement PC, déployer le résultat, puis récupérer et tester l’application directement sur mon téléphone. Pour un projet de taille adaptée, cette boucle peut parfois produire une première version fonctionnelle en moins d’une heure.</p>
+            </section>
+
+            <section class="features-section">
+                <h2 class="features-title" data-translate>Trois composants reliés</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <h3 data-translate>Nexus Mobile</h3>
+                        <p data-translate>Application Android utilisée pour écrire les demandes, choisir l’agent et suivre le travail à distance.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>WSAI</h3>
+                        <p data-translate>Serveur intermédiaire qui relie les systèmes, transporte les demandes et permet de communiquer avec les agents.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Nexus PC</h3>
+                        <p data-translate>Logiciel Windows qui fait le pont avec Cursor CLI et l’environnement de développement présent sur mon ordinateur.</p>
+                    </article>
+                </div>
             </section>
 
             <section class="nexus-pc-explain">
-                <h2 data-translate>Comment ça circule</h2>
-                <p class="lead" data-translate>Nexus Mobile permet d'envoyer les demandes et de suivre leur progression à distance.</p>
-                <p class="lead" data-translate>WSAI reçoit les demandes et les conserve dans sa file de traitement.</p>
-                <p class="lead" data-translate>Nexus PC récupère les demandes, les adapte à cursor-agent et communique avec Cursor.</p>
-                <p class="lead" data-translate>Nexus PC maintient la continuité des conversations en rattachant le conversationId et le contexte récent.</p>
-                <p class="lead" data-translate>Les réponses reviennent ensuite vers Nexus Mobile par le même parcours.</p>
-            </section>
-
-            <section class="nexus-pc-explain">
-                <h2 data-translate>Nexus Mobile</h2>
-                <p class="lead" data-translate>Interface Android pour écrire les demandes (@admin), choisir l'agent et suivre l'avancement — même en mobilité, sans ouvrir Cursor sur le PC.</p>
+                <h2 data-translate>La boucle complète</h2>
+                <p class="lead" data-translate><strong>Idée sur le téléphone → Nexus Mobile → WSAI → Nexus PC → Cursor CLI / agents → développement → GitHub / build → application disponible → téléchargement et test sur le téléphone.</strong></p>
+                <p class="lead" data-translate>Le système conserve aussi la continuité du travail : Nexus PC rattache les demandes au bon conversationId et au contexte récent afin de poursuivre une session au lieu de repartir de zéro à chaque instruction.</p>
             </section>
 
             <section class="screenshots-section">
-                <h2 class="screenshots-title" data-translate>Aperçu Nexus Mobile</h2>
+                <h2 class="screenshots-title" data-translate>Nexus Mobile</h2>
                 <div class="screenshots-grid">
                     <figure class="screenshot-card">
                         <img src="../assets/projects/nexus/mobile/04-chat-mission.jpg" alt="Nexus Mobile — chat mission et session Cursor" width="1080" height="2340" loading="lazy" decoding="async">
@@ -1056,7 +1056,7 @@ const projects = [
 
             <section class="nexus-pc-explain">
                 <h2 data-translate>Nexus PC</h2>
-                <p class="lead" data-translate>Centre de contrôle Windows : récupère les demandes via WSAI, les lance avec cursor-agent (CLI), rattache le conversationId et le contexte récent, puis renvoie le résultat vers le mobile.</p>
+                <p class="lead" data-translate>Le centre de contrôle Windows reçoit le travail par WSAI, le transmet à Cursor CLI ou à l’agent choisi, maintient le contexte de la session et retourne le résultat vers le mobile.</p>
             </section>
 
             <figure class="hero-pc-shot">
@@ -1064,23 +1064,23 @@ const projects = [
             </figure>
 
             <section class="features-section">
-                <h2 class="features-title" data-translate>Ce que démontre Nexus</h2>
+                <h2 class="features-title" data-translate>Ce que Nexus démontre</h2>
                 <div class="features-grid nexus-advantages-grid">
                     <article class="feature-card">
-                        <h3 data-translate>Un projet, deux faces</h3>
-                        <p data-translate>Mobile pour commander et suivre ; PC pour exécuter Cursor en CLI sur le workspace.</p>
+                        <h3 data-translate>Orchestration à distance</h3>
+                        <p data-translate>Piloter un environnement de développement depuis un téléphone sans rester devant le poste de travail.</p>
                     </article>
                     <article class="feature-card">
-                        <h3 data-translate>Continuité des conversations</h3>
-                        <p data-translate>conversationId et contexte récent conservés pour reprendre le fil sans recommencer à zéro.</p>
+                        <h3 data-translate>Gestion du contexte</h3>
+                        <p data-translate>Préserver les conversations et le contexte récent pour poursuivre le travail d’une instruction à l’autre.</p>
                     </article>
                     <article class="feature-card">
-                        <h3 data-translate>File en arrière-plan</h3>
-                        <p data-translate>WSAI transporte et conserve les demandes — invisible côté vitrine, essentiel au parcours.</p>
+                        <h3 data-translate>Agents spécialisés</h3>
+                        <p data-translate>Choisir et faire intervenir différents agents dans le même parcours, sous ma supervision.</p>
                     </article>
                     <article class="feature-card">
-                        <h3 data-translate>Boucle complète</h3>
-                        <p data-translate>Demande mobile → file → exécution PC → réponse mobile, sans rester devant l'écran.</p>
+                        <h3 data-translate>Boucle jusqu’au téléphone</h3>
+                        <p data-translate>Passer de l’idée au build déployé, puis au téléchargement et au test réel sur l’appareil mobile.</p>
                     </article>
                 </div>
             </section>
