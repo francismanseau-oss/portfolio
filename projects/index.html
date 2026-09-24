@@ -714,14 +714,40 @@ main.page-projects {
 @media (max-width: 720px) {
     .screenshots-grid--hk {
         grid-template-columns: 1fr;
-        justify-items: center;
+        justify-items: stretch;
+        width: 100%;
     }
+
+    .screenshots-stack {
+        width: 100%;
+    }
+
+    /* Paysages : pleine largeur, plus de plafond bas */
+    .screenshots-grid--hk .screenshot-card,
     .screenshots-grid--hk .screenshot-card--landscape {
         max-width: 100%;
+        width: 100%;
     }
+
+    .screenshots-grid--hk .screenshot-card--landscape img {
+        width: 100%;
+        max-height: none;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Support : même échelle pixels que les paysages (460/1024), pas un zoom géant */
     .screenshots-grid--hk .screenshot-card--portrait {
         justify-self: center;
-        max-width: min(100%, 280px);
+        width: calc(100% * 460 / 1024);
+        max-width: calc(100% * 460 / 1024);
+    }
+
+    .screenshots-grid--hk .screenshot-card--portrait img {
+        width: 100%;
+        max-height: none;
+        height: auto;
+        object-fit: contain;
     }
 }
 
@@ -740,8 +766,8 @@ main.page-projects {
     .screenshots-grid:not(.screenshots-grid--hk):has(> :nth-child(6):last-child) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .screenshot-card { max-width: 160px; }
-    .screenshot-card img { max-height: 320px; }
+    .screenshots-grid:not(.screenshots-grid--hk) .screenshot-card { max-width: 160px; }
+    .screenshots-grid:not(.screenshots-grid--hk) .screenshot-card img { max-height: 320px; }
 }
 
 .hero-app-shot {
