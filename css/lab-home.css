@@ -408,6 +408,7 @@ html[data-theme="auto"][data-theme-effective="day"] .lab-threshold__enter:hover 
 }
 
 .lab-spotlight {
+    position: relative;
     flex: 1 1 auto;
     width: min(420px, 100%);
     margin: 0;
@@ -417,6 +418,14 @@ html[data-theme="auto"][data-theme-effective="day"] .lab-threshold__enter:hover 
     border: 1px solid rgba(34, 211, 238, 0.32);
     border-radius: var(--radius, 14px);
     box-shadow: 0 0 28px rgba(34, 211, 238, 0.1);
+    cursor: pointer;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.lab-spotlight:hover,
+.lab-spotlight:focus-within {
+    border-color: rgba(34, 211, 238, 0.6);
+    box-shadow: 0 0 32px rgba(34, 211, 238, 0.2);
 }
 
 .lab-spotlight__chevrons {
@@ -508,7 +517,15 @@ html[data-theme="auto"][data-theme-effective="day"] .lab-threshold__enter:hover 
     text-decoration: none;
 }
 
-.lab-spotlight__cta a:hover {
+/* Étend la zone cliquable du lien à toute la carte */
+.lab-spotlight__cta a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.lab-spotlight__cta a:hover,
+.lab-spotlight:hover .lab-spotlight__cta a {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
