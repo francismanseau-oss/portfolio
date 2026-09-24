@@ -1087,6 +1087,73 @@ const projects = [
         `
     },
     {
+        id: "chatgpt-github",
+        title: "ChatGPT ↔ GitHub — développement sans PC",
+        image: "../assets/project-gallery/chatgpt-github.svg",
+        alt: "ChatGPT relié directement à GitHub pour un workflow de développement sans PC personnel",
+        description: "Deuxième route de travail conçue pour les petits projets et prototypes rapides : partir d’une idée sur mon téléphone, travailler directement avec ChatGPT, déposer le résultat dans GitHub, tester, corriger et itérer sans passer par mon PC.",
+        technologies: ["ChatGPT", "GitHub", "GitHub Actions", "PoC", "Automatisation", "QA / validation"],
+        categories: ["systemes", "ia", "experimentations"],
+        status: "fonctionnel",
+        statusLabel: "Workflow fonctionnel",
+        template: `
+            <section class="page-hero">
+                <div class="project-card-badges" aria-label="Informations projet">
+                    <span class="badge badge-cat-type" data-translate>Workflow IA</span>
+                    <span class="badge badge-cat-platform" data-translate>ChatGPT + GitHub</span>
+                    <span class="badge badge-available" data-translate>Fonctionnel</span>
+                </div>
+                <h1>ChatGPT ↔ GitHub — une route de développement sans PC</h1>
+                <p class="lead" data-translate><strong>L’idée de départ :</strong> je disposais déjà de Nexus pour piloter mon environnement PC à distance. Je voulais expérimenter une deuxième méthode plus légère : retirer complètement mon PC personnel de la chaîne et travailler directement avec ChatGPT et GitHub.</p>
+                <p class="lead" data-translate>Cette route est surtout pensée pour les petits projets, les prototypes et les démonstrateurs. Je peux partir d’une idée sur mon téléphone, la structurer avec ChatGPT, faire créer ou modifier les fichiers du projet, les déposer dans GitHub, puis tester le résultat et revenir rapidement avec les corrections.</p>
+            </section>
+
+            <section class="features-section">
+                <h2 class="features-title" data-translate>La boucle directe</h2>
+                <p class="lead"><strong>Téléphone → ChatGPT → GitHub → démo / test → correction → nouvelle itération.</strong></p>
+                <p class="lead" data-translate>L’objectif n’est pas de remplacer mon environnement complet. C’est d’avoir une route plus courte lorsque le projet s’y prête. Pour un projet plus important, je peux toujours utiliser ChatGPT avec Nexus, WSAI et Cursor CLI.</p>
+            </section>
+
+            <section class="features-section">
+                <h2 class="features-title" data-translate>Ce qu’il a fallu mettre en place</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <h3 data-translate>Accès au dépôt</h3>
+                        <p data-translate>Configurer et valider les accès nécessaires pour que ChatGPT puisse lire le contenu d’un dépôt GitHub, créer ou modifier des fichiers et enregistrer les changements dans le dépôt.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>PoC et transferts</h3>
+                        <p data-translate>Construire des preuves de concept pour vérifier les routes de transfert et confirmer qu’un fichier ou une modification arrive réellement au bon endroit avant d’intégrer la méthode au workflow.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Automatisation</h3>
+                        <p data-translate>Utiliser GitHub Actions et les mécanismes d’automatisation du dépôt lorsque certaines étapes doivent être exécutées ou validées automatiquement après un changement.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <h2 class="features-title" data-translate>Pourquoi deux routes ?</h2>
+                <div class="features-grid nexus-advantages-grid">
+                    <article class="feature-card">
+                        <h3>ChatGPT ↔ GitHub</h3>
+                        <p data-translate>Route légère pour itérer rapidement sur une idée, un petit projet ou un prototype, sans passer par mon PC personnel.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3>Nexus / WSAI / Cursor CLI</h3>
+                        <p data-translate>Route plus complète lorsque le projet demande mon environnement PC, Cursor CLI, mes agents ou une chaîne de développement plus importante.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <h2 class="features-title" data-translate>Ce que cette expérimentation démontre</h2>
+                <p class="lead" data-translate>Je ne cherchais pas simplement un nouvel outil. J’ai identifié une autre façon d’organiser mon travail : réduire le nombre d’intermédiaires pour accélérer les premières itérations, tout en conservant une route plus complète pour les projets qui en ont besoin. Chaque résultat reste testé et validé avant d’être considéré comme terminé.</p>
+            </section>
+        `
+    },
+
+    {
         id: "haven",
         title: "Haven",
         image: "../assets/project-gallery/haven.png",
