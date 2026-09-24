@@ -2,6 +2,7 @@
     var MAIN_PAGES = {
         home: true,
         services: true,
+        skills: true,
         projects: true,
         submission: true,
         about: true,
