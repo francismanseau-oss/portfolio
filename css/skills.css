@@ -810,6 +810,12 @@ html[data-theme="auto"][data-theme-effective="day"] .skills-method li {
     color: var(--text, #e8eef8);
 }
 
+/* Mode jour : conserver le principe discret, sans gros bloc gris. */
+html[data-theme="day"] .skills-pipeline__principle,
+html[data-theme="auto"][data-theme-effective="day"] .skills-pipeline__principle {
+    background: rgba(34, 211, 238, 0.045);
+}
+
 @media (max-width: 720px) {
     .skills-pipeline__grid { grid-template-columns: 1fr; }
     .skills-section--pipeline { margin-bottom: 56px; }
