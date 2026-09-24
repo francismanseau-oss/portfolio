@@ -875,7 +875,27 @@ main.page-projects {
     box-shadow: var(--glow-cyan);
 }
 
-.haven-shot img { display: block; width: 100%; height: auto; }
+.haven-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Mobile : une colonne, largeur identique (évite la 3e plus large en flex wrap) */
+@media (max-width: 720px) {
+    .haven-shots {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .haven-shot {
+        flex: 0 0 auto;
+        width: min(100%, 220px);
+        max-width: 220px;
+    }
+}
 
 .haven-benefits-grid,
 .nexus-advantages-grid {
