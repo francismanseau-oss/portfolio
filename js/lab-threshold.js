@@ -48,7 +48,7 @@
                 window.clearInterval(cycleTimer);
                 cycleTimer = null;
             }
-        }, 1600);
+        }, 800);
     }
 
     function enterAtelier() {
