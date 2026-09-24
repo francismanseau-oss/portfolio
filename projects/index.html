@@ -869,16 +869,24 @@ main.page-projects {
 .haven-shot {
     flex: 1 1 160px;
     max-width: 220px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(34, 211, 238, 0.28);
-    box-shadow: var(--glow-cyan);
+    margin: 0;
 }
 
 .haven-shot img {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    box-shadow: var(--glow-cyan);
+}
+
+.haven-shot figcaption {
+    padding: 8px 6px 0;
+    font-size: 0.78rem;
+    color: var(--text-muted-soft);
+    text-align: center;
+    line-height: 1.35;
 }
 
 /* Mobile : une colonne, largeur identique (évite la 3e plus large en flex wrap) */
@@ -1351,12 +1359,15 @@ const projects = [
             <section class="haven-shots" aria-label="Captures d'écran Haven">
                 <figure class="haven-shot">
                     <img src="../assets/projects/haven/01-accueil.png" alt="Haven — Accueil : modes Jour, Conduite, Sommeil, Travail" width="460" height="1024" loading="lazy" decoding="async">
+                    <figcaption data-translate>Modes et leur configuration</figcaption>
                 </figure>
                 <figure class="haven-shot">
                     <img src="../assets/projects/haven/02-historique.png" alt="Haven — Historique : interruptions évitées" width="460" height="1024" loading="lazy" decoding="async">
+                    <figcaption data-translate>Historique</figcaption>
                 </figure>
                 <figure class="haven-shot">
                     <img src="../assets/projects/haven/03-horaire.png" alt="Haven — Horaire automatique hebdomadaire" width="460" height="1024" loading="lazy" decoding="async">
+                    <figcaption data-translate>Horaire d’automatisation à configurer</figcaption>
                 </figure>
             </section>
 
