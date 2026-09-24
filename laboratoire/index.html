@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0e1a">
     <meta name="color-scheme" content="light dark">
-    <meta name="description" content="Laboratoire — prototypes, PoC et expérimentations de Francis Manseau. Projets en cours, en pause ou volontairement incomplets.">
+    <meta name="description" content="Laboratoire — solutions, prototypes et expérimentations de Francis Manseau nés de problèmes concrets et d’idées à tester.">
     <title>Laboratoire | Francis Manseau</title>
     <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../assets/brand/favicon/favicon-32.png" type="image/png" sizes="32x32">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../css/layout.css?v=13">
     <link rel="stylesheet" href="../css/interactive.css?v=13">
     <link rel="stylesheet" href="../css/mobile-readability.css?v=13">
-    <link rel="stylesheet" href="../css/laboratoire.css?v=1">
+    <link rel="stylesheet" href="../css/laboratoire.css?v=2">
 </head>
 <body class="page-lab" data-nav-root="../" data-nav-active="lab">
     <script src="../js/site-bg.js"></script>
@@ -58,90 +58,132 @@
     <main>
         <header class="page-intro">
             <h1 data-translate>Laboratoire</h1>
-            <p class="page-intro__lead" data-translate>Banquette d’essais : prototypes, PoC, outils en développement et projets mis sur pause. Rien ici n’a besoin d’être terminé pour mériter sa place.</p>
+            <p class="page-intro__lead" data-translate>Ici, je rassemble des solutions, prototypes et expérimentations nés de problèmes concrets, de besoins personnels ou simplement d’idées que j’ai voulu tester. Certains sont fonctionnels, d’autres sont encore en développement : le but est de montrer ce que j’explore, pourquoi je l’ai construit et ce que j’ai réussi à faire fonctionner.</p>
         </header>
 
-        <p class="lab-note" data-translate>Les trois réalisations principales restent dans <a href="../projects/index.html">Projets phares</a>. Ici, on montre le chemin et les hypothèses.</p>
+        <p class="lab-note" data-translate>Les trois réalisations principales restent dans <a href="../projects/index.html">Projets phares</a>.</p>
 
         <section class="lab-list" aria-label="Expérimentations du laboratoire">
             <article class="lab-card">
                 <div class="lab-card__top">
                     <h2 class="lab-card__title">ChatGPT ↔ GitHub</h2>
-                    <span class="lab-card__status" data-translate>Workflow fonctionnel</span>
                 </div>
-                <p class="lab-card__desc" data-translate>Deuxième route de travail pour petits projets : idée sur le téléphone, ChatGPT, dépôt GitHub, test et itération — sans passer par le PC personnel.</p>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>IA</span>
+                    <span class="lab-badge" data-translate>GitHub</span>
+                    <span class="lab-badge" data-translate>Workflow</span>
+                </p>
+                <p class="lab-card__desc" data-translate>J’ai développé une deuxième façon de travailler directement avec ChatGPT et GitHub. À partir de mon téléphone, je peux partir d’une idée et créer un projet numérique, l’envoyer sur GitHub, le tester et l’améliorer rapidement — parfois en quelques minutes pour un petit projet.</p>
+            </article>
+
+            <article class="lab-card">
+                <div class="lab-card__top">
+                    <h2 class="lab-card__title">ChatGPT Web — affichage allégé</h2>
+                </div>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>Script</span>
+                    <span class="lab-badge" data-translate>Violentmonkey</span>
+                    <span class="lab-badge" data-translate>Web</span>
+                </p>
+                <p class="lab-card__desc" data-translate>Un petit script créé pour régler un irritant dans mes très longues conversations ChatGPT. Il ne conserve à l’écran que mes cinq derniers messages tout en laissant les réponses de ChatGPT disponibles, ce qui allège l’affichage et me ramène directement au bas de la conversation lorsque je reviens dans un chat.</p>
             </article>
 
             <article class="lab-card">
                 <div class="lab-card__top">
                     <h2 class="lab-card__title">Postman / MailPerso</h2>
-                    <span class="lab-card__status" data-translate>En développement</span>
                 </div>
-                <p class="lab-card__desc" data-translate>Agent WSAI spécialisé dans l’analyse et le classement automatique des courriels. MailPerso sert d’interface et de connexion à la boîte ; expérimentation d’une gestion personnalisée de la réception.</p>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>Agent IA</span>
+                    <span class="lab-badge" data-translate>WSAI</span>
+                    <span class="lab-badge" data-translate>Courriel</span>
+                </p>
+                <p class="lab-card__desc" data-translate>Le projet est parti d’un irritant très concret : les courriels indésirables qui s’accumulaient et le temps perdu à faire du classement. L’idée a évolué vers Postman, un agent IA intégré à WSAI qui analyse et classe mes courriels afin d’automatiser et simplifier leur gestion.</p>
             </article>
 
             <article class="lab-card">
                 <div class="lab-card__top">
-                    <h2 class="lab-card__title">Kios</h2>
-                    <span class="lab-card__status" data-translate>Prototype</span>
+                    <h2 class="lab-card__title">Transfert de fichiers via ChatGPT</h2>
                 </div>
-                <p class="lab-card__desc" data-translate>Bac à sable Godot pour tester des idées de monde et de terrain avant qu’elles deviennent un produit. Volontairement embryonnaire.</p>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>Custom GPT</span>
+                    <span class="lab-badge" data-translate>PoC</span>
+                    <span class="lab-badge" data-translate>GitHub</span>
+                </p>
+                <p class="lab-card__desc" data-translate>Une preuve de concept conçue pour transférer de vrais fichiers depuis mon téléphone jusqu’à GitHub en passant par ChatGPT. Le système utilise notamment un GPT personnalisé spécialisé, Axon, et m’a permis de valider qu’un véritable transfert de fichiers pouvait fonctionner dans ce workflow.</p>
             </article>
 
             <article class="lab-card">
                 <div class="lab-card__top">
                     <h2 class="lab-card__title">Project Inspector</h2>
-                    <span class="lab-card__status" data-translate>En développement</span>
                 </div>
-                <p class="lab-card__desc" data-translate>Outil d’atelier pour inspecter plus vite ce qui bloque dans un projet — au service du diagnostic, pas de la démo.</p>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>Outil</span>
+                    <span class="lab-badge" data-translate>Diagnostic</span>
+                    <span class="lab-badge" data-translate>Sécurité</span>
+                </p>
+                <p class="lab-card__desc" data-translate>Un outil conçu pour analyser rapidement le contenu d’un projet avant de travailler dessus. Il identifie les types de fichiers et la nature du projet, signale certains éléments à surveiller — par exemple une forte présence de DLL — et lance également une vérification avec Microsoft Defender.</p>
             </article>
 
             <article class="lab-card">
                 <div class="lab-card__top">
-                    <h2 class="lab-card__title">ChatGPT-web (affichage allégé)</h2>
-                    <span class="lab-card__status" data-translate>Expérimentation</span>
+                    <h2 class="lab-card__title">AstroMétéo</h2>
                 </div>
-                <p class="lab-card__desc" data-translate>Userscript Violentmonkey qui n’affiche que les derniers messages du fil pour alléger la page, sans couper le contexte de l’agent.</p>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>Android</span>
+                    <span class="lab-badge" data-translate>APK</span>
+                    <span class="lab-badge" data-translate>Astrologie</span>
+                </p>
+                <p class="lab-card__desc" data-translate>Un prototype Android qui présente une « météo énergétique » personnalisée à partir du thème natal et des mouvements des planètes. La version actuelle se concentre sur la météo du jour : elle décrit des tendances et des énergies selon les principes de l’astrologie, sans prétendre prédire l’avenir.</p>
             </article>
 
             <article class="lab-card">
                 <div class="lab-card__top">
-                    <h2 class="lab-card__title">AstroMeteo</h2>
-                    <span class="lab-card__status" data-translate>Démo Android</span>
+                    <h2 class="lab-card__title">Zenitude</h2>
                 </div>
-                <p class="lab-card__desc" data-translate>Application Android d’éphémérides et de météo symbolique : lieu, thème natal, modes d’affichage. Disponible en démo APK sur CLI-demo.</p>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>Android</span>
+                    <span class="lab-badge" data-translate>APK</span>
+                    <span class="lab-badge" data-translate>Audio hors ligne</span>
+                </p>
+                <p class="lab-card__desc" data-translate>Une application de détente permettant de créer sa propre ambiance en mélangeant différents sons naturels, comme la pluie, une crique ou les criquets. Elle fonctionne hors ligne et permet simplement de composer l’environnement sonore désiré.</p>
             </article>
 
             <article class="lab-card">
                 <div class="lab-card__top">
-                    <h2 class="lab-card__title">MGL Zen</h2>
-                    <span class="lab-card__status" data-translate>Démo Android</span>
+                    <h2 class="lab-card__title">Passerelle d’entrevue bilingue</h2>
                 </div>
-                <p class="lab-card__desc" data-translate>Minuterie flexible et mixer d’ambiances sonores hors ligne. Projet Android en itération, publié en démo sur CLI-demo.</p>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>Traduction vocale</span>
+                    <span class="lab-badge" data-translate>Prototype</span>
+                    <span class="lab-badge" data-translate>Web</span>
+                </p>
+                <p class="lab-card__desc" data-translate>Une expérimentation créée pour contourner une barrière linguistique lors d’une conversation ou d’une entrevue. Une personne peut parler en français et transmettre son message en anglais à l’autre participant, avec le même principe dans l’autre direction.</p>
+            </article>
+
+            <article class="lab-card">
+                <div class="lab-card__top">
+                    <h2 class="lab-card__title">PrivateRecorder</h2>
+                </div>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>Android</span>
+                    <span class="lab-badge" data-translate>APK</span>
+                    <span class="lab-badge" data-translate>Confidentialité</span>
+                </p>
+                <p class="lab-card__desc" data-translate>Une application Android d’enregistrement audio conçue avec une contrainte volontaire : aucune permission Internet. L’enregistrement, la lecture et l’export des fichiers audio se font localement sur l’appareil.</p>
             </article>
 
             <article class="lab-card">
                 <div class="lab-card__top">
                     <h2 class="lab-card__title">Autosuffisance Québec</h2>
-                    <span class="lab-card__status" data-translate>Pilote web</span>
                 </div>
-                <p class="lab-card__desc" data-translate>Série de fiches pilotes (plantes, arbres, petits animaux) pour valider l’architecture d’une encyclopédie d’autosuffisance avant production massive.</p>
-            </article>
-
-            <article class="lab-card">
-                <div class="lab-card__top">
-                    <h2 class="lab-card__title">Vision Demo</h2>
-                    <span class="lab-card__status" data-translate>Prototype</span>
-                </div>
-                <p class="lab-card__desc" data-translate>Démo Android liée aux expérimentations Vision / hard-surface — terrain de test plutôt que produit fini.</p>
-            </article>
-
-            <article class="lab-card">
-                <div class="lab-card__top">
-                    <h2 class="lab-card__title">Pont fichiers Axon / Neo</h2>
-                    <span class="lab-card__status" data-translate>PoC en cours</span>
-                </div>
-                <p class="lab-card__desc" data-translate>Worker Cloudflare pour faire transiter un fichier de ChatGPT vers GitHub (octets réels + commit). Pont entre le terrain Cursor (PC) et les dépôts francismanseau-oss.</p>
+                <p class="lab-card__badges" aria-label="Étiquettes">
+                    <span class="lab-badge" data-translate>Application Web</span>
+                    <span class="lab-badge" data-translate>Base de connaissances</span>
+                    <span class="lab-badge" data-translate>En développement</span>
+                </p>
+                <p class="lab-card__desc" data-translate>Un projet visant à créer une bibliothèque structurée de connaissances pratiques pour apprendre à devenir plus autonome et à répondre soi-même à ses besoins essentiels.</p>
+                <p class="lab-card__desc" data-translate>L’objectif est de réunir au même endroit des guides et des outils d’apprentissage sur des sujets comme l’alimentation et le jardinage, l’eau, l’habitat, l’énergie, les semences, les premiers soins, la pêche, la chasse, les outils, l’artisanat et d’autres connaissances pratiques.</p>
+                <p class="lab-card__desc" data-translate>La vision est de constituer progressivement une banque de connaissances pour l’autonomie et la résilience, qui puisse rester utile lorsque les ressources ou services habituels sont difficiles d’accès. Le projet actuel n’en représente encore que les premières fondations.</p>
             </article>
         </section>
     </main>

@@ -35,6 +35,24 @@
     font-weight: 700;
 }
 
+.lab-card__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0 0 0.55rem;
+}
+
+.lab-badge {
+    display: inline-block;
+    padding: 0.12rem 0.55rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    white-space: nowrap;
+}
+
 .lab-card__status {
     display: inline-block;
     padding: 0.12rem 0.55rem;
@@ -47,10 +65,14 @@
 }
 
 .lab-card__desc {
-    margin: 0;
+    margin: 0 0 0.55rem;
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.5;
+}
+
+.lab-card__desc:last-child {
+    margin-bottom: 0;
 }
 
 .lab-note {
