@@ -870,23 +870,32 @@ main.page-projects {
     flex: 1 1 160px;
     max-width: 220px;
     margin: 0;
+    background: var(--bg-card);
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    border-radius: 12px;
+    box-shadow: var(--glow-cyan);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .haven-shot img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 12px;
-    border: 1px solid rgba(34, 211, 238, 0.28);
-    box-shadow: var(--glow-cyan);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .haven-shot figcaption {
-    padding: 8px 6px 0;
+    padding: 10px 12px 12px;
     font-size: 0.78rem;
     color: var(--text-muted-soft);
     text-align: center;
     line-height: 1.35;
+    border-top: 1px solid var(--border);
+    background: var(--bg-card);
 }
 
 /* Mobile : une colonne, largeur identique (évite la 3e plus large en flex wrap) */
