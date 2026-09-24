@@ -1,0 +1,77 @@
+/* Laboratoire — liste compacte d’expérimentations */
+
+.page-lab .page-intro {
+    margin-bottom: 1.25rem;
+}
+
+.lab-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    width: min(720px, calc(100% - 2rem));
+    margin: 0 auto 3rem;
+}
+
+.lab-card {
+    padding: 1rem 1.15rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.05);
+}
+
+.lab-card__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 0.75rem;
+    margin-bottom: 0.45rem;
+}
+
+.lab-card__title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.lab-card__status {
+    display: inline-block;
+    padding: 0.12rem 0.55rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.lab-card__desc {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.lab-note {
+    width: min(720px, calc(100% - 2rem));
+    margin: 0 auto 2.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .lab-card {
+        padding: 0.95rem 1rem;
+    }
+
+    .lab-card__title {
+        font-size: 1.05rem;
+    }
+
+    .lab-card__desc {
+        font-size: 1rem;
+        line-height: 1.55;
+    }
+}

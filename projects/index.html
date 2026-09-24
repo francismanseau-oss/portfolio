@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0e1a">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Le Laboratoire Francis Manseau — études de conception : applications, systèmes, prototypes, expérimentations.">
-<title>Laboratoire | Francis Manseau</title>
+<meta name="description" content="Projets phares — HK Crib GO, Nexus / WSAI et Haven. Les trois principales preuves de travail de Francis Manseau.">
+<title>Projets phares | Francis Manseau</title>
 <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../assets/brand/favicon/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="../assets/brand/favicon/favicon-16.png" type="image/png" sizes="16x16">
@@ -687,7 +687,7 @@ main.page-projects {
 }
 
 .haven-benefits.features-section,
-.cribleplus-benefits.features-section {
+.hk-crib-go-benefits.features-section {
     background: transparent;
     border: 0;
     box-shadow: none;
@@ -749,13 +749,13 @@ main.page-projects {
 
 .haven-calendar-note p:last-child { margin-bottom: 0; }
 
-.cribleplus-legal-links {
+.hk-crib-go-legal-links {
     margin-top: 32px;
     padding-top: 24px;
     border-top: 1px solid var(--border);
 }
 
-.cribleplus-legal-links__list {
+.hk-crib-go-legal-links__list {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -764,7 +764,7 @@ main.page-projects {
     gap: 10px 18px;
 }
 
-.cribleplus-legal-links__list a {
+.hk-crib-go-legal-links__list a {
     color: var(--accent);
     text-decoration: none;
     font-weight: 500;
@@ -824,7 +824,7 @@ main.page-projects {
                 </a>
             </div>
             <nav class="main-nav" id="mainNav" aria-label="Navigation principale"></nav>
-            <script src="../js/site-nav.js?v=8"></script>
+            <script src="../js/site-nav.js?v=9"></script>
             <span class="lang-status" id="langStatus" data-translate>Traduction…</span>
             <nav class="lang-switcher" id="langFlags" aria-label="Choisir la langue">
                 <button type="button" class="lang-btn" data-lang="en">EN</button>
@@ -850,11 +850,11 @@ main.page-projects {
 
 <main class="page-projects">
     <header class="page-intro">
-        <h1 data-translate>Le Laboratoire</h1>
-        <p class="page-intro__lead" data-translate>Ici, chaque projet est une preuve concrète de ma façon de travailler : comprendre un besoin ou un problème, construire une solution, la tester, diagnostiquer les écarts et l’améliorer. Bienvenue dans le Laboratoire.</p>
+        <h1 data-translate>Projets phares</h1>
+        <p class="page-intro__lead" data-translate>Trois réalisations principales : un jeu Android publié, un écosystème de pilotage à distance, et une application de garde d’enfants. Le détail reste ici ; les expérimentations vivent dans le Laboratoire.</p>
     </header>
 
-    <section class="projects-showcase" id="projectsShowcase" aria-label="Études de conception">
+    <section class="projects-showcase" id="projectsShowcase" aria-label="Projets phares">
         <div class="showcase-carousel">
             <button class="showcase-arrow" type="button" data-direction="-1" aria-label="Projet précédent">‹</button>
 
@@ -865,7 +865,7 @@ main.page-projects {
             <button class="showcase-arrow" type="button" data-direction="1" aria-label="Projet suivant">›</button>
         </div>
 
-        <div class="showcase-dots" id="showcaseDots" role="tablist" aria-label="Navigation des projets"></div>
+        <div class="showcase-dots" id="showcaseDots" role="tablist" aria-label="Navigation des projets phares"></div>
     </section>
 
     <section class="project-detail" id="projectDetail" hidden aria-live="polite"></section>
@@ -894,10 +894,10 @@ main.page-projects {
 <script src="../js/i18n.js?v=2"></script>
 <script>
 const projects = [
-    {
+{
         id: "hk-crib-go",
         title: "HK Crib GO",
-        image: "../assets/projects/cribleplus/partie-en-cours.png",
+        image: "../assets/projects/hk-crib-go/partie-en-cours.png",
         imageClass: "project-card__media--hk",
         alt: "HK Crib GO — jeu de cribbage Android",
         description: "HK Crib GO — Hong Kong Cribbage en version rapide : parties en rounds d’environ cinq minutes, cinq adversaires IA, six langues, pointage visuel, statistiques, récompenses et support technique intégré.",
@@ -924,7 +924,7 @@ const projects = [
                 </p>
             </section>
 
-            <section class="features-section cribleplus-benefits">
+            <section class="features-section hk-crib-go-benefits">
                 <h2 class="features-title" data-translate>Ce qui distingue HK Crib GO</h2>
                 <div class="features-grid">
                     <article class="feature-card">
@@ -959,16 +959,16 @@ const projects = [
                 <div class="screenshots-grid screenshots-grid--hk">
                     <div class="screenshots-stack">
                         <figure class="screenshot-card screenshot-card--landscape">
-                            <img src="../assets/projects/cribleplus/partie-en-cours.png" alt="HK Crib GO — Partie en cours contre l'IA" width="1024" height="460" loading="lazy" decoding="async">
+                            <img src="../assets/projects/hk-crib-go/partie-en-cours.png" alt="HK Crib GO — Partie en cours contre l'IA" width="1024" height="460" loading="lazy" decoding="async">
                             <figcaption data-translate>Partie en cours — plateau et score</figcaption>
                         </figure>
                         <figure class="screenshot-card screenshot-card--landscape">
-                            <img src="../assets/projects/cribleplus/menu-parametres.png" alt="HK Crib GO — Fin d’un round" width="1024" height="460" loading="lazy" decoding="async">
+                            <img src="../assets/projects/hk-crib-go/menu-parametres.png" alt="HK Crib GO — Fin d’un round" width="1024" height="460" loading="lazy" decoding="async">
                             <figcaption data-translate>Fin d’un round</figcaption>
                         </figure>
                     </div>
                     <figure class="screenshot-card screenshot-card--portrait">
-                        <img src="../assets/projects/cribleplus/support-centre.png" alt="HK Crib GO — Centre de support technique" width="460" height="1024" loading="lazy" decoding="async">
+                        <img src="../assets/projects/hk-crib-go/support-centre.png" alt="HK Crib GO — Centre de support technique" width="460" height="1024" loading="lazy" decoding="async">
                         <figcaption data-translate>Centre Support — ticket technique</figcaption>
                     </figure>
                 </div>
@@ -988,7 +988,7 @@ const projects = [
             
         `
     },
-    {
+{
         id: "nexus",
         title: "Nexus (PC & Mobile) — avec WSAI",
         image: "../assets/project-gallery/nexus-bridge.png",
@@ -1086,74 +1086,7 @@ const projects = [
             </section>
         `
     },
-    {
-        id: "chatgpt-github",
-        title: "ChatGPT ↔ GitHub — développement sans PC",
-        image: "../assets/project-gallery/chatgpt-github.png",
-        alt: "ChatGPT relié directement à GitHub pour un workflow de développement sans PC personnel",
-        description: "Deuxième route de travail conçue pour les petits projets et prototypes rapides : partir d’une idée sur mon téléphone, travailler directement avec ChatGPT, déposer le résultat dans GitHub, tester, corriger et itérer sans passer par mon PC.",
-        technologies: ["ChatGPT", "GitHub", "GitHub Actions", "PoC", "Automatisation", "QA / validation"],
-        categories: ["systemes", "ia", "experimentations"],
-        status: "fonctionnel",
-        statusLabel: "Workflow fonctionnel",
-        template: `
-            <section class="page-hero">
-                <div class="project-card-badges" aria-label="Informations projet">
-                    <span class="badge badge-cat-type" data-translate>Workflow IA</span>
-                    <span class="badge badge-cat-platform" data-translate>ChatGPT + GitHub</span>
-                    <span class="badge badge-available" data-translate>Fonctionnel</span>
-                </div>
-                <h1>ChatGPT ↔ GitHub — une route de développement sans PC</h1>
-                <p class="lead" data-translate><strong>L’idée de départ :</strong> je disposais déjà de Nexus pour piloter mon environnement PC à distance. Je voulais expérimenter une deuxième méthode plus légère : retirer complètement mon PC personnel de la chaîne et travailler directement avec ChatGPT et GitHub.</p>
-                <p class="lead" data-translate>Cette route est surtout pensée pour les petits projets, les prototypes et les démonstrateurs. Je peux partir d’une idée sur mon téléphone, la structurer avec ChatGPT, faire créer ou modifier les fichiers du projet, les déposer dans GitHub, puis tester le résultat et revenir rapidement avec les corrections.</p>
-            </section>
-
-            <section class="features-section">
-                <h2 class="features-title" data-translate>La boucle directe</h2>
-                <p class="lead"><strong>Téléphone → ChatGPT → GitHub → démo / test → correction → nouvelle itération.</strong></p>
-                <p class="lead" data-translate>L’objectif n’est pas de remplacer mon environnement complet. C’est d’avoir une route plus courte lorsque le projet s’y prête. Pour un projet plus important, je peux toujours utiliser ChatGPT avec Nexus, WSAI et Cursor CLI.</p>
-            </section>
-
-            <section class="features-section">
-                <h2 class="features-title" data-translate>Ce qu’il a fallu mettre en place</h2>
-                <div class="features-grid">
-                    <article class="feature-card">
-                        <h3 data-translate>Accès au dépôt</h3>
-                        <p data-translate>Configurer et valider les accès nécessaires pour que ChatGPT puisse lire le contenu d’un dépôt GitHub, créer ou modifier des fichiers et enregistrer les changements dans le dépôt.</p>
-                    </article>
-                    <article class="feature-card">
-                        <h3 data-translate>PoC et transferts</h3>
-                        <p data-translate>Construire des preuves de concept pour vérifier les routes de transfert et confirmer qu’un fichier ou une modification arrive réellement au bon endroit avant d’intégrer la méthode au workflow.</p>
-                    </article>
-                    <article class="feature-card">
-                        <h3 data-translate>Automatisation</h3>
-                        <p data-translate>Utiliser GitHub Actions et les mécanismes d’automatisation du dépôt lorsque certaines étapes doivent être exécutées ou validées automatiquement après un changement.</p>
-                    </article>
-                </div>
-            </section>
-
-            <section class="features-section">
-                <h2 class="features-title" data-translate>Pourquoi deux routes ?</h2>
-                <div class="features-grid nexus-advantages-grid">
-                    <article class="feature-card">
-                        <h3>ChatGPT ↔ GitHub</h3>
-                        <p data-translate>Route légère pour itérer rapidement sur une idée, un petit projet ou un prototype, sans passer par mon PC personnel.</p>
-                    </article>
-                    <article class="feature-card">
-                        <h3>Nexus / WSAI / Cursor CLI</h3>
-                        <p data-translate>Route plus complète lorsque le projet demande mon environnement PC, Cursor CLI, mes agents ou une chaîne de développement plus importante.</p>
-                    </article>
-                </div>
-            </section>
-
-            <section class="features-section">
-                <h2 class="features-title" data-translate>Ce que cette expérimentation démontre</h2>
-                <p class="lead" data-translate>Je ne cherchais pas simplement un nouvel outil. J’ai identifié une autre façon d’organiser mon travail : réduire le nombre d’intermédiaires pour accélérer les premières itérations, tout en conservant une route plus complète pour les projets qui en ont besoin. Chaque résultat reste testé et validé avant d’être considéré comme terminé.</p>
-            </section>
-        `
-    },
-
-    {
+{
         id: "haven",
         title: "Haven",
         image: "../assets/project-gallery/haven.png",
@@ -1247,149 +1180,8 @@ const projects = [
                 <p data-translate>Le calendrier Haven sert à configurer les journées flottantes, fériés, congés et journées pédagogiques — pour voir en un coup d'œil sa journée, sa semaine ou son mois. Cette fonctionnalité n'est pas encore disponible dans la version actuelle.</p>
             </aside>
         `
-    },
-    {
-        id: "kios",
-        title: "Kios",
-        image: "../assets/project-gallery/kios.png",
-        alt: "Kios — prototype de terrain Godot",
-        description: "Prototype embryonnaire d’un univers de terrain en Godot : exploration, construction de monde, et expérimentations voxel.",
-        technologies: ["Godot", "GDScript", "Prototype terrain"],
-        categories: ["prototypes"],
-        status: "prototype",
-        statusLabel: "Prototype — terrain",
-        journalUrl: "../journals/index.html",
-        study: {
-            irritation: "Avoir des idées de monde et de terrain… et nulle part où les tester vite, concrètement, sans attendre un « vrai » produit fini.",
-            why: "Ouvrir un bac à sable de conception : un terrain où les idées de monde peuvent naître et se casser.",
-            problem: "Sans prototype spatial, les idées restent abstraites ; le terrain force à voir ce qui tient vraiment.",
-            birth: "Phase de prototypage Godot : terrain, exploration, essais — volontairement embryonnaire.",
-            choices: "Godot comme environnement de conception. Godot Voxel reste un détail d’expérimentation, pas une promesse de produit.",
-            challenges: "Rester honnête sur le stade (prototype) tout en montrant la démarche.",
-            experiments: "Blocs de terrain, rythme de déplacement, premières structures — plusieurs pistes encore ouvertes.",
-            learnings: "Un prototype visible vaut mieux qu’une idée parfaite sur papier. Kios grandira avec le laboratoire."
-        },
-        template: `
-            <section class="page-hero">
-                <div class="project-card-badges" aria-label="Informations projet">
-                    <span class="badge badge-cat-type" data-translate>Prototype</span>
-                    <span class="badge badge-cat-platform" data-translate>Godot</span>
-                    <span class="badge badge-dev" data-translate>Terrain en prototypage</span>
-                </div>
-                <h1>Kios</h1>
-                <p class="lead" data-translate>Kios n’est pas encore un produit. C’est un terrain de conception : un espace Godot où tester des idées de monde avant qu’elles deviennent autre chose.</p>
-                <p class="lead" data-translate>Le stade est embryonnaire — et c’est volontaire. Ici, on montre le chemin, pas une vitrine finie.</p>
-            </section>
-            <section class="screenshots-section">
-                <h2 class="screenshots-title" data-translate>Aperçu du terrain</h2>
-                <div class="screenshots-grid">
-                    <figure class="screenshot-card">
-                        <img src="../assets/projects/kios/kios-pure-world.webp" alt="Kios — aperçu du monde" width="1280" height="720" loading="lazy" decoding="async">
-                        <figcaption data-translate>Prototype de terrain — exploration</figcaption>
-                    </figure>
-                </div>
-            </section>
-        `
-    },
-    {
-        id: "project-inspector",
-        title: "Project Inspector",
-        image: "../assets/project-gallery/project-inspector.png",
-        alt: "Project Inspector — outil d’inspection de projets",
-        description: "Outil né d’une irritation concrète : inspecter plus vite ce qui bloque dans un projet, sans perdre le fil.",
-        technologies: ["Automatisation", "Windows", "Scripts"],
-        categories: ["systemes", "experimentations"],
-        status: "en-developpement",
-        statusLabel: "En développement",
-        journalUrl: "../journals/index.html",
-        study: {
-            irritation: "Perdre du temps à chercher où ça coince dans un projet — fichiers, états, détails — alors que l’énergie devrait aller à la solution.",
-            why: "Accélérer l’inspection : voir plus clair, plus vite, pour décider.",
-            problem: "Sans vue structurée, le diagnostic devient du bricolage répété.",
-            birth: "Un outil de laboratoire pour soutenir la méthode Comprendre → Tester → Corriger → Valider → Améliorer.",
-            choices: "Priorité à la clarté du diagnostic plutôt qu’à une interface spectaculaire.",
-            challenges: "Rester utile sans devenir un monstre de fonctionnalités.",
-            experiments: "Plusieurs formats de rapport et de parcours ; simplification en cours.",
-            learnings: "Les meilleurs outils d’atelier naissent d’une irritation répétée — pas d’une feature list."
-        },
-        template: `
-            <section class="page-hero">
-                <div class="project-card-badges" aria-label="Informations projet">
-                    <span class="badge badge-cat-type" data-translate>Outil</span>
-                    <span class="badge badge-cat-platform" data-translate>Atelier</span>
-                    <span class="badge badge-dev" data-translate>En développement</span>
-                </div>
-                <h1>Project Inspector</h1>
-                <p class="lead" data-translate>Un outil du laboratoire pour inspecter plus vite ce qui bloque — au service de la conception, pas de la démo.</p>
-            </section>
-        `
-    },
-    {
-        id: "chatgpt-web",
-        title: "ChatGPT-web (affichage allégé)",
-        image: "../assets/project-gallery/chatgpt-web.png",
-        alt: "ChatGPT-web — userscript Violentmonkey, affichage allégé",
-        description: "Script expérimental pour n’afficher que les derniers messages du fil (environ 5), accélérer le travail avec l’agent — sans couper le contexte AI.",
-        technologies: ["JavaScript", "Violentmonkey", "Navigateur"],
-        categories: ["idees"],
-        status: "experimentation",
-        statusLabel: "Idée / expérimentation",
-        journalUrl: "../journals/index.html",
-        study: {
-            irritation: "Un fil qui s’allonge… la page devient lourde, le scroll devient lent, alors que l’agent a encore besoin de tout le contexte.",
-            why: "Alléger l’affichage (garder les ~5 derniers messages visibles) sans couper le contexte AI.",
-            problem: "Performance et lisibilité du fil vs conservation du contexte pour l’agent.",
-            birth: "Une irritation quotidienne de session longue, transformée en micro-script d’atelier.",
-            choices: "Masquer à l’écran seulement — le contexte reste ; approche fragile après les mises à jour.",
-            challenges: "Compatibilité après update, ne rien casser côté agent.",
-            experiments: "Plusieurs seuils d’affichage ; règle actuelle : derniers messages seulement.",
-            learnings: "Parfois le bon outil est un script né d’une vraie friction — pas un produit."
-        },
-        template: `
-            <section class="page-hero">
-                <div class="project-card-badges" aria-label="Informations projet">
-                    <span class="badge badge-cat-type" data-translate>Idée</span>
-                    <span class="badge badge-cat-platform" data-translate>Web</span>
-                    <span class="badge badge-cat-type" data-translate>Script</span>
-                </div>
-                <h1>ChatGPT-web</h1>
-                <p class="lead" data-translate>Afficher moins pour travailler plus vite — sans priver l’agent de son contexte. Micro-script Violentmonkey d’atelier.</p>
-            </section>
-        `
-    },
-    {
-        id: "mail-perso",
-        title: "Courriel privé",
-        image: "../assets/project-gallery/mail-perso.png",
-        alt: "Courriel privé — projet en cours",
-        description: "Projet embryonnaire : reprendre la main sur le courriel privé. Pas encore abouti — déjà une irritation claire.",
-        technologies: ["Prototype", "Vie privée"],
-        categories: ["prototypes", "experimentations"],
-        status: "experimentation",
-        statusLabel: "En expérimentation — non abouti",
-        journalUrl: "../journals/index.html",
-        study: {
-            irritation: "Le courriel privé qui ne se comporte pas comme on le voudrait — bruit, dépendance, manque de contrôle.",
-            why: "Explorer une approche plus maîtrisée du courriel, alignée sur la même méthode de conception.",
-            problem: "Les boîtes classiques imposent leurs règles ; l’irritation, c’est le manque de leviers simples.",
-            birth: "Encore ouvert : idée et premiers essais, pas un produit à promettre.",
-            choices: "Dire la vérité du stade — non fini — plutôt que d’inventer une vitrine.",
-            challenges: "Ne pas sur-vendre ; garder la place pour l’évolution dans le laboratoire.",
-            experiments: "Pistes en cours ; plusieurs hypothèses non tranchées.",
-            learnings: "Montrer un projet non abouti, c’est aussi montrer comment on pense — pas seulement ce qui est livré."
-        },
-        template: `
-            <section class="page-hero">
-                <div class="project-card-badges" aria-label="Informations projet">
-                    <span class="badge badge-cat-type" data-translate>Idée</span>
-                    <span class="badge badge-soon" data-translate>Non abouti</span>
-                </div>
-                <h1 data-translate>Courriel privé</h1>
-                <p class="lead" data-translate>Une irritation réelle, un projet encore ouvert. Le laboratoire l’accueille comme expérimentation — pas comme promesse marketing.</p>
-            </section>
-        `
     }
-];
+
 
 let currentIndex = 0;
 let visualIndex = 1;

@@ -4,7 +4,7 @@
   "nav": {
     "home": "Accueil",
     "kios": "Kios",
-    "cribleplus": "Crible+",
+    "hk-crib-go": "HK Crib GO",
     "haven": "Haven",
     "nexusBridge": "Nexus Bridge"
   },
@@ -23,8 +23,8 @@
     "title": "Kios",
     "demoSoon": "Démo bientôt disponible"
   },
-  "cribleplus": {
-    "title": "Crible+",
+  "hk-crib-go": {
+    "title": "HK Crib GO",
     "download": "Télécharger v1.6 (Android)"
   },
   "haven": {

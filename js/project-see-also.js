@@ -8,11 +8,10 @@
     var root = document.body.getAttribute("data-nav-root") || "../";
 
     var projects = [
-        { id: "cribleplus", label: "Crible+", href: "cribleplus/index.html" },
-        { id: "haven", label: "Haven", href: "haven/index.html" },
-        { id: "nexus-bridge", label: "Nexus Bridge", href: "nexus-bridge/index.html" },
-        { id: "kios", label: "Kios", href: "kios/index.html" },
-        { id: "project-inspector", label: "Project Inspector", href: "project-inspector/index.html" }
+        { id: "hk-crib-go", label: "HK Crib GO", href: "projects/index.html#hk-crib-go" },
+        { id: "haven", label: "Haven", href: "projects/index.html#haven" },
+        { id: "nexus", label: "Nexus / WSAI", href: "projects/index.html#nexus" },
+        { id: "lab", label: "Laboratoire", href: "laboratoire/index.html" }
     ];
 
     var nav = document.createElement("nav");

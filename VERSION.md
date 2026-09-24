@@ -1,30 +1,24 @@
 # Portfolio — Laboratoire Francis Manseau
 
-## Accueil V1.0 — GELÉ
+## Accueil V1.0 gelé (2026-08-06)
 
-- **Statut :** V1.0 stabilisée (2026-08-06)
-- **Périmètre gelé :** `index.html` / seuil + atelier d’accueil (`lab-home.css`, `lab-threshold.js`)
-- **Règle :** aucune nouvelle section, architecture ou concept sur l’accueil sans décision explicite de rouvrir la V1
-- **Suite autorisée :** correctifs de bugs uniquement ; Laboratoire (`projects/`), Démarche, Contact, journaux hors gel structurel de l’accueil
+- Correctifs de bugs uniquement sur l’accueil
+- Suite : Projets phares, Laboratoire, Compétences, Contact, journaux
 
-## Contenu V1 (référence)
+## Navigation
 
-Nav : Accueil · Laboratoire · Démarche · Contact  
-Signature : *Les technologies évoluent. La résolution de problèmes demeure.*  
-CTA : Explorer le laboratoire → `projects/index.html`
+Accueil · Projets phares · Laboratoire · Compétences · Contact
 
-## Vérification clôturée — 2026-08-06
+CTA accueil : Projets phares + Laboratoire
 
-| Contrôle | Résultat |
-|----------|----------|
-| Accueil V1.0 (`meta portfolio-version=1.0`) | OK — gelé |
-| Nav 4 items (Accueil · Laboratoire · Démarche · Contact) | OK — `site-nav.js` |
-| Pages + `site-nav` (accueil, lab, démarche, contact, journaux) | OK |
-| Assets accueil (portrait, logo, favicons) | OK |
-| Assets Laboratoire (22 images projets / galerie) | OK — 0 manquant |
-| CTA thème jour (hover lisible) | OK — `lab-home.css` |
-| i18n : `applyCurrentLang` après carrousel | OK — `projects/index.html` |
-| Contact courriel + LinkedIn | OK |
-| README aligné sur structure Laboratoire | OK |
+## Structure
 
-Hors périmètre de cette vérif : push GitHub Pages, nouvelles études, refonte hors bugs.
+| Section | Chemin |
+|---------|--------|
+| Projets phares | `projects/index.html` — HK Crib GO, Nexus/WSAI, Haven |
+| Laboratoire | `laboratoire/index.html` — expérimentations compactes |
+| Compétences | `competences/index.html` |
+| Contact | `contact/index.html` |
+| Journaux | `journals/` |
+
+Assets HK Crib GO : `assets/projects/hk-crib-go/`

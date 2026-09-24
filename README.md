@@ -1,41 +1,40 @@
-# Portefolio — Laboratoire Francis Manseau
+# Portfolio — Laboratoire Francis Manseau
 
-Site portfolio professionnel (Laboratoire de conception) — mobile, thème jour/nuit, carrousel d’études.
+Site portfolio professionnel — mobile, thème jour/nuit, projets phares et laboratoire d’expérimentations.
+
+Les dépôts `portfolio` et `portefolio` restent synchronisés temporairement (historique d’URL).
 
 ## Identité visuelle
 
-Symbole **Maillage Modular** — fichiers dans `assets/brand/` (SVG) ; PNG favicon/nav via `generate-brand-assets.bat` ou `python scripts/generate-brand-assets.py`. Voir `assets/brand/CONCEPT.md`.
+Symbole **Maillage Modular** — `assets/brand/` ; voir `assets/brand/CONCEPT.md`.
 
 ## Version
 
 Voir `VERSION.md` — **Accueil V1.0 gelé** (2026-08-06).
 
-## Première installation
-
-```
-C:\Projets\portefolio\setup-init.bat
-```
-
-## Structure actuelle
+## Structure
 
 | Section | Fichier | Note |
 |---------|---------|------|
 | **Accueil** | `index.html` | Seuil + atelier — **V1.0 gelé** |
-| **Laboratoire** | `projects/index.html` | Études (carrousel + fiches) |
-| **Démarche** | `competences/index.html` | Approche & compétences |
+| **Projets phares** | `projects/index.html` | HK Crib GO, Nexus / WSAI, Haven |
+| **Laboratoire** | `laboratoire/index.html` | Prototypes et expérimentations (cartes courtes) |
+| **Compétences** | `competences/index.html` | Approche & compétences |
 | **Contact** | `contact/index.html` | Courriel + LinkedIn |
-| **Journaux** | `journals/` | Carnets liés aux études |
+| **Journaux** | `journals/` | Carnets liés aux études phares |
 
-Navigation centralisée : `js/site-nav.js`  
+Navigation : `js/site-nav.js`  
 i18n dynamique (MyMemory) : `js/i18n.js` + `data-translate`
-
-Anciennes sections (Services / À propos / Soumission) : redirection vers l’accueil.
 
 ## Contact
 
 Courriel : `francismanseau@videotron.ca`  
 LinkedIn : https://www.linkedin.com/in/francis-manseau-723b8586/
 
-## Modifier les études
+## Modifier les projets phares
 
-Liste dans `projects/index.html` (tableau `projects`).
+Liste dans `projects/index.html` (tableau `projects` — 3 entrées).
+
+## Modifier le Laboratoire
+
+Cartes dans `laboratoire/index.html`.

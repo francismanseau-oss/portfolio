@@ -2,6 +2,7 @@
     var SWIPE_PAGES = [
         { id: "home", path: "index.html" },
         { id: "projects", path: "projects/index.html" },
+        { id: "lab", path: "laboratoire/index.html" },
         { id: "skills", path: "competences/index.html" },
         { id: "contact", path: "contact/index.html" }
     ];
