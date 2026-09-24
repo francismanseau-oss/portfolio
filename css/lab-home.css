@@ -397,6 +397,37 @@ html[data-theme="auto"][data-theme-effective="day"] .lab-threshold__enter:hover 
     font-style: italic;
 }
 
+.lab-open {
+    margin: 2rem auto 0;
+    max-width: 30em;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--lab-muted);
+}
+
+.lab-contact-cta {
+    margin: 0.9rem 0 0;
+}
+
+.lab-contact-cta a {
+    display: inline-block;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.lab-contact-cta a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.lab-contact-cta a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
 /* Mise en avant Nexus — un seul bloc, pas une 2e navigation */
 .lab-spotlight-wrap {
     display: flex;

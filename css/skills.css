@@ -176,6 +176,10 @@ html[data-theme="auto"][data-theme-effective="day"] .skills-card {
     color: var(--text, #e8eef8);
 }
 
+.skills-orientation__head > .skills-axis__title {
+    margin: 0;
+}
+
 .skills-axis__note {
     margin: clamp(14px, 3vw, 18px) 0 0;
     color: var(--text-muted, #b4c1d3);
