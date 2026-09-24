@@ -796,7 +796,7 @@ html[data-theme="auto"][data-theme-effective="day"] .skills-method li {
 .skills-pipeline__tags {
     justify-content: center;
     max-width: 48rem;
-    margin: 0 auto clamp(26px, 4vw, 34px);
+    margin: 10px auto clamp(26px, 4vw, 34px);
 }
 
 .skills-pipeline__principle {
