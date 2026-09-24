@@ -17,7 +17,7 @@ Voir `VERSION.md` — **Accueil V1.0 gelé** (2026-08-06).
 | Section | Fichier | Note |
 |---------|---------|------|
 | **Accueil** | `index.html` | Seuil + atelier — **V1.0 gelé** |
-| **Projets phares** | `projects/index.html` | HK Crib GO, Nexus / WSAI, Haven |
+| **Projets phares** | `projects/index.html` | Nexus / WSAI, HK Crib GO, Haven |
 | **Laboratoire** | `laboratoire/index.html` | Prototypes et expérimentations (cartes courtes) |
 | **Compétences** | `competences/index.html` | Approche & compétences |
 | **Contact** | `contact/index.html` | Courriel + LinkedIn |

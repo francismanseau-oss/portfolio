@@ -8,9 +8,9 @@
     var root = document.body.getAttribute("data-nav-root") || "../";
 
     var projects = [
+        { id: "nexus", label: "Nexus / WSAI", href: "projects/index.html#nexus" },
         { id: "hk-crib-go", label: "HK Crib GO", href: "projects/index.html#hk-crib-go" },
         { id: "haven", label: "Haven", href: "projects/index.html#haven" },
-        { id: "nexus", label: "Nexus / WSAI", href: "projects/index.html#nexus" },
         { id: "lab", label: "Laboratoire", href: "laboratoire/index.html" }
     ];
 

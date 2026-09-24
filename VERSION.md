@@ -15,7 +15,7 @@ CTA accueil : Projets phares + Laboratoire
 
 | Section | Chemin |
 |---------|--------|
-| Projets phares | `projects/index.html` — HK Crib GO, Nexus/WSAI, Haven |
+| Projets phares | `projects/index.html` — Nexus/WSAI, HK Crib GO, Haven |
 | Laboratoire | `laboratoire/index.html` — expérimentations compactes |
 | Compétences | `competences/index.html` |
 | Contact | `contact/index.html` |

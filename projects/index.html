@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0e1a">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Projets phares — HK Crib GO, Nexus / WSAI et Haven. Les trois principales preuves de travail de Francis Manseau.">
+<meta name="description" content="Projets phares — Nexus / WSAI, HK Crib GO et Haven. Les trois principales preuves de travail de Francis Manseau.">
 <title>Projets phares | Francis Manseau</title>
 <link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../assets/brand/favicon/favicon-32.png" type="image/png" sizes="32x32">
@@ -240,8 +240,47 @@ main.page-projects {
     margin: 1.25rem 0 0;
 }
 
+.project-download-cta--after-intro {
+    margin-top: clamp(1.35rem, 3vw, 1.75rem);
+    padding-top: clamp(1rem, 2vw, 1.25rem);
+    border-top: 1px solid var(--border);
+}
+
 .project-download-cta .btn-learn-more {
     text-decoration: none;
+}
+
+/* Intro 2 colonnes (HK Crib GO desktop) */
+.project-intro-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+    margin-top: 0.35rem;
+    align-items: start;
+}
+
+.project-intro-split__copy .lead:last-child {
+    margin-bottom: 0;
+}
+
+.project-intro-split__media {
+    min-width: 0;
+}
+
+.page-hero--hk > h1 {
+    margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
+}
+
+.features-section--prose .lead {
+    max-width: 68ch;
+}
+
+@media (min-width: 900px) {
+    .project-intro-split {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+        gap: clamp(1.5rem, 3vw, 2rem);
+        align-items: center;
+    }
 }
 
 .showcase-arrow {
@@ -294,7 +333,7 @@ main.page-projects {
 /* -- Détail projet -- */
 
 .project-detail {
-    width: min(760px, 92%);
+    width: min(980px, 94%);
     margin: clamp(40px, 7vw, 56px) auto 0;
     opacity: 1;
     transition: opacity 0.32s ease;
@@ -537,14 +576,14 @@ main.page-projects {
     transform: none;
 }
 
-/* HK Crib GO : 2 paysages empilés à gauche, Support portrait à droite */
+/* HK Crib GO : 2 paysages empilés + Support portrait — colonnes plus équilibrées */
 .screenshots-grid--hk {
-    grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.7fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
     align-items: center;
     justify-items: stretch;
-    max-width: 720px;
-    margin-inline: auto;
-    gap: clamp(14px, 3vw, 22px);
+    max-width: none;
+    margin-inline: 0;
+    gap: clamp(12px, 2.5vw, 18px);
 }
 
 .screenshots-stack {
@@ -566,13 +605,25 @@ main.page-projects {
 }
 
 .screenshots-grid--hk .screenshot-card--portrait {
-    max-width: 200px;
-    justify-self: end;
+    max-width: 180px;
+    justify-self: center;
     align-self: center;
 }
 
 .screenshots-grid--hk .screenshot-card--portrait img {
-    max-height: 440px;
+    max-height: 400px;
+}
+
+.project-intro-split__media .screenshots-grid--hk .screenshot-card--portrait {
+    max-width: 160px;
+}
+
+.project-intro-split__media .screenshots-grid--hk .screenshot-card--portrait img {
+    max-height: 360px;
+}
+
+.project-intro-split__media .screenshot-card figcaption {
+    font-size: 0.7rem;
 }
 
 @media (max-width: 640px) {
@@ -622,7 +673,7 @@ main.page-projects {
     max-width: 100%;
     border: 1px solid rgba(34, 211, 238, 0.28);
     border-radius: var(--radius);
-    overflow: hidden;
+    overflow: visible;
     box-shadow: var(--glow-cyan);
     background: var(--bg-card);
 }
@@ -631,10 +682,42 @@ main.page-projects {
     display: block;
     width: 100%;
     height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.hero-pc-shot figcaption {
+    padding: 10px 14px 12px;
+    font-size: 0.82rem;
+    color: var(--text-muted-soft);
+    text-align: center;
+    line-height: 1.4;
+    border-top: 1px solid var(--border);
+}
+
+/* Nexus Mobile : 3 colonnes stables (évite le :has fragile) */
+.screenshots-section .screenshots-grid:not(.screenshots-grid--hk) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    justify-items: center;
+}
+
+.screenshots-section .screenshot-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    opacity: 1;
 }
 
 .nexus-pc-explain {
-    margin: 0 0 clamp(28px, 5vw, 40px);
+    margin: 32px 0;
+    padding: 32px;
+    border-radius: var(--radius);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--glow-cyan);
 }
 
 .nexus-pc-explain h2 {
@@ -645,29 +728,28 @@ main.page-projects {
     font-size: .82rem;
 }
 
-.nexus-pc-explain .lead { margin-bottom: 12px; }
+.nexus-pc-explain .lead { margin-bottom: 12px; max-width: 68ch; }
 .nexus-pc-explain .lead:last-child { margin-bottom: 0; }
 
-/* Haven */
-.haven-summary-box {
-    padding: 32px;
-    border-radius: var(--radius);
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    box-shadow: var(--glow-cyan);
-    text-align: center;
+/* Haven — aligné sur page-hero ; sous-titre conservé */
+.page-hero > h1 {
+    margin: 0 0 12px;
 }
 
-.haven-summary-box h1 { margin: 0 0 16px; }
-.haven-subtitle { margin-bottom: 20px; color: var(--accent); font-weight: 600; }
+.haven-subtitle {
+    margin: 0 0 20px;
+    color: var(--accent);
+    font-weight: 600;
+    text-align: left;
+}
 
 .haven-shots {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    margin-top: clamp(24px, 4vw, 32px);
-    margin-bottom: clamp(32px, 6vw, 48px);
+    margin-top: clamp(20px, 3.5vw, 28px);
+    margin-bottom: clamp(28px, 5vw, 40px);
 }
 
 .haven-shot {
@@ -686,20 +768,13 @@ main.page-projects {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.haven-benefits.features-section,
-.hk-crib-go-benefits.features-section {
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-    padding: 0;
-}
-
 .haven-challenges {
     margin-top: 32px;
     padding: 28px 32px;
     border-radius: var(--radius);
     background: var(--bg-surface);
     border: 1px solid var(--border);
+    box-shadow: var(--glow-cyan);
 }
 
 .haven-challenges .features-title { margin-bottom: 12px; }
@@ -711,6 +786,7 @@ main.page-projects {
     color: var(--lead-color);
     line-height: 1.7;
     font-size: 1rem;
+    max-width: 68ch;
 }
 
 .haven-challenges__outro { margin-bottom: 0; margin-top: 16px; }
@@ -720,6 +796,7 @@ main.page-projects {
     padding: 0 0 0 1.15em;
     color: var(--text-muted-soft);
     line-height: 1.75;
+    max-width: 68ch;
 }
 
 .haven-challenges__list li { margin: 0 0 6px; }
@@ -800,7 +877,8 @@ main.page-projects {
     .page-hero,
     .features-section,
     .screenshots-section,
-    .haven-summary-box {
+    .nexus-pc-explain,
+    .haven-challenges {
         padding: clamp(18px, 4vw, 22px);
     }
 
@@ -895,100 +973,6 @@ main.page-projects {
 <script>
 const projects = [
 {
-        id: "hk-crib-go",
-        title: "HK Crib GO",
-        image: "../assets/projects/hk-crib-go/partie-en-cours.png",
-        imageClass: "project-card__media--hk",
-        alt: "HK Crib GO — jeu de cribbage Android",
-        description: "HK Crib GO — Hong Kong Cribbage en version rapide : parties en rounds d’environ cinq minutes, cinq adversaires IA, six langues, pointage visuel, statistiques, récompenses et support technique intégré.",
-        technologies: ["Kotlin", "Android", "JavaScript", "Gradle", "WebView", "IA"],
-        downloadUrl: "https://github.com/francismanseau-oss/hk-crib-go-apk/releases/download/v2.0.11/HK-Crib-GO-2.0.11.apk",
-        downloadLabel: "Télécharger l'APK",
-        categories: ["applications", "ia"],
-        status: "abouti",
-        statusLabel: "Suffisamment abouti",
-        journalUrl: "../journals/hk-crib-go.html",
-        template: `
-            <section class="page-hero">
-                <div class="project-card-badges" aria-label="Informations projet">
-                    <span class="badge badge-cat-type" data-translate>Jeu</span>
-                    <span class="badge badge-cat-platform" data-translate>Android</span>
-                    <span class="badge badge-available" data-translate>Disponible</span>
-                </div>
-                <h1>HK Crib GO</h1>
-                <p class="lead" data-translate><strong>HK</strong> pour Hong Kong, <strong>Crib</strong> pour Cribbage et <strong>GO</strong> pour l’idée d’un jeu rapide, mobile et prêt à jouer partout.</p>
-                <p class="lead" data-translate>Le projet est né d’une irritation concrète : j’aime jouer au cribbage Hong Kong dehors, mais dès qu’il vente, les cartes s’envolent. Après avoir cherché une application correspondant à cette variante sans en trouver, j’ai décidé de créer la mienne.</p>
-                <p class="lead" data-translate>Le Hong Kong conserve la logique de comptage des combinaisons du cribbage, mais sans phase de pegging. J’ai repensé le pointage et le format en rounds pour ramener une partie pouvant exceptionnellement approcher 1 h 30 à environ cinq minutes.</p>
-                <p class="project-download-cta">
-                    <a class="btn-learn-more" href="https://github.com/francismanseau-oss/hk-crib-go-apk/releases/download/v2.0.11/HK-Crib-GO-2.0.11.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
-                </p>
-            </section>
-
-            <section class="features-section hk-crib-go-benefits">
-                <h2 class="features-title" data-translate>Ce qui distingue HK Crib GO</h2>
-                <div class="features-grid">
-                    <article class="feature-card">
-                        <h3 data-translate>Hors ligne</h3>
-                        <p data-translate>Jouez sans connexion. Idéal en déplacement ou sans données mobiles.</p>
-                    </article>
-                    <article class="feature-card">
-                        <h3 data-translate>5 adversaires IA</h3>
-                        <p data-translate>Choisissez parmi cinq adversaires IA différents pour varier les parties.</p>
-                    </article>
-                    <article class="feature-card">
-                        <h3 data-translate>Personnalisation & 6 langues</h3>
-                        <p data-translate>Choix des cartes, de la table et du tableau de comptage, avec une interface disponible en six langues.</p>
-                    </article>
-                </div>
-            </section>
-
-            <section class="features-section">
-                <h2 class="features-title" data-translate>Un pointage visible et compréhensible</h2>
-                <p class="lead" data-translate>Chaque main est comptée individuellement et son total est affiché directement sous les cartes, puis les résultats sont cumulés pour obtenir le total du round.</p>
-                <p class="lead" data-translate>Pendant le comptage, les cartes qui participent au pointage changent de couleur. Lorsqu’une même carte intervient dans plusieurs combinaisons, une petite pastille indique combien de fois elle est comptabilisée : ×2, ×3, ×4, etc. Le joueur peut ainsi voir quelles cartes produisent les points et comment se construit le résultat.</p>
-            </section>
-
-            <section class="features-section">
-                <h2 class="features-title" data-translate>Expérience, historique et récompenses</h2>
-                <p class="lead" data-translate>HK Crib GO conserve un historique des pointages et attribue des médailles et des trophées selon les performances réalisées. Ces récompenses ne servent pas à déverrouiller des fonctions : elles représentent les résultats obtenus pendant les parties.</p>
-                <p class="lead" data-translate>De petites animations accompagnent le jeu : indicateur pendant que l’adversaire IA joue, animation de remise d’un trophée au gagnant et indications visuelles clignotantes pour guider le joueur lorsqu’un message du soutien technique est disponible.</p>
-            </section>
-
-            <section class="screenshots-section">
-                <h2 class="screenshots-title" data-translate>Aperçu du jeu</h2>
-                <div class="screenshots-grid screenshots-grid--hk">
-                    <div class="screenshots-stack">
-                        <figure class="screenshot-card screenshot-card--landscape">
-                            <img src="../assets/projects/hk-crib-go/partie-en-cours.png" alt="HK Crib GO — Partie en cours contre l'IA" width="1024" height="460" loading="lazy" decoding="async">
-                            <figcaption data-translate>Partie en cours — plateau et score</figcaption>
-                        </figure>
-                        <figure class="screenshot-card screenshot-card--landscape">
-                            <img src="../assets/projects/hk-crib-go/menu-parametres.png" alt="HK Crib GO — Fin d’un round" width="1024" height="460" loading="lazy" decoding="async">
-                            <figcaption data-translate>Fin d’un round</figcaption>
-                        </figure>
-                    </div>
-                    <figure class="screenshot-card screenshot-card--portrait">
-                        <img src="../assets/projects/hk-crib-go/support-centre.png" alt="HK Crib GO — Centre de support technique" width="460" height="1024" loading="lazy" decoding="async">
-                        <figcaption data-translate>Centre Support — ticket technique</figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <section class="features-section">
-                <h2 class="features-title" data-translate>Soutien technique relié à WSAI</h2>
-                <p class="lead" data-translate>Le centre de soutien de HK Crib GO communique avec WSAI, mon serveur IA hébergé sur mon ordinateur personnel. Lorsqu’un utilisateur soumet une demande de soutien, le système peut réveiller automatiquement mon PC par Wake-on-LAN (niveau 3). Une fois WSAI démarré et opérationnel, le serveur envoie d’abord un accusé de réception, puis analyse la demande et retourne une réponse de soutien adaptée au problème rencontré.</p>
-                <p class="lead" data-translate>Cette chaîne relie directement l’application Android, le réveil de la machine distante et mon infrastructure IA afin d’assurer le traitement du soutien technique.</p>
-            </section>
-
-            <section class="features-section">
-                <h2 class="features-title" data-translate>Évolution prévue</h2>
-                <p class="lead" data-translate>HK Crib GO est actuellement en phase de test sur Google Play et continue d’évoluer avant une diffusion plus large. Un Hall of Fame et un mode multijoueur font partie des évolutions prévues; le multijoueur attend notamment un bassin de joueurs suffisant pour être développé et testé dans de bonnes conditions.</p>
-            </section>
-
-            
-        `
-    },
-{
         id: "nexus",
         title: "Nexus (PC & Mobile) — avec WSAI",
         image: "../assets/project-gallery/nexus-bridge.png",
@@ -1034,8 +1018,8 @@ const projects = [
             </section>
 
             <figure class="hero-pc-shot">
-                <img src="../assets/projects/nexus/pc/wsai-ai-moteurs-panel.png" alt="WSAI — panneau de gestion des moteurs IA et du support HK" width="1200" height="700" loading="lazy" decoding="async">
-                <figcaption data-translate>WSAI — moteurs IA et Support HK (arrière-plan de Nexus)</figcaption>
+                <img src="../assets/projects/nexus/pc/wsai-console-dashboard.png" alt="WSAI Console — tableau de bord" width="1013" height="468" loading="eager" decoding="async">
+                <figcaption data-translate>WSAI Console — tableau de bord (arrière-plan de Nexus)</figcaption>
             </figure>
 
             <section class="nexus-pc-explain">
@@ -1048,15 +1032,15 @@ const projects = [
                 <h2 class="screenshots-title" data-translate>Nexus Mobile</h2>
                 <div class="screenshots-grid">
                     <figure class="screenshot-card">
-                        <img src="../assets/projects/nexus/mobile/04-chat-mission.jpg" alt="Nexus Mobile — chat mission et session Cursor" width="1080" height="2340" loading="lazy" decoding="async">
+                        <img src="../assets/projects/nexus/mobile/04-chat-mission.png" alt="Nexus Mobile — chat mission et session Cursor" width="1220" height="2712" loading="eager" decoding="async">
                         <figcaption data-translate>Chat mission — envoi et suivi à distance</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="../assets/projects/nexus/mobile/02-agents.jpg" alt="Nexus Mobile — menu agents" width="1080" height="2340" loading="lazy" decoding="async">
+                        <img src="../assets/projects/nexus/mobile/02-agents.jpg" alt="Nexus Mobile — menu agents" width="1220" height="2712" loading="eager" decoding="async">
                         <figcaption data-translate>Choix d’agent — Virtuose = Cursor</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="../assets/projects/nexus/mobile/01-options.jpg" alt="Nexus Mobile — options et Wake-on-LAN" width="1080" height="2340" loading="lazy" decoding="async">
+                        <img src="../assets/projects/nexus/mobile/01-options.png" alt="Nexus Mobile — options et Wake-on-LAN" width="1220" height="2712" loading="eager" decoding="async">
                         <figcaption data-translate>Options — réveil PC et préférences</figcaption>
                     </figure>
                 </div>
@@ -1068,7 +1052,7 @@ const projects = [
             </section>
 
             <figure class="hero-pc-shot">
-                <img src="../assets/projects/nexus/pc/nexus-bridge-control-center.png" alt="Nexus PC — Control Center" width="1600" height="1000" loading="lazy" decoding="async">
+                <img src="../assets/projects/nexus/pc/nexus-bridge-control-center.png" alt="Nexus PC — Control Center" width="800" height="852" loading="eager" decoding="async">
             </figure>
 
             <section class="features-section">
@@ -1095,11 +1079,107 @@ const projects = [
         `
     },
 {
+        id: "hk-crib-go",
+        title: "HK Crib GO",
+        image: "../assets/projects/hk-crib-go/partie-en-cours.png",
+        imageClass: "project-card__media--hk",
+        alt: "HK Crib GO — jeu de cribbage Android",
+        description: "HK Crib GO — Hong Kong Cribbage en version rapide : parties en rounds d’environ cinq minutes, cinq adversaires IA, six langues, pointage visuel, statistiques, récompenses et support technique intégré.",
+        technologies: ["Kotlin", "Android", "JavaScript", "Gradle", "WebView", "IA"],
+        downloadUrl: "https://github.com/francismanseau-oss/hk-crib-go-apk/releases/download/v2.0.11/HK-Crib-GO-2.0.11.apk",
+        downloadLabel: "Télécharger l'APK",
+        categories: ["applications", "ia"],
+        status: "abouti",
+        statusLabel: "Suffisamment abouti",
+        journalUrl: "../journals/hk-crib-go.html",
+        template: `
+            <section class="page-hero page-hero--hk">
+                <div class="project-card-badges" aria-label="Informations projet">
+                    <span class="badge badge-cat-type" data-translate>Jeu</span>
+                    <span class="badge badge-cat-platform" data-translate>Android</span>
+                    <span class="badge badge-available" data-translate>Disponible</span>
+                </div>
+                <h1>HK Crib GO</h1>
+                <div class="project-intro-split">
+                    <div class="project-intro-split__copy">
+                        <p class="lead" data-translate><strong>HK</strong> pour Hong Kong, <strong>Crib</strong> pour Cribbage et <strong>GO</strong> pour l’idée d’un jeu rapide, mobile et prêt à jouer partout.</p>
+                        <p class="lead" data-translate>Le projet est né d’une irritation concrète : j’aime jouer au cribbage Hong Kong dehors, mais dès qu’il vente, les cartes s’envolent. Après avoir cherché une application correspondant à cette variante sans en trouver, j’ai décidé de créer la mienne.</p>
+                        <p class="lead" data-translate>Le Hong Kong conserve la logique de comptage des combinaisons du cribbage, mais sans phase de pegging. J’ai repensé le pointage et le format en rounds pour ramener une partie pouvant exceptionnellement approcher 1 h 30 à environ cinq minutes.</p>
+                    </div>
+                    <div class="project-intro-split__media" aria-label="Aperçu du jeu">
+                        <div class="screenshots-grid screenshots-grid--hk">
+                            <div class="screenshots-stack">
+                                <figure class="screenshot-card screenshot-card--landscape">
+                                    <img src="../assets/projects/hk-crib-go/partie-en-cours.png" alt="HK Crib GO — Partie en cours contre l'IA" width="1024" height="460" loading="lazy" decoding="async">
+                                    <figcaption data-translate>Partie en cours — plateau et score</figcaption>
+                                </figure>
+                                <figure class="screenshot-card screenshot-card--landscape">
+                                    <img src="../assets/projects/hk-crib-go/menu-parametres.png" alt="HK Crib GO — Fin d’un round" width="1024" height="460" loading="lazy" decoding="async">
+                                    <figcaption data-translate>Fin d’un round</figcaption>
+                                </figure>
+                            </div>
+                            <figure class="screenshot-card screenshot-card--portrait">
+                                <img src="../assets/projects/hk-crib-go/support-centre.png" alt="HK Crib GO — Centre de support technique" width="460" height="1024" loading="lazy" decoding="async">
+                                <figcaption data-translate>Centre Support — ticket technique</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <p class="project-download-cta project-download-cta--after-intro">
+                    <a class="btn-learn-more" href="https://github.com/francismanseau-oss/hk-crib-go-apk/releases/download/v2.0.11/HK-Crib-GO-2.0.11.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
+                </p>
+            </section>
+
+            <section class="features-section hk-crib-go-benefits">
+                <h2 class="features-title" data-translate>Ce qui distingue HK Crib GO</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <h3 data-translate>Hors ligne</h3>
+                        <p data-translate>Jouez sans connexion. Idéal en déplacement ou sans données mobiles.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>5 adversaires IA</h3>
+                        <p data-translate>Choisissez parmi cinq adversaires IA différents pour varier les parties.</p>
+                    </article>
+                    <article class="feature-card">
+                        <h3 data-translate>Personnalisation & 6 langues</h3>
+                        <p data-translate>Choix des cartes, de la table et du tableau de comptage, avec une interface disponible en six langues.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="features-section features-section--prose">
+                <h2 class="features-title" data-translate>Un pointage visible et compréhensible</h2>
+                <p class="lead" data-translate>Chaque main est comptée individuellement et son total est affiché directement sous les cartes, puis les résultats sont cumulés pour obtenir le total du round.</p>
+                <p class="lead" data-translate>Pendant le comptage, les cartes qui participent au pointage changent de couleur. Lorsqu’une même carte intervient dans plusieurs combinaisons, une petite pastille indique combien de fois elle est comptabilisée : ×2, ×3, ×4, etc. Le joueur peut ainsi voir quelles cartes produisent les points et comment se construit le résultat.</p>
+            </section>
+
+            <section class="features-section features-section--prose">
+                <h2 class="features-title" data-translate>Expérience, historique et récompenses</h2>
+                <p class="lead" data-translate>HK Crib GO conserve un historique des pointages et attribue des médailles et des trophées selon les performances réalisées. Ces récompenses ne servent pas à déverrouiller des fonctions : elles représentent les résultats obtenus pendant les parties.</p>
+                <p class="lead" data-translate>De petites animations accompagnent le jeu : indicateur pendant que l’adversaire IA joue, animation de remise d’un trophée au gagnant et indications visuelles clignotantes pour guider le joueur lorsqu’un message du soutien technique est disponible.</p>
+            </section>
+
+            <section class="features-section features-section--prose">
+                <h2 class="features-title" data-translate>Soutien technique relié à WSAI</h2>
+                <p class="lead" data-translate>Le centre de soutien de HK Crib GO communique avec WSAI, mon serveur IA hébergé sur mon ordinateur personnel. Lorsqu’un utilisateur soumet une demande de soutien, le système peut réveiller automatiquement mon PC par Wake-on-LAN (niveau 3). Une fois WSAI démarré et opérationnel, le serveur envoie d’abord un accusé de réception, puis analyse la demande et retourne une réponse de soutien adaptée au problème rencontré.</p>
+                <p class="lead" data-translate>Cette chaîne relie directement l’application Android, le réveil de la machine distante et mon infrastructure IA afin d’assurer le traitement du soutien technique.</p>
+            </section>
+
+            <section class="features-section features-section--prose">
+                <h2 class="features-title" data-translate>Évolution prévue</h2>
+                <p class="lead" data-translate>HK Crib GO est actuellement en phase de test sur Google Play et continue d’évoluer avant une diffusion plus large. Un Hall of Fame et un mode multijoueur font partie des évolutions prévues; le multijoueur attend notamment un bassin de joueurs suffisant pour être développé et testé dans de bonnes conditions.</p>
+            </section>
+
+            
+        `
+    },
+{
         id: "haven",
         title: "Haven",
         image: "../assets/project-gallery/haven.png",
-        alt: "Haven — gestion intelligente des appels, notifications, messages et courriels",
-        description: "Application Android de gestion intelligente des appels, notifications, messages texte et courriels. Automatisation basée sur des règles personnalisées selon votre contexte — travail, conduite ou sommeil.",
+        alt: "Haven — automatisation contextuelle des appels en conduite",
+        description: "Application Android de sécurité routière : automatisation de la gestion des appels en conduite via Android Auto et Bluetooth, avec règles et exceptions configurables.",
         technologies: ["Kotlin", "Android", "Règles", "Notifications", "Automatisation"],
         downloadUrl: "https://github.com/francismanseau-oss/haven-apk/releases/latest/download/haven.apk",
         downloadLabel: "Télécharger l'APK",
@@ -1118,7 +1198,7 @@ const projects = [
             learnings: "La meilleure automatisation est celle qu’on oublie — parce qu’elle respecte le contexte."
         },
         template: `
-            <section class="haven-summary-box">
+            <section class="page-hero">
                 <div class="project-card-badges" aria-label="Informations projet">
                     <span class="badge badge-cat-type" data-translate>Application</span>
                     <span class="badge badge-cat-platform" data-translate>Android</span>
@@ -1126,10 +1206,12 @@ const projects = [
                 </div>
                 <h1>Haven</h1>
                 <p class="haven-subtitle" data-translate>Réappropriez-vous votre tranquillité d'esprit.</p>
-                <p class="lead" data-translate>Application Android de gestion intelligente des appels, notifications, messages texte et courriels. Automatisation basée sur des règles personnalisées selon votre contexte — travail, conduite ou sommeil.</p>
-                <p class="lead" data-translate>Configurez Haven une seule fois selon vos préférences, puis laissez-le travailler automatiquement en arrière-plan selon vos horaires et votre contexte.</p>
-                <p class="lead" data-translate>Haven illustre la même démarche de résolution de problèmes : partir d’un besoin réel, définir des règles, tester sur appareil, ajuster, puis aboutir à une solution fonctionnelle.</p>
-                <p class="project-download-cta">
+                <p class="lead" data-translate>Haven est une application Android de sécurité routière conçue autour d’une idée centrale : <strong>automatiser la gestion des appels pendant la conduite</strong>, plutôt que demander au conducteur d’activer et de désactiver manuellement un mode.</p>
+                <p class="lead" data-translate>Grâce à <strong>Android Auto</strong> et au <strong>Bluetooth</strong> du véhicule, Haven peut reconnaître le contexte de conduite et <strong>adapter automatiquement son comportement</strong> lorsque l’utilisateur entre ou sort de son véhicule.</p>
+                <p class="lead" data-translate>Le système applique ensuite une logique de filtrage configurable. Il ne s’agit pas simplement de bloquer tous les appels : Haven doit gérer différentes <strong>règles et exceptions</strong>, notamment les <strong>appels d’urgence 911</strong>, les contacts autorisés et le <strong>deuxième appel</strong>, qui peut être accepté lorsque cette possibilité a été activée dans la configuration.</p>
+                <p class="lead" data-translate>Le défi du projet réside donc autant dans l’application que dans sa <strong>logique d’automatisation</strong> : détecter le bon contexte, déclencher le bon mode, appliquer les règles configurées et prévoir les exceptions sans intervention inutile du conducteur.</p>
+                <p class="lead" data-translate>Haven démontre ma capacité à <strong>connecter plusieurs fonctions Android</strong> et à les faire travailler ensemble pour transformer un besoin concret en système automatisé.</p>
+                <p class="project-download-cta project-download-cta--after-intro">
                     <a class="btn-learn-more" href="https://github.com/francismanseau-oss/haven-apk/releases/latest/download/haven.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
                 </p>
             </section>
@@ -1189,6 +1271,7 @@ const projects = [
             </aside>
         `
     }
+
 ];
 
 let currentIndex = 0;

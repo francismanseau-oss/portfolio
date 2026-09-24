@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """Keep only flagship projects in projects/index.html array; rewrite cribleplus paths/classes."""
 from pathlib import Path
 import re
@@ -86,27 +86,27 @@ new_text = new_text.replace(
     "<title>Projets phares | Francis Manseau</title>",
 )
 new_text = new_text.replace(
-    'content="Le Laboratoire Francis Manseau — études de conception : applications, systèmes, prototypes, expérimentations."',
-    'content="Projets phares — HK Crib GO, Nexus / WSAI et Haven. Les trois principales preuves de travail de Francis Manseau."',
+    'content="Le Laboratoire Francis Manseau â€” Ã©tudes de conception : applications, systÃ¨mes, prototypes, expÃ©rimentations."',
+    'content="Projets phares â€” Nexus / WSAI, HK Crib GO et Haven. Les trois principales preuves de travail de Francis Manseau."',
 )
 new_text = new_text.replace(
     "<h1 data-translate>Le Laboratoire</h1>",
     "<h1 data-translate>Projets phares</h1>",
 )
 new_text = new_text.replace(
-    "Ici, chaque projet est une preuve concrète de ma façon de travailler : comprendre un besoin ou un problème, construire une solution, la tester, diagnostiquer les écarts et l’améliorer. Bienvenue dans le Laboratoire.",
-    "Trois réalisations principales : un jeu Android publié, un écosystème de pilotage à distance, et une application de garde d’enfants. Le détail reste ici ; les expérimentations vivent dans le Laboratoire.",
+    "Ici, chaque projet est une preuve concrÃ¨te de ma faÃ§on de travailler : comprendre un besoin ou un problÃ¨me, construire une solution, la tester, diagnostiquer les Ã©carts et lâ€™amÃ©liorer. Bienvenue dans le Laboratoire.",
+    "Trois rÃ©alisations principales : un jeu Android publiÃ©, un Ã©cosystÃ¨me de pilotage Ã  distance, et une application de garde dâ€™enfants. Le dÃ©tail reste ici ; les expÃ©rimentations vivent dans le Laboratoire.",
 )
 
 # Crible+ path/class cleanup (keep asset rename separate)
 new_text = new_text.replace("assets/projects/cribleplus/", "assets/projects/hk-crib-go/")
 new_text = new_text.replace("cribleplus-benefits", "hk-crib-go-benefits")
 new_text = new_text.replace("cribleplus-legal-links", "hk-crib-go-legal-links")
-new_text = new_text.replace("/* HK Crib GO : 2 paysages empilés", "/* HK Crib GO : 2 paysages empilés")
+new_text = new_text.replace("/* HK Crib GO : 2 paysages empilÃ©s", "/* HK Crib GO : 2 paysages empilÃ©s")
 
 # aria label
 new_text = new_text.replace(
-    'aria-label="Études de conception"',
+    'aria-label="Ã‰tudes de conception"',
     'aria-label="Projets phares"',
 )
 new_text = new_text.replace(
