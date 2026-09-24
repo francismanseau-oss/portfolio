@@ -250,37 +250,35 @@ main.page-projects {
     text-decoration: none;
 }
 
-/* Intro 2 colonnes (HK Crib GO desktop) */
-.project-intro-split {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: clamp(1.25rem, 3vw, 1.75rem);
-    margin-top: 0.35rem;
-    align-items: start;
-}
-
-.project-intro-split__copy .lead:last-child {
-    margin-bottom: 0;
-}
-
-.project-intro-split__media {
-    min-width: 0;
-}
-
+/* HK Crib GO : stack vertical — récit → captures larges → CTA */
 .page-hero--hk > h1 {
     margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
 }
 
-.features-section--prose .lead {
+.hk-intro-copy {
+    margin-top: 0.35rem;
+}
+
+.hk-intro-copy .lead {
     max-width: 68ch;
 }
 
-@media (min-width: 900px) {
-    .project-intro-split {
-        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-        gap: clamp(1.5rem, 3vw, 2rem);
-        align-items: center;
-    }
+.hk-intro-copy .lead:last-child {
+    margin-bottom: 0;
+}
+
+.hk-intro-media {
+    margin-top: clamp(1.35rem, 3vw, 1.85rem);
+    min-width: 0;
+    width: 100%;
+}
+
+.project-detail:has(.page-hero--hk) {
+    width: min(1120px, 94%);
+}
+
+.features-section--prose .lead {
+    max-width: 68ch;
 }
 
 .showcase-arrow {
@@ -461,6 +459,16 @@ main.page-projects {
     box-shadow: var(--glow-cyan);
 }
 
+/* Détail projet : stack vertical (pas la grille 2 col. héritée de layout.css) */
+.project-detail .page-hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+}
+
+.project-detail .page-hero > * {
+    grid-column: 1;
+}
+
 .badge {
     display: inline-block;
     margin-bottom: 14px;
@@ -576,20 +584,23 @@ main.page-projects {
     transform: none;
 }
 
-/* HK Crib GO : 2 paysages empilés + Support portrait — colonnes plus équilibrées */
+/* HK : 2 paysages empilés + Support portrait — pleine largeur sous le texte */
 .screenshots-grid--hk {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-    align-items: center;
+    --hk-gap: clamp(12px, 2vw, 16px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
     justify-items: stretch;
+    width: 100%;
     max-width: none;
     margin-inline: 0;
-    gap: clamp(12px, 2.5vw, 18px);
+    gap: clamp(14px, 2.5vw, 22px);
 }
 
 .screenshots-stack {
     display: flex;
     flex-direction: column;
-    gap: clamp(10px, 2vw, 14px);
+    gap: var(--hk-gap);
     min-width: 0;
 }
 
@@ -602,38 +613,115 @@ main.page-projects {
     max-height: none;
     width: 100%;
     height: auto;
+    object-fit: contain;
 }
 
 .screenshots-grid--hk .screenshot-card--portrait {
-    max-width: 180px;
+    max-width: min(100%, 280px);
+    width: 100%;
     justify-self: center;
-    align-self: center;
 }
 
 .screenshots-grid--hk .screenshot-card--portrait img {
-    max-height: 400px;
+    max-height: none;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
-.project-intro-split__media .screenshots-grid--hk .screenshot-card--portrait {
-    max-width: 160px;
+.screenshots-grid--hk .screenshot-card figcaption {
+    font-size: 0.78rem;
 }
 
-.project-intro-split__media .screenshots-grid--hk .screenshot-card--portrait img {
-    max-height: 360px;
+/* Desktop : Support = hauteur des 2 paysages + gap (échelle cohérente) */
+@media (min-width: 721px) {
+    .screenshots-grid--hk {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 30%);
+        grid-template-rows: auto auto auto auto;
+        column-gap: clamp(14px, 2.5vw, 22px);
+        row-gap: var(--hk-gap);
+        align-items: stretch;
+    }
+
+    .screenshots-stack,
+    .screenshots-stack .screenshot-card--landscape {
+        display: contents;
+    }
+
+    .screenshots-stack .screenshot-card--landscape:nth-child(1) img {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        height: auto;
+    }
+
+    .screenshots-stack .screenshot-card--landscape:nth-child(2) img {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: auto;
+    }
+
+    .screenshots-stack .screenshot-card--landscape:nth-child(1) figcaption {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .screenshots-stack .screenshot-card--landscape:nth-child(2) figcaption {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .screenshots-grid--hk > .screenshot-card--portrait {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        position: relative;
+        align-self: stretch;
+        justify-self: stretch;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        min-width: 0;
+        min-height: 0;
+        margin: 0;
+    }
+
+    .screenshots-grid--hk > .screenshot-card--portrait img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        box-sizing: border-box;
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: center top;
+    }
+
+    .screenshots-grid--hk > .screenshot-card--portrait figcaption {
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        width: max-content;
+        max-width: 14rem;
+        box-sizing: border-box;
+    }
 }
 
-.project-intro-split__media .screenshot-card figcaption {
-    font-size: 0.7rem;
-}
-
-@media (max-width: 640px) {
+@media (max-width: 720px) {
     .screenshots-grid--hk {
         grid-template-columns: 1fr;
         justify-items: center;
     }
+    .screenshots-grid--hk .screenshot-card--landscape {
+        max-width: 100%;
+    }
     .screenshots-grid--hk .screenshot-card--portrait {
         justify-self: center;
-        max-width: 180px;
+        max-width: min(100%, 280px);
     }
 }
 
@@ -1100,29 +1188,27 @@ const projects = [
                     <span class="badge badge-available" data-translate>Disponible</span>
                 </div>
                 <h1>HK Crib GO</h1>
-                <div class="project-intro-split">
-                    <div class="project-intro-split__copy">
-                        <p class="lead" data-translate><strong>HK</strong> pour Hong Kong, <strong>Crib</strong> pour Cribbage et <strong>GO</strong> pour l’idée d’un jeu rapide, mobile et prêt à jouer partout.</p>
-                        <p class="lead" data-translate>Le projet est né d’une irritation concrète : j’aime jouer au cribbage Hong Kong dehors, mais dès qu’il vente, les cartes s’envolent. Après avoir cherché une application correspondant à cette variante sans en trouver, j’ai décidé de créer la mienne.</p>
-                        <p class="lead" data-translate>Le Hong Kong conserve la logique de comptage des combinaisons du cribbage, mais sans phase de pegging. J’ai repensé le pointage et le format en rounds pour ramener une partie pouvant exceptionnellement approcher 1 h 30 à environ cinq minutes.</p>
-                    </div>
-                    <div class="project-intro-split__media" aria-label="Aperçu du jeu">
-                        <div class="screenshots-grid screenshots-grid--hk">
-                            <div class="screenshots-stack">
-                                <figure class="screenshot-card screenshot-card--landscape">
-                                    <img src="../assets/projects/hk-crib-go/partie-en-cours.png" alt="HK Crib GO — Partie en cours contre l'IA" width="1024" height="460" loading="lazy" decoding="async">
-                                    <figcaption data-translate>Partie en cours — plateau et score</figcaption>
-                                </figure>
-                                <figure class="screenshot-card screenshot-card--landscape">
-                                    <img src="../assets/projects/hk-crib-go/menu-parametres.png" alt="HK Crib GO — Fin d’un round" width="1024" height="460" loading="lazy" decoding="async">
-                                    <figcaption data-translate>Fin d’un round</figcaption>
-                                </figure>
-                            </div>
-                            <figure class="screenshot-card screenshot-card--portrait">
-                                <img src="../assets/projects/hk-crib-go/support-centre.png" alt="HK Crib GO — Centre de support technique" width="460" height="1024" loading="lazy" decoding="async">
-                                <figcaption data-translate>Centre Support — ticket technique</figcaption>
+                <div class="hk-intro-copy">
+                    <p class="lead" data-translate><strong>HK</strong> pour Hong Kong, <strong>Crib</strong> pour Cribbage et <strong>GO</strong> pour l’idée d’un jeu rapide, mobile et prêt à jouer partout.</p>
+                    <p class="lead" data-translate>Le projet est né d’une irritation concrète : j’aime jouer au cribbage Hong Kong dehors, mais dès qu’il vente, les cartes s’envolent. Après avoir cherché une application correspondant à cette variante sans en trouver, j’ai décidé de créer la mienne.</p>
+                    <p class="lead" data-translate>Le Hong Kong conserve la logique de comptage des combinaisons du cribbage, mais sans phase de pegging. J’ai repensé le pointage et le format en rounds pour ramener une partie pouvant exceptionnellement approcher 1 h 30 à environ cinq minutes.</p>
+                </div>
+                <div class="hk-intro-media" aria-label="Aperçu du jeu">
+                    <div class="screenshots-grid screenshots-grid--hk">
+                        <div class="screenshots-stack">
+                            <figure class="screenshot-card screenshot-card--landscape">
+                                <img src="../assets/projects/hk-crib-go/partie-en-cours.png" alt="HK Crib GO — Partie en cours contre l'IA" width="1024" height="460" loading="lazy" decoding="async">
+                                <figcaption data-translate>Partie en cours — plateau et score</figcaption>
+                            </figure>
+                            <figure class="screenshot-card screenshot-card--landscape">
+                                <img src="../assets/projects/hk-crib-go/menu-parametres.png" alt="HK Crib GO — Fin d’un round" width="1024" height="460" loading="lazy" decoding="async">
+                                <figcaption data-translate>Fin d’un round</figcaption>
                             </figure>
                         </div>
+                        <figure class="screenshot-card screenshot-card--portrait">
+                            <img src="../assets/projects/hk-crib-go/support-centre.png" alt="HK Crib GO — Centre de support technique" width="460" height="1024" loading="lazy" decoding="async">
+                            <figcaption data-translate>Centre Support — ticket technique</figcaption>
+                        </figure>
                     </div>
                 </div>
                 <p class="project-download-cta project-download-cta--after-intro">
