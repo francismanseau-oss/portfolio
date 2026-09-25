@@ -1080,7 +1080,7 @@ main.page-projects {
 <main class="page-projects">
     <header class="page-intro">
         <h1 data-translate>Projets phares</h1>
-        <p class="page-intro__lead" data-translate>Trois réalisations principales : un jeu Android publié, un écosystème de pilotage à distance, et une application de garde d’enfants. Le détail reste ici ; les expérimentations vivent dans le Laboratoire.</p>
+        <p class="page-intro__lead" data-translate>Trois réalisations principales : Nexus avec WSAI, un écosystème de pilotage à distance ; HK Crib GO, un jeu Android actuellement en phase de test sur Google Play ; et Haven, un refuge numérique Android actuellement en phase de test sur Google Play.</p>
     </header>
 
     <section class="projects-showcase" id="projectsShowcase" aria-label="Projets phares">
@@ -1249,7 +1249,7 @@ const projects = [
                 <div class="project-card-badges" aria-label="Informations projet">
                     <span class="badge badge-cat-type" data-translate>Jeu</span>
                     <span class="badge badge-cat-platform" data-translate>Android</span>
-                    <span class="badge badge-available" data-translate>Disponible</span>
+                    <span class="badge badge-available" data-translate>En test sur Google Play</span>
                 </div>
                 <h1>HK Crib GO</h1>
                 <div class="hk-intro-copy">
@@ -1328,8 +1328,8 @@ const projects = [
         id: "haven",
         title: "Haven",
         image: "../assets/project-gallery/haven.png",
-        alt: "Haven — automatisation contextuelle des appels en conduite",
-        description: "Application Android de sécurité routière : automatisation de la gestion des appels en conduite via Android Auto et Bluetooth, avec règles et exceptions configurables.",
+        alt: "Haven — refuge numérique Android contre les interruptions du téléphone",
+        description: "Haven — refuge numérique Android conçu pour réduire et contrôler les interruptions du téléphone : appels, notifications et autres sollicitations. Modes selon le contexte (conduite, sommeil, travail), avec règles et exceptions configurables. En phase de test sur Google Play.",
         technologies: ["Kotlin", "Android", "Règles", "Notifications", "Automatisation"],
         downloadUrl: "https://github.com/francismanseau-oss/haven-apk/releases/latest/download/haven.apk",
         downloadLabel: "Télécharger l'APK",
@@ -1352,14 +1352,15 @@ const projects = [
                 <div class="project-card-badges" aria-label="Informations projet">
                     <span class="badge badge-cat-type" data-translate>Application</span>
                     <span class="badge badge-cat-platform" data-translate>Android</span>
-                    <span class="badge badge-available" data-translate>Disponible</span>
+                    <span class="badge badge-available" data-translate>En test sur Google Play</span>
                 </div>
                 <h1>Haven</h1>
                 <p class="haven-subtitle" data-translate>Réappropriez-vous votre tranquillité d'esprit.</p>
-                <p class="lead" data-translate>Haven est une application Android de sécurité routière conçue autour d’une idée centrale : <strong>automatiser la gestion des appels pendant la conduite</strong>, plutôt que demander au conducteur d’activer et de désactiver manuellement un mode.</p>
-                <p class="lead" data-translate>Après une configuration initiale, Haven peut reconnaître automatiquement le démarrage d’un trajet à partir de la connexion <strong>Android Auto</strong> ou <strong>Bluetooth</strong> du véhicule, puis <strong>adapter son comportement</strong> lorsque l’utilisateur entre ou sort de son véhicule.</p>
+                <p class="lead" data-translate>Haven est un <strong>refuge numérique Android</strong> conçu pour <strong>réduire et contrôler les interruptions du téléphone</strong> : appels, notifications et autres sollicitations. Plutôt que de demander à l’utilisateur d’activer et de désactiver manuellement un mode, Haven applique les bons comportements selon le contexte : jour, conduite, sommeil ou travail.</p>
+                <p class="lead" data-translate>Haven est actuellement en phase de test sur Google Play.</p>
+                <p class="lead" data-translate>Pour le mode Conduite, après une configuration initiale, Haven peut reconnaître automatiquement le démarrage d’un trajet à partir de la connexion <strong>Android Auto</strong> ou <strong>Bluetooth</strong> du véhicule, puis <strong>adapter son comportement</strong> lorsque l’utilisateur entre ou sort de son véhicule.</p>
                 <p class="lead" data-translate>Le système applique ensuite une logique de filtrage configurable. Il ne s’agit pas simplement de bloquer tous les appels : Haven doit gérer différentes <strong>règles et exceptions</strong>, notamment les <strong>appels d’urgence 911</strong>, les contacts autorisés et le <strong>deuxième appel</strong>, qui peut être accepté lorsque cette possibilité a été activée dans la configuration.</p>
-                <p class="lead" data-translate>Le défi du projet réside donc autant dans l’application que dans sa <strong>logique d’automatisation</strong> : détecter le bon contexte, déclencher le bon mode, appliquer les règles configurées et prévoir les exceptions sans intervention inutile du conducteur.</p>
+                <p class="lead" data-translate>Le défi du projet réside donc autant dans l’application que dans sa <strong>logique d’automatisation</strong> : détecter le bon contexte, déclencher le bon mode, appliquer les règles configurées et prévoir les exceptions sans intervention inutile de l’utilisateur.</p>
                 <p class="lead" data-translate>Haven démontre ma capacité à <strong>connecter plusieurs fonctions Android</strong> et à les faire travailler ensemble pour transformer un besoin concret en système automatisé.</p>
                 <p class="project-download-cta project-download-cta--after-intro">
                     <a class="btn-learn-more" href="https://github.com/francismanseau-oss/haven-apk/releases/latest/download/haven.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
