@@ -1356,12 +1356,14 @@ const projects = [
                 </div>
                 <h1>Haven</h1>
                 <p class="haven-subtitle" data-translate>Réappropriez-vous votre tranquillité d'esprit.</p>
-                <p class="lead" data-translate>Haven est un <strong>refuge numérique Android</strong> conçu pour <strong>réduire et contrôler les interruptions du téléphone</strong> : appels, notifications et autres sollicitations. Plutôt que de demander à l’utilisateur d’activer et de désactiver manuellement un mode, Haven applique les bons comportements selon le contexte : jour, conduite, sommeil ou travail.</p>
+                <p class="lead" data-translate>Haven est un <strong>refuge numérique Android</strong> conçu pour <strong>réduire les interruptions du téléphone</strong> — appels, notifications et autres sollicitations — <strong>sans couper l’utilisateur des communications importantes</strong>. Ce n’est pas un simple mode « Ne pas déranger » : Haven adapte le comportement du téléphone selon le contexte — travail, conduite, sommeil, école ou périodes de repos.</p>
+                <p class="lead" data-translate><strong>L’objectif de Haven n’est pas de couper l’utilisateur du monde. Il est de créer un environnement numérique calme qui sait quand une interruption mérite réellement de passer.</strong></p>
                 <p class="lead" data-translate>Haven est actuellement en phase de test sur Google Play.</p>
                 <p class="lead" data-translate>Pour le mode Conduite, après une configuration initiale, Haven peut reconnaître automatiquement le démarrage d’un trajet à partir de la connexion <strong>Android Auto</strong> ou <strong>Bluetooth</strong> du véhicule, puis <strong>adapter son comportement</strong> lorsque l’utilisateur entre ou sort de son véhicule.</p>
-                <p class="lead" data-translate>Le système applique ensuite une logique de filtrage configurable. Il ne s’agit pas simplement de bloquer tous les appels : Haven doit gérer différentes <strong>règles et exceptions</strong>, notamment les <strong>appels d’urgence 911</strong>, les contacts autorisés et le <strong>deuxième appel</strong>, qui peut être accepté lorsque cette possibilité a été activée dans la configuration.</p>
+                <p class="lead" data-translate>Le filtrage n’est jamais aveugle. Les <strong>alertes gouvernementales</strong> importantes, comme les <strong>alertes AMBER</strong>, sont préservées, et les <strong>communications d’urgence comme le 911</strong> restent accessibles : elles ne sont pas bloquées par Haven. L’utilisateur sélectionne aussi ses <strong>contacts d’urgence</strong> dans <em>Configuration → Contacts d’urgence</em> : un parent, un enfant, un membre de la famille ou un employeur, par exemple.</p>
+                <p class="lead" data-translate><strong>Le deuxième appel</strong> : lorsque le mode « Ne pas déranger » (pastille rouge) est actif, le premier appel d’un contact d’urgence peut être filtré. Si cette même personne rappelle en moins de 5 minutes, le deuxième appel est autorisé. Une personne importante peut ainsi insister lorsqu’une situation semble urgente, sans que le filtrage général soit désactivé.</p>
                 <p class="lead" data-translate>Le défi du projet réside donc autant dans l’application que dans sa <strong>logique d’automatisation</strong> : détecter le bon contexte, déclencher le bon mode, appliquer les règles configurées et prévoir les exceptions sans intervention inutile de l’utilisateur.</p>
-                <p class="lead" data-translate>Haven démontre ma capacité à <strong>connecter plusieurs fonctions Android</strong> et à les faire travailler ensemble pour transformer un besoin concret en système automatisé.</p>
+                <p class="lead" data-translate>Haven démontre ma capacité à combiner <strong>logique conditionnelle</strong>, <strong>automatisation</strong>, <strong>gestion de différents états</strong> et <strong>gestion des exceptions</strong>, en intégrant plusieurs fonctions Android pour transformer un besoin concret en système automatisé.</p>
                 <p class="project-download-cta project-download-cta--after-intro">
                     <a class="btn-learn-more" href="https://github.com/francismanseau-oss/haven-apk/releases/latest/download/haven.apk" target="_blank" rel="noopener noreferrer" data-translate>Télécharger l'APK (Android)</a>
                 </p>
@@ -1391,11 +1393,11 @@ const projects = [
                     </article>
                     <article class="feature-card">
                         <h3 data-translate>Conduite automatique</h3>
-                        <p data-translate>Détection des trajets et activation du mode conduite sans intervention manuelle.</p>
+                        <p data-translate>Après une configuration initiale, activation du mode conduite dès la connexion au véhicule, sans intervention manuelle.</p>
                     </article>
                     <article class="feature-card">
                         <h3 data-translate>Contexte scolaire</h3>
-                        <p data-translate>Règles par plages horaires pour réduire les distractions en classe et les réactiver aux pauses.</p>
+                        <p data-translate>Règles par plages horaires pour réduire les distractions en classe et les réactiver aux pauses, tout en maintenant les mécanismes de sécurité prévus.</p>
                     </article>
                     <article class="feature-card">
                         <h3 data-translate>Sommeil sans inquiétude</h3>
@@ -1409,7 +1411,7 @@ const projects = [
                 <p class="haven-challenges__intro" data-translate>Au cours du développement de Haven, plusieurs problématiques indépendantes ont été étudiées et résolues.</p>
                 <ul class="haven-challenges__list">
                     <li data-translate>Architecture des appels d'urgence (911 / 112)</li>
-                    <li data-translate>Conception d'une logique permettant le déblocage d'un deuxième appel en moins de cinq minutes</li>
+                    <li data-translate>Conception d'une logique permettant le déblocage d'un deuxième appel en moins de 5 minutes</li>
                     <li data-translate>Filtrage intelligent des appels et des notifications</li>
                     <li data-translate>Profils automatiques selon le contexte</li>
                     <li data-translate>Automatisation Android</li>
