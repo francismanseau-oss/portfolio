@@ -9,12 +9,14 @@
 }
 
 html {
-    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%;
 }
 
 body {
     line-height: 1.5;
-    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100%;
     padding-top: var(--header-h);
     min-width: 0;
     position: relative;
@@ -368,7 +370,6 @@ a.home-contact-email:visited {
     grid-template-areas: "brand nav toggle";
     align-items: center;
     gap: clamp(10px, 2vw, 20px);
-    flex-wrap: wrap;
     padding: 10px clamp(16px, 4vw, 40px);
     min-height: var(--header-h);
 }
@@ -385,6 +386,13 @@ a.home-contact-email:visited {
 
 .nav-toggle {
     grid-area: toggle;
+    justify-self: end;
+}
+
+/* Évite qu’un élément hors flux (langues / statut) crée une 2ᵉ rangée dans la grille. */
+.header-top > .lang-status,
+.header-top > .lang-switcher:not(.lang-dropdown-menu) {
+    grid-area: brand;
 }
 
 .header-brand {
@@ -435,10 +443,17 @@ a.home-contact-email:visited {
 
 .nav-toggle {
     display: none;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     font-size: 1.25rem;
     flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+    touch-action: manipulation;
 }
 
 .lang-status {
@@ -1408,21 +1423,37 @@ a.project-card-link .badge {
         touch-action: auto;
     }
     .site-header { position: relative; }
+    /* Une seule rangée : logo | progression | hamburger (menu ouvert = rangée implicite dessous). */
     .header-top {
         min-height: 56px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        gap: 8px;
         grid-template-columns: minmax(0, 1fr) auto auto;
-        grid-template-areas:
-            "brand progress toggle"
-            "nav nav nav";
+        grid-template-areas: "brand progress toggle";
+        align-items: center;
+    }
+    .header-brand {
+        gap: 8px;
+    }
+    .logo-icon {
+        height: 40px;
+        max-height: 40px;
+    }
+    .logo-text {
+        font-size: clamp(0.82rem, 3.6vw, 0.98rem);
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .mobile-page-progress {
         grid-area: progress;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        justify-self: end;
         gap: 0;
         min-width: 0;
-        max-width: 46vw;
+        max-width: 42vw;
         padding-right: 2px;
         font-size: clamp(0.68rem, 2.8vw, 0.78rem);
         font-weight: 600;
@@ -1479,15 +1510,22 @@ a.project-card-link .badge {
     .mobile-swipe-hints[hidden] {
         display: none !important;
     }
-    .main-nav { justify-self: stretch; }
-    .nav-toggle { display: block; }
+    .nav-toggle {
+        display: inline-flex;
+        grid-area: toggle;
+        justify-self: end;
+        margin: 0;
+    }
     .main-nav {
         display: none;
+        grid-area: auto;
+        grid-column: 1 / -1;
+        justify-self: stretch;
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
         width: 100%;
-        padding: 2px clamp(16px, 4vw, 40px) 4px;
+        padding: 2px 0 4px;
         border-top-width: 1px;
         border-top-style: solid;
     }
